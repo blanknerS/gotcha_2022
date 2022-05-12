@@ -14,6 +14,9 @@
 		FF7A0B7F282D67F5003BE9BF /* GotchaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B7E282D67F5003BE9BF /* GotchaTests.swift */; };
 		FF7A0B89282D67F5003BE9BF /* GotchaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B88282D67F5003BE9BF /* GotchaUITests.swift */; };
 		FF7A0B8B282D67F5003BE9BF /* GotchaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B8A282D67F5003BE9BF /* GotchaUITestsLaunchTests.swift */; };
+		FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B97282D69E4003BE9BF /* LoginView.swift */; };
+		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
+		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		FF7A0B84282D67F5003BE9BF /* GotchaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotchaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B88282D67F5003BE9BF /* GotchaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaUITests.swift; sourceTree = "<group>"; };
 		FF7A0B8A282D67F5003BE9BF /* GotchaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF7A0B97282D69E4003BE9BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				FF7A0B6F282D67F1003BE9BF /* ContentView.swift */,
+				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
+				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
 			);
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
+				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
 				FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
+				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
