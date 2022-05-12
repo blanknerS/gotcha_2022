@@ -1,14 +1,14 @@
 //
-//  Gotcha_AppApp.swift
-//  Shared
+//  GotchaApp.swift
+//  Gotcha
 //
-//  Created by Yaman Habip on 5/2/22.
+//  Created by Blake Ankner on 5/12/22.
 //
 
 import SwiftUI
 
 @main
-struct Gotcha_AppApp: App {
+struct GotchaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

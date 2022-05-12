@@ -1,13 +1,13 @@
 //
-//  Tests_macOS.swift
-//  Tests macOS
+//  GotchaUITests.swift
+//  GotchaUITests
 //
-//  Created by Yaman Habip on 5/2/22.
+//  Created by Blake Ankner on 5/12/22.
 //
 
 import XCTest
 
-class Tests_macOS: XCTestCase {
+class GotchaUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

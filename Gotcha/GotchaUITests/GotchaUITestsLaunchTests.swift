@@ -1,13 +1,13 @@
 //
-//  Tests_iOSLaunchTests.swift
-//  Tests iOS
+//  GotchaUITestsLaunchTests.swift
+//  GotchaUITests
 //
-//  Created by Yaman Habip on 5/2/22.
+//  Created by Blake Ankner on 5/12/22.
 //
 
 import XCTest
 
-class Tests_iOSLaunchTests: XCTestCase {
+class GotchaUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
