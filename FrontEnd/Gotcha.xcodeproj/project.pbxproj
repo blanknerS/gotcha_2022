@@ -17,6 +17,7 @@
 		FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B97282D69E4003BE9BF /* LoginView.swift */; };
 		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
 		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
+		FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		FF7A0B97282D69E4003BE9BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
+		FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				FF7A0B6F282D67F1003BE9BF /* ContentView.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
@@ -152,6 +155,8 @@
 			dependencies = (
 			);
 			name = Gotcha;
+			packageProductDependencies = (
+			);
 			productName = Gotcha;
 			productReference = FF7A0B6A282D67F1003BE9BF /* Gotcha.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +229,8 @@
 				Base,
 			);
 			mainGroup = FF7A0B61282D67F1003BE9BF;
+			packageReferences = (
+			);
 			productRefGroup = FF7A0B6B282D67F1003BE9BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +249,7 @@
 			files = (
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
+				FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
