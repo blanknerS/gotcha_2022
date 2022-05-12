@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        VStack(alignment: .leading){
+        VStack{
             HStack{
                 Text("Name")
                     .font(.headline)
