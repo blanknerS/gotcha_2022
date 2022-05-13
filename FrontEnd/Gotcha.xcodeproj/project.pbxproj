@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6F282D67F1003BE9BF /* ContentView.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
 		FF7A0B6F282D67F1003BE9BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				FF7A0B6F282D67F1003BE9BF /* ContentView.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
 				FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */,
