@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17D054C32832B69B0044B01F /* Display_DB_Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D054C22832B69B0044B01F /* Display_DB_Functions.swift */; };
 		FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6F282D67F1003BE9BF /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17D054C22832B69B0044B01F /* Display_DB_Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display_DB_Functions.swift; sourceTree = "<group>"; };
 		FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				FF7A0B6F282D67F1003BE9BF /* ContentView.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				17D054C22832B69B0044B01F /* Display_DB_Functions.swift */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
@@ -283,6 +286,7 @@
 				FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
+				17D054C32832B69B0044B01F /* Display_DB_Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,6 @@ struct MainView: View {
 //                    .font(.title2)
             }
             Spacer()
-            Spacer(minLength: 50)
          
             Text("Your Target: ______")
                 .font(.title3)
@@ -102,6 +101,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .preferredColorScheme(.dark)
+            .previewInterfaceOrientation(.portrait)
             
     }
 }
