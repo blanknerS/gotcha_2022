@@ -25,7 +25,7 @@ struct MainView: View {
             }
             Spacer()
             Spacer(minLength: 50)
-            Spacer()
+         
             Text("Your Target: ______")
                 .font(.title3)
             Text("Number of Tages: ______")
