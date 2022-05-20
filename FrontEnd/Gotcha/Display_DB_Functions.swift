@@ -6,7 +6,6 @@
 //
 // Use this file for testing JS stuff
 
-import Foundation
 import SwiftUI
 
 
