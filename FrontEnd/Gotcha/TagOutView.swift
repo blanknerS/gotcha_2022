@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct TagOutView: View {
+    
+//    @Binding var show: Bool
+    
     var body: some View {
-        Text("Do you want to tag out?")
+        ZStack{
+            Text("Hello")
+        }
     }
 }
 
