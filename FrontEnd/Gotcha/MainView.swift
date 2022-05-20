@@ -14,6 +14,10 @@ struct MainView: View {
 //    @State private var engine: CHHapticEngine?
 //    @State private var leaderBoard: List = ["HEYYEH", "LWHEFL", "jf"]
     var body: some View {
+        
+        let backgroundGradient = LinearGradient(
+            colors: [Color("lightBlue"), Color("secondBlue")],
+            startPoint: .top, endPoint: .bottom)
         TabView {
             ProfileView()
                 .tabItem {
@@ -25,6 +29,8 @@ struct MainView: View {
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
         }
+        .accentColor(Color("mediumBlue"))
+        .background(backgroundGradient)
     }
 }
 

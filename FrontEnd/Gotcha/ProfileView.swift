@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     let backgroundGradient = LinearGradient(
-        colors: [Color("violet"), Color("yellow")],
+        colors: [Color("lightBlue"), Color("secondBlue")],
         startPoint: .top, endPoint: .bottom)
     
     
@@ -18,20 +18,19 @@ struct ProfileView: View {
         VStack (alignment: .center, spacing: 20){
             HStack{
                 Text("Name")
+                    .padding()
                     .font(.largeTitle)
-                    .foregroundColor(Color.black)
-                    .background(Color("rose"))
+                    .foregroundColor(Color("white"))
+                    .background(Color("firstBlue"))
                     .cornerRadius(20)
                 Spacer()
-                Label("Leaderboard", systemImage: "crown.fill")
-                    .font(.title2)
-                    .foregroundColor(Color("lavender"))
             }
             Spacer()
             Label("Your Target: _______", systemImage: "exclamationmark.shield.fill")
+                .padding()
                 .font(.title2)
-                .foregroundColor(Color.black)
-                .background(Color("acid"))
+                .foregroundColor(Color("white"))
+                .background(Color("firstBlue"))
                 .cornerRadius(20)
 //                .overlay(
 //                            RoundedRectangle(cornerRadius: 20)
@@ -40,8 +39,9 @@ struct ProfileView: View {
                 
             Label("Number of Tags: _______", systemImage: "number")
                 .font(.title2)
-                .foregroundColor(Color.black)
-                .background(Color("rose"))
+                .padding()
+                .foregroundColor(Color("white"))
+                .background(Color("firstBlue"))
                 .cornerRadius(20)
             Spacer()
 //            ScrollView{
@@ -64,5 +64,6 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .preferredColorScheme(.dark)
+            .previewInterfaceOrientation(.portrait)
     }
 }

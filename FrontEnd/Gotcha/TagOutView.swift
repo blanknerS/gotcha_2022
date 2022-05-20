@@ -10,11 +10,15 @@ import SwiftUI
 struct TagOutView: View {
     
 //    @Binding var show: Bool
+    let backgroundGradient = LinearGradient(
+        colors: [Color("lightBlue"), Color("secondBlue")],
+        startPoint: .top, endPoint: .bottom)
     
     var body: some View {
-        ZStack{
-            Text("Hello")
+        VStack{
         }
+        .padding()
+        .background(backgroundGradient)
     }
 }
 
