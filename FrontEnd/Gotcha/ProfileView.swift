@@ -16,55 +16,53 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            HStack{
-                Spacer()
-                Text("Blake")
-                    .padding()
-                    .font(.largeTitle)
-                    .foregroundColor(Color("white"))
-                    .background(Color("firstBlue"))
-                    .cornerRadius(20)
-                Spacer()
+            VStack (alignment: .center){
+                HStack{
+                    Image("blakeProfile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(Circle())
+                        .frame(width: 150, height: 150)
+                }
+                HStack{
+                    Text("Blake")
+//                        .padding()
+                        .font(.title)
+                        .foregroundColor(Color("white"))
+//                        .background(Color("lightPurple"))
+                        .cornerRadius(20)
+                }
             }
-            Image("blakeProfile")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(Circle())
-                .frame(width: 150, height: 150)
+            Spacer()
             
-            Spacer()
-            Label("Your Target: YAMAN HABIP", systemImage: "exclamationmark.shield.fill")
-                .multilineTextAlignment(.center)
-                .padding()
-                .font(.title2)
-                .foregroundColor(Color("white"))
-                .background(Color("mediumRed"))
-                .cornerRadius(20)
-//                .overlay(
-//                            RoundedRectangle(cornerRadius: 20)
-//                                .stroke(Color("acid"), lineWidth: 5)
-//                        )
-                
-            Label("Number of Tags: 5", systemImage: "number")
-                .font(.title2)
-                .padding()
-                .foregroundColor(Color("white"))
-                .background(Color("darkGreen"))
-                .cornerRadius(20)
-            Spacer()
-//            ScrollView{
-//                VStack{
-//                    ForEach(0..<100) {
-//                                    Text("Row \($0)")
-//                                }
-//                    }
-//            }
-//            .padding(10).border(Color.red, width: 3)
-//            .frame(width: .infinity, height: 100)
-//
+            List{
+                Section(header: Text("Stats")){
+                    Label("Your Target: YAMAN HABIP", systemImage: "exclamationmark.shield.fill")
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .font(.title2)
+                        .foregroundColor(Color("white"))
+                        .background(Color("pink"))
+                        .cornerRadius(20)
+                        
+                    Label("Number of Tags: 5", systemImage: "number")
+                        .font(.title2)
+                        .padding()
+                        .foregroundColor(Color("white"))
+                        .background(Color("lightGrey"))
+                        .cornerRadius(20)
+                }
+                .listRowBackground(Color("lightPurple"))
+            }
+            .onAppear {
+                // Set the default to clear
+                UITableView.appearance().backgroundColor = .clear
+            }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(backgroundGradient)
+        .background(Color("darkPurple"))
+        
     }
 }
 

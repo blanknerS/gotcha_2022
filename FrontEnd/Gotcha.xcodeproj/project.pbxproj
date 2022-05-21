@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
+		FF3991902839442100963F86 /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF39918F2839442000963F86 /* anonymous-glitch.gif */; };
+		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
+		FF3991942839476200963F86 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991932839476200963F86 /* CountdownView.swift */; };
 		FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
-		FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6F282D67F1003BE9BF /* ContentView.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
 		FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */; };
 		FF7A0B7F282D67F5003BE9BF /* GotchaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B7E282D67F5003BE9BF /* GotchaTests.swift */; };
@@ -41,10 +43,12 @@
 
 /* Begin PBXFileReference section */
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FF39918F2839442000963F86 /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
+		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
+		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
-		FF7A0B6F282D67F1003BE9BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF7A0B71282D67F4003BE9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF7A0B7A282D67F5003BE9BF /* GotchaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotchaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,9 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
-				FF7A0B6F282D67F1003BE9BF /* ContentView.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FF39918F2839442000963F86 /* anonymous-glitch.gif */,
+				FF3991912839447200963F86 /* GifImageView.swift */,
+				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
@@ -254,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
+				FF3991902839442100963F86 /* anonymous-glitch.gif in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */,
 			);
@@ -281,10 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
+				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
+				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
-				FF7A0B70282D67F1003BE9BF /* ContentView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
 			);

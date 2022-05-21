@@ -57,11 +57,13 @@ struct LeaderBoardView: View {
                 ForEach(leaders) { leader in
                     HStack{
                         Text(leader.name)
+                            .foregroundColor(Color("black"))
                         Spacer()
                         Label(leader.tags, systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("darkGrey"))
                     }
                 }
-                .listRowBackground(Color("firstBlue"))
+                .listRowBackground(Color("white"))
             }
             Section(header: Text("Last Words")){
                 ForEach(lastWords) { word in
@@ -71,7 +73,7 @@ struct LeaderBoardView: View {
                         Text("- \(word.author)")
                     }
                 }
-                .listRowBackground(Color("lightBlue"))
+                .listRowBackground(Color("darkGrey"))
             }
         }
         
