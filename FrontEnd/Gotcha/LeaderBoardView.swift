@@ -48,6 +48,10 @@ struct LeaderBoardView: View {
     @State private var ids = Set<UUID>()
 
     var body: some View {
+        
+//        UITableView.appearance().backgroundColor = .clear
+//        UITableViewCell.appearance().backgroundColor = .clear
+        
         List{
             Section(header: Text("LeaderBoard")){
                 ForEach(leaders) { leader in
@@ -57,6 +61,7 @@ struct LeaderBoardView: View {
                         Label(leader.tags, systemImage: "checkmark.shield.fill")
                     }
                 }
+                .listRowBackground(Color.red)
             }
             Section(header: Text("Last Words")){
                 ForEach(lastWords) { word in
@@ -68,9 +73,14 @@ struct LeaderBoardView: View {
                 }
             }
         }
+        
         .navigationTitle("Leader Board")
         .padding()
-        .background(backgroundGradient)
+        .background(backgroundGradient.ignoresSafeArea())
+        .onAppear {
+            // Set the default to clear
+            UITableView.appearance().backgroundColor = .clear
+        }
     }
 }
 
