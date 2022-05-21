@@ -61,7 +61,7 @@ struct LeaderBoardView: View {
                         Label(leader.tags, systemImage: "checkmark.shield.fill")
                     }
                 }
-                .listRowBackground(Color.red)
+                .listRowBackground(Color("firstBlue"))
             }
             Section(header: Text("Last Words")){
                 ForEach(lastWords) { word in
@@ -71,6 +71,7 @@ struct LeaderBoardView: View {
                         Text("- \(word.author)")
                     }
                 }
+                .listRowBackground(Color("lightBlue"))
             }
         }
         
