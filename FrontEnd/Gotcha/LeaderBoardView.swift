@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LeaderBoardView: View {
     
+    let backgroundGradient = LinearGradient(
+        colors: [Color("lightBlue"), Color("secondBlue")],
+        startPoint: .top, endPoint: .bottom)
+    
     struct Leader: Identifiable{
         
         let name: String
@@ -37,6 +41,8 @@ struct LeaderBoardView: View {
                 Text($0.name + $0.tags)
 
         }
+        .padding()
+        .background(backgroundGradient)
     }
 }
         
@@ -45,5 +51,6 @@ struct LeaderBoardView: View {
 struct LeaderBoardView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderBoardView()
+            .preferredColorScheme(.dark)
     }
 }

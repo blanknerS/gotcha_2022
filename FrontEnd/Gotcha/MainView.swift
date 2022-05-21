@@ -24,7 +24,7 @@ struct MainView: View {
                     Label("Your Info", systemImage: "face.smiling.fill")}
             LeaderBoardView()
                 .tabItem {
-                    Label("Menu", systemImage: "crown.fill")}
+                    Label("Leaderboard", systemImage: "crown.fill")}
             TagOutView()
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
