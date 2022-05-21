@@ -21,6 +21,12 @@ struct LeaderBoardView: View {
 
     }
     
+    struct Words: Identifiable{
+        let sentence: String
+        let id = UUID()
+        let author: String
+    }
+    
     //populate this list with Leaders in the given format
     
     var leaders: [Leader] = [
@@ -32,19 +38,42 @@ struct LeaderBoardView: View {
         
     ]
     
+    var lastWords: [Words] = [
+        Words(sentence: "BLEH BLEH ALW", author: "Blake"),
+        Words(sentence: "BLEH jldvnle", author: "Yaman"),
+        Words(sentence: "lwoiefnweflw", author: "Andrew"),
+        Words(sentence: "BLFJh3oI", author: "Ryan"),
+    ]
+    
     @State private var ids = Set<UUID>()
 
     var body: some View {
-        
-        List(leaders, selection: $ids) {
-                
-                Text($0.name + $0.tags)
-
+        List{
+            Section(header: Text("LeaderBoard")){
+                ForEach(leaders) { leader in
+                    HStack{
+                        Text(leader.name)
+                        Spacer()
+                        Label(leader.tags, systemImage: "checkmark.shield.fill")
+                    }
+                }
+            }
+            Section(header: Text("Last Words")){
+                ForEach(lastWords) { word in
+                    HStack{
+                        Text(word.sentence)
+                        Spacer()
+                        Text("- \(word.author)")
+                    }
+                }
+            }
         }
+        .navigationTitle("Leader Board")
         .padding()
         .background(backgroundGradient)
     }
 }
+
         
 
 
