@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
+		FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389F283A843E0026AB2D /* ReportError.swift */; };
+		FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0938A1283A88DD0026AB2D /* PopUp.swift */; };
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991902839442100963F86 /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF39918F2839442000963F86 /* anonymous-glitch.gif */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
+		FF09389F283A843E0026AB2D /* ReportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportError.swift; sourceTree = "<group>"; };
+		FF0938A1283A88DD0026AB2D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF39918F2839442000963F86 /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		FF7A0B61282D67F1003BE9BF = {
 			isa = PBXGroup;
 			children = (
+				FF0938A1283A88DD0026AB2D /* PopUp.swift */,
 				FF7A0B6C282D67F1003BE9BF /* Gotcha */,
 				FF7A0B7D282D67F5003BE9BF /* GotchaTests */,
 				FF7A0B87282D67F5003BE9BF /* GotchaUITests */,
@@ -118,6 +123,7 @@
 				FF39918F2839442000963F86 /* anonymous-glitch.gif */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
+				FF09389F283A843E0026AB2D /* ReportError.swift */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
@@ -290,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */,
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
@@ -298,6 +305,7 @@
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
+				FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

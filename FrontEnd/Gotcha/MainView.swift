@@ -28,7 +28,7 @@ struct MainView: View {
             TagOutView()
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
-            CountdownView(referenceDate: Date())
+            CountdownView(user: "Blake", referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
         }

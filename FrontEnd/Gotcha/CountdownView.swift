@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct CountdownView: View {
     
     @State var nowDate: Date = Date()
-    @State var flipped = false
+
+     @State private var showMailView = false
+    @State var showPopUp = false
+    @State var user : String
     
 //    var referenceDate: Date(2022-09-10 08:00:00 +0000) //This has to be Gotcha Day... GRRRRRRR not sure how to do
     var referenceDate: Date
@@ -23,6 +27,12 @@ struct CountdownView: View {
     var body: some View {
         
         VStack (spacing: 10){
+            Spacer(minLength: 40)
+            Text("WELCOME \(user)" .uppercased())
+                .glowBorder(color: .black, lineWidth: 5)
+                .foregroundColor(Color.red)
+                .font(.largeTitle)
+                .padding(.bottom, 30)
             GifImageView(name: "anonymous-glitch")
                 .frame(maxWidth: .infinity, maxHeight: 250)
                 .background(Color.black)
@@ -30,7 +40,7 @@ struct CountdownView: View {
                 .padding()
             Text("GOTCHA DAY IN")
                 .glowBorder(color: .black, lineWidth: 5)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color("white"))
                 .font(.title)
                 .padding(.top, 20)
             
@@ -58,7 +68,7 @@ struct CountdownView: View {
                     .cornerRadius(20)
             
             }
-            .background(Color.black)
+//            .background(Color.black)
             .cornerRadius(20)
             .foregroundColor(Color.white)
             .font(.largeTitle)
@@ -73,11 +83,23 @@ struct CountdownView: View {
                 Text("Sec")
             }
             .padding()
-            .offset(y: -25)
+            .foregroundColor(Color("darkGrey"))
+            Spacer()
+            Button("Report Problem"){
+                showPopUp.toggle()
+                print("Clicked")
+            }
+//            .offset(y:60)
+            .padding(8)
+            .background(Color("mediumGrey"))
+            .foregroundColor(Color("lightGrey"))
+//            .glowBorder(color: .black, lineWidth: 2)
+            .cornerRadius(20)
             
-//            BounceAnimationView(text: "枯菊や日日にさめゆくいきどほり", startTime: 0.0)
-//            BounceAnimationView(text: "萩原朔太郎", startTime: 1.5)
-                .padding(.top, 30)
+            Color.clear
+                .modifier(Popup(isPresented: showPopUp,
+                                content: { ReportError(showPopUp: $showPopUp) }))
+                .frame(width: 10, height: 130, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("lightGrey"))
@@ -99,9 +121,6 @@ struct CountdownView: View {
         let minutes = String(format: "%02d", components.minute ?? 00)
         let seconds = String(format: "%02d", components.second ?? 00)
         
-        flipped.toggle()
-        print(flipped)
-        
         return (days, hours, minutes, seconds)
 //        return String(format: "%02dd:%02dh:%02dm:%02ds",
 //                      components.day ?? 00,
@@ -112,11 +131,9 @@ struct CountdownView: View {
 }
 
 
-
-
 struct CountdownView_Previews: PreviewProvider {
     static var previews: some View {
-        CountdownView(referenceDate: Date()) //NOT SURE HOW TO GET DATE TIME OBJECT OF FUTURE DATE...
+        CountdownView(user: "Blake", referenceDate: Date()) //NOT SURE HOW TO GET DATE TIME OBJECT OF FUTURE DATE...
     }
 }
 
