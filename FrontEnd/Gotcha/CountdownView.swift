@@ -32,7 +32,7 @@ struct CountdownView: View {
             HStack{
                 let result = countDownString()
                 Text(result.0)
-                    .background(Color.red)
+//                    .background(Color.red)
                 Text(result.1)
                 Text(result.2)
                 Text(result.3)
