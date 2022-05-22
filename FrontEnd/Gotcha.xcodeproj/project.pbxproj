@@ -22,6 +22,7 @@
 		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
 		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
 		FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */; };
+		FFB6AFD6283978B3007BF20F /* clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6AFD5283978B3007BF20F /* clock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FFB6AFD5283978B3007BF20F /* clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				FF39918F2839442000963F86 /* anonymous-glitch.gif */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
+				FFB6AFD5283978B3007BF20F /* clock.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
+				FFB6AFD6283978B3007BF20F /* clock.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,

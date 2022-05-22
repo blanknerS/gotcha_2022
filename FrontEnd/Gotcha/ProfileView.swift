@@ -33,21 +33,24 @@ struct ProfileView: View {
                         .cornerRadius(20)
                 }
             }
-            Spacer()
-            
+            Spacer(minLength: 50)
+//            VStack(alignment: .center){
             List{
                 Section(header: Text("Stats")){
-                    Label("Your Target: YAMAN HABIP", systemImage: "exclamationmark.shield.fill")
+                    Text("Your Target:\n YAMAN HABIP")
                         .multilineTextAlignment(.center)
                         .padding()
                         .font(.title2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .foregroundColor(Color("white"))
                         .background(Color("pink"))
                         .cornerRadius(20)
                         
-                    Label("Number of Tags: 5", systemImage: "number")
-                        .font(.title2)
+                    Text("Number of Tags: \n5")
+                        .multilineTextAlignment(.center)
                         .padding()
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .foregroundColor(Color("white"))
                         .background(Color("lightGrey"))
                         .cornerRadius(20)
@@ -58,6 +61,7 @@ struct ProfileView: View {
                 // Set the default to clear
                 UITableView.appearance().backgroundColor = .clear
             }
+//            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
@@ -70,6 +74,6 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .preferredColorScheme(.dark)
-            .previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

@@ -13,7 +13,8 @@ struct CountdownView: View {
     
     
     
-    var referenceDate: Date(2022-09-10 08:00:00 +0000) //This has to be Gotcha Day... GRRRRRRR not sure how to do
+//    var referenceDate: Date(2022-09-10 08:00:00 +0000) //This has to be Gotcha Day... GRRRRRRR not sure how to do
+    var referenceDate: Date
     var timer: Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             self.nowDate = Date()
@@ -28,27 +29,47 @@ struct CountdownView: View {
                 .background(Color.black)
                 .cornerRadius(20)
                 .padding()
-            Text(countDownString(from: referenceDate))
-                .foregroundColor(Color.white)
-                .font(.largeTitle)
-                .onAppear(perform: {
-                    _ = self.timer
-                })
+            HStack{
+                let result = countDownString()
+                Text(result.0)
+                    .background(Color.red)
+                Text(result.1)
+                Text(result.2)
+                Text(result.3)
+            
+            }
+            .foregroundColor(Color.white)
+            .font(.largeTitle)
+            .onAppear(perform: {
+                _ = self.timer
+            })
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
     }
-    func countDownString(from date: Date) -> String {
+    func countDownString() -> (String, String, String, String) {
+        
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+
+        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
+        
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
             .dateComponents([.day, .hour, .minute, .second],
                             from: nowDate,
-                            to: referenceDate)
-        return String(format: "%02dd:%02dh:%02dm:%02ds",
-                      components.day ?? 00,
-                      components.hour ?? 00,
-                      components.minute ?? 00,
-                      components.second ?? 00)
+                            to: myDate)
+        let days = String(format: "%02dd", components.day ?? 00)
+        let hours = String(format: "%02dh", components.hour ?? 00)
+        let minutes = String(format: "%02dm", components.minute ?? 00)
+        let seconds = String(format: "%02ds", components.second ?? 00)
+        
+        return (days, hours, minutes, seconds)
+//        return String(format: "%02dd:%02dh:%02dm:%02ds",
+//                      components.day ?? 00,
+//                      components.hour ?? 00,
+//                      components.minute ?? 00,
+//                      components.second ?? 00)
     }
 }
 
