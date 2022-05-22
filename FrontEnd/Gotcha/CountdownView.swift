@@ -32,12 +32,25 @@ struct CountdownView: View {
             HStack{
                 let result = countDownString()
                 Text(result.0)
-//                    .background(Color.red)
+                    .padding()
+                    .background(Color("darkGrey"))
+                    .cornerRadius(20)
                 Text(result.1)
+                    .padding()
+                    .background(Color("darkGrey"))
+                    .cornerRadius(20)
                 Text(result.2)
+                    .padding()
+                    .background(Color("darkGrey"))
+                    .cornerRadius(20)
                 Text(result.3)
+                    .padding()
+                    .background(Color("darkGrey"))
+                    .cornerRadius(20)
             
             }
+            .background(Color.black)
+            .cornerRadius(20)
             .foregroundColor(Color.white)
             .font(.largeTitle)
             .onAppear(perform: {
@@ -45,7 +58,7 @@ struct CountdownView: View {
             })
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+        .background(Color("lightGrey"))
     }
     func countDownString() -> (String, String, String, String) {
         
