@@ -22,33 +22,39 @@ struct CountdownView: View {
     
     var body: some View {
         
-        VStack{
+        VStack (spacing: 10){
             GifImageView(name: "anonymous-glitch")
                 .frame(maxWidth: .infinity, maxHeight: 250)
                 .background(Color.black)
                 .cornerRadius(20)
                 .padding()
+            Text("GOTCHA DAY IN")
+                .glowBorder(color: .black, lineWidth: 5)
+                .foregroundColor(Color.white)
+                .font(.title)
+                .padding(.top, 20)
+            
             HStack{
                 let result = countDownString()
                 BounceAnimationView(text: result.0, startTime: 0.0)
                     .padding()
                     .background(Color("darkGrey"))
+                    .glowBorder(color: .red, lineWidth: 10)
                     .cornerRadius(20)
-//                Text(result.0)
-//                    .padding()
-//                    .background(Color("darkGrey"))
-//                    .cornerRadius(20)
                 BounceAnimationView(text: result.1, startTime: 1.5)
                     .padding()
                     .background(Color("darkGrey"))
+                    .glowBorder(color: .red, lineWidth: 10)
                     .cornerRadius(20)
                 BounceAnimationView(text: result.2, startTime: 3.0)
                     .padding()
                     .background(Color("darkGrey"))
+                    .glowBorder(color: .red, lineWidth: 10)
                     .cornerRadius(20)
                 BounceAnimationView(text: result.3, startTime: 4.5)
                     .padding()
                     .background(Color("darkGrey"))
+                    .glowBorder(color: .red, lineWidth: 10)
                     .cornerRadius(20)
             
             }
@@ -56,9 +62,18 @@ struct CountdownView: View {
             .cornerRadius(20)
             .foregroundColor(Color.white)
             .font(.largeTitle)
+            .offset(y:10)
             .onAppear(perform: {
                 _ = self.timer
             })
+            HStack{
+                Text("Days")
+                Text("Hours")
+                Text("Min")
+                Text("Sec")
+            }
+            .padding()
+            .offset(y: -25)
             
 //            BounceAnimationView(text: "枯菊や日日にさめゆくいきどほり", startTime: 0.0)
 //            BounceAnimationView(text: "萩原朔太郎", startTime: 1.5)
@@ -79,10 +94,10 @@ struct CountdownView: View {
             .dateComponents([.day, .hour, .minute, .second],
                             from: nowDate,
                             to: myDate)
-        let days = String(format: "%02dd", components.day ?? 00)
-        let hours = String(format: "%02dh", components.hour ?? 00)
-        let minutes = String(format: "%02dm", components.minute ?? 00)
-        let seconds = String(format: "%02ds", components.second ?? 00)
+        let days = String(format: "%02d", components.day ?? 00)
+        let hours = String(format: "%02d", components.hour ?? 00)
+        let minutes = String(format: "%02d", components.minute ?? 00)
+        let seconds = String(format: "%02d", components.second ?? 00)
         
         flipped.toggle()
         print(flipped)
