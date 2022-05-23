@@ -36,7 +36,7 @@ struct CountdownView: View {
             GifImageView(name: "anonymous-glitch")
 //                .scaledToFit()
 //                .layoutPriority(1)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: 280)
                 .background(Color.black)
                 .cornerRadius(20)
                 .padding()
@@ -89,21 +89,25 @@ struct CountdownView: View {
             .padding()
             .foregroundColor(Color("darkGrey"))
             Spacer()
-            Button("Report Problem"){
-                showPopUp.toggle()
-                print("Clicked")
+            ZStack{
+                Button("Report Problem"){
+                    showPopUp.toggle()
+                    print("Clicked")
+                }
+    //            .offset(y:60)
+                .padding(8)
+                .background(Color("mediumGrey"))
+                .foregroundColor(Color("lightGrey"))
+    //            .glowBorder(color: .black, lineWidth: 2)
+                .cornerRadius(20)
+                .opacity(showPopUp ? 0 : 1)
+                
+                Color.clear
+                    .modifier(Popup(isPresented: showPopUp,
+                                    content: { ReportError(showPopUp: $showPopUp) }))
+//                    .frame(width: 200, height: 130, alignment: .center)
+//                    .background(Color.black)
             }
-//            .offset(y:60)
-            .padding(8)
-            .background(Color("mediumGrey"))
-            .foregroundColor(Color("lightGrey"))
-//            .glowBorder(color: .black, lineWidth: 2)
-            .cornerRadius(20)
-            
-            Color.clear
-                .modifier(Popup(isPresented: showPopUp,
-                                content: { ReportError(showPopUp: $showPopUp) }))
-                .frame(width: 10, height: 130, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("lightGrey"))

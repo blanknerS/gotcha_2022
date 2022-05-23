@@ -13,30 +13,42 @@ struct ReportError: View {
     @Binding var showPopUp: Bool
 
     var body: some View {
-        VStack {
-            Text("What can we help you with:")
-                .offset(y:5)
-            ZStack{
-                TextField(
-                    "Problem",
-                    text: $givenName
-                )
-                .disableAutocorrection(true)
-                .frame(height: 55)
+        ZStack{
+            Color("mediumGrey")
+                .padding(-10)
+                .frame(width: .infinity, height: 150)
+                .ignoresSafeArea()
+                .cornerRadius(20)
+            
+            VStack {
+                Text("What can we help you with:")
+                    .offset(y:5)
+                ZStack{
+                    TextField(
+                        "Problem",
+                        text: $givenName
+                    )
+                    .disableAutocorrection(true)
+                }
+                Button("Send"){
+                    print("Send: \(givenName)")
+                    showPopUp.toggle()
+                    givenName = ""
+                }
+    //            TextField(
+    //                "Family Name",
+    //                text: $familyName
+    //            )
+    //            .disableAutocorrection(true)
             }
-            Button("Send"){
-                print("Send: \(givenName)")
-                showPopUp.toggle()
-                givenName = ""
-            }
-//            TextField(
-//                "Family Name",
-//                text: $familyName
-//            )
-//            .disableAutocorrection(true)
+//            .padding()
+            .frame(width: .infinity, height: 60, alignment: .center)
+            .textFieldStyle(.roundedBorder)
+//            .background(Color("darkGrey"))
+    //        .cornerRadius(20)
         }
-        .frame(width: 300, height: 30, alignment: .center)
-        .textFieldStyle(.roundedBorder)
+//        .frame(width: .infinity, height: 100)
+        .padding()
     }
 }
 
