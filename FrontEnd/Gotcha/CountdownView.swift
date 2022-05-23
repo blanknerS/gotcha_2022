@@ -27,22 +27,25 @@ struct CountdownView: View {
     var body: some View {
         
         VStack (spacing: 10){
-            Spacer(minLength: 40)
+            Spacer(minLength: 30)
             Text("WELCOME \(user)" .uppercased())
                 .glowBorder(color: .black, lineWidth: 5)
-                .foregroundColor(Color.red)
+                .foregroundColor(Color.white)
                 .font(.largeTitle)
-                .padding(.bottom, 30)
+                .padding(.bottom, 10)
             GifImageView(name: "anonymous-glitch")
-                .frame(maxWidth: .infinity, maxHeight: 250)
+//                .scaledToFit()
+//                .layoutPriority(1)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black)
                 .cornerRadius(20)
                 .padding()
+                .padding(.bottom, 10)
             Text("GOTCHA DAY IN")
                 .glowBorder(color: .black, lineWidth: 5)
                 .foregroundColor(Color("white"))
                 .font(.title)
-                .padding(.top, 20)
+//                .padding(.top, 20)
             
             HStack{
                 let result = countDownString()
@@ -68,6 +71,7 @@ struct CountdownView: View {
                     .cornerRadius(20)
             
             }
+            .frame(maxWidth: .infinity, maxHeight: 70)
 //            .background(Color.black)
             .cornerRadius(20)
             .foregroundColor(Color.white)

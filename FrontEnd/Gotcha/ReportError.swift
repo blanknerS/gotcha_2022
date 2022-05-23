@@ -15,6 +15,7 @@ struct ReportError: View {
     var body: some View {
         VStack {
             Text("What can we help you with:")
+                .offset(y:5)
             ZStack{
                 TextField(
                     "Problem",

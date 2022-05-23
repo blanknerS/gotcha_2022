@@ -22,13 +22,14 @@ struct MainView: View {
             ProfileView()
                 .tabItem {
                     Label("Your Info", systemImage: "face.smiling.fill")}
+            
             LeaderBoardView()
                 .tabItem {
                     Label("Leaderboard", systemImage: "crown.fill")}
             TagOutView()
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
-            CountdownView(user: "Blake", referenceDate: Date())
+            CountdownView(user: "TERRY", referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
         }
