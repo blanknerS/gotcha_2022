@@ -27,6 +27,7 @@ struct GifImageView: UIViewRepresentable {
             characterEncodingName: "UTF-8",
             baseURL: url.deletingLastPathComponent()
         )
+        webView.scrollView.isScrollEnabled = false
         
         return webView
     }

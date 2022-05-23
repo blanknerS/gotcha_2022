@@ -24,7 +24,9 @@
 		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
 		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
 		FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */; };
-		FFD539B4283AFB3C002B623F /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFD539B3283AFB3C002B623F /* anonymous-glitch.gif */; };
+		FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */; };
+		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
+		FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +67,9 @@
 		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FFD539B3283AFB3C002B623F /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "anonymous-glitch.gif"; path = "../../../../../.Trash/anonymous-glitch.gif"; sourceTree = "<group>"; };
+		FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (1).gif"; sourceTree = "<group>"; };
+		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
+		FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (2).gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +127,12 @@
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF09389F283A843E0026AB2D /* ReportError.swift */,
-				FFD539B3283AFB3C002B623F /* anonymous-glitch.gif */,
+				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
+				FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
+				FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */,
 				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
@@ -268,10 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD539B4283AFB3C002B623F /* anonymous-glitch.gif in Resources */,
+				FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
+				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
 				FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */,
+				FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

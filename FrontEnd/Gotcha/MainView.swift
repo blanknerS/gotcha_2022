@@ -32,6 +32,7 @@ struct MainView: View {
             CountdownView(user: "TERRY", referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
+//                .scaledToFill()
         }
         .accentColor(Color("mediumBlue"))
         .background(backgroundGradient)
