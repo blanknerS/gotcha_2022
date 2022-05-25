@@ -79,7 +79,8 @@ for email in emails:
 
 
 	user = {
-		"uID": samp,
+
+		
 		"firstName": fN,
 		"lastName": lN,
 		"class" : clss,
