@@ -268,3 +268,5 @@ GitHub.sublime-settings
 # End of https://www.gitignore.io/api/node,linux,macos,firebase,jetbrains,sublimetext,redis
 FrontEnd/Gotcha.xcodeproj/project.xcworkspace/xcuserdata/yamanhabip.xcuserdatad/UserInterfaceState.xcuserstate
 FrontEnd/Gotcha.xcodeproj/project.xcworkspace/xcuserdata/blakeankner.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+FrontEnd/Gotcha.xcodeproj/project.xcworkspace/xcuserdata/yamanhabip.xcuserdatad/UserInterfaceState.xcuserstate
