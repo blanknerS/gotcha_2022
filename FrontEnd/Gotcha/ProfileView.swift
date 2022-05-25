@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ProfileView: View {
     
     let backgroundGradient = LinearGradient(
         colors: [Color("lightBlue"), Color("secondBlue")],
         startPoint: .top, endPoint: .bottom)
-    
     
     var body: some View {
         VStack {

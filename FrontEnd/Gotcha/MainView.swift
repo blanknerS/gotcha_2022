@@ -9,6 +9,7 @@ import SwiftUI
 import CoreHaptics
 
 struct MainView: View {
+
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.dynamicTypeSize) var typeSize
 //    @State private var engine: CHHapticEngine?

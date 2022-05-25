@@ -6,19 +6,15 @@
 //
 
 import SwiftUI
-//import FirebaseCore
-//import Firebase
-
+import FirebaseCore
+import Firebase
 
 @main
 struct GotchaApp: App {
-    
-//    init() {
-//        FirebaseApp.configure()
-//
-//        let db = Firestore.firestore()
-//
-//                db.collection("people").getDocuments() { (querySnapshot, err) in
+    init() {
+        FirebaseApp.configure()
+        
+//                db.collection("users").getDocuments() { (querySnapshot, err) in
 //                    if let err = err {
 //                        print("error with data: \(err)")
 //                    }
@@ -28,13 +24,9 @@ struct GotchaApp: App {
 //                            print(document.data())
 //                        }
 //                    }
-//
 //                }
-//    }
-    
-    
-    
-    
+    }
+
     var body: some Scene {
         WindowGroup {
             MainView()
