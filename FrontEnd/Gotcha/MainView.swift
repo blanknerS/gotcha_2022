@@ -52,7 +52,6 @@ struct MainView_Previews: PreviewProvider {
 
 
 
-
 //            Button(action: {
 //                prepareHaptics()
 //                showPopUp = true
