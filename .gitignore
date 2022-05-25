@@ -235,6 +235,7 @@ typings/
 
 # Workspace files are user-specific
 *.sublime-workspace
+*.xcuserstate
 
 # Project files should be checked into the repository, unless a significant
 # proportion of contributors will probably not be using Sublime Text
