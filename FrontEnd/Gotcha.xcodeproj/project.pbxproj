@@ -23,7 +23,6 @@
 		FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B97282D69E4003BE9BF /* LoginView.swift */; };
 		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
 		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
-		FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */; };
 		FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */; };
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 		FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */; };
@@ -66,7 +65,6 @@
 		FF7A0B97282D69E4003BE9BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
-		FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (1).gif"; sourceTree = "<group>"; };
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 		FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (2).gif"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */,
-				FF7A0B9D282D7583003BE9BF /* GoogleService-Info.plist */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
@@ -278,7 +275,6 @@
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
-				FF7A0B9E282D7584003BE9BF /* GoogleService-Info.plist in Resources */,
 				FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

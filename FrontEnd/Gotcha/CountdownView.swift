@@ -42,10 +42,9 @@ struct CountdownView: View {
                     .cornerRadius(20)
                     .padding()
             }
-            .frame(width:.infinity, height: 300)
 //                .padding(.bottom, 10)
-            Spacer(minLength: 40)
-            Text("GOTCHA DAY IN")
+            Spacer(minLength: 30)
+            Text("GOTCHA IN")
                 .glowBorder(color: .black, lineWidth: 5)
                 .foregroundColor(Color("white"))
                 .font(.title)
@@ -148,6 +147,7 @@ struct CountdownView_Previews: PreviewProvider {
         CountdownView(user: "Blake", referenceDate: Date()) //NOT SURE HOW TO GET DATE TIME OBJECT OF FUTURE DATE...
     }
 }
+
 
 struct BounceAnimationView: View {
     let characters: Array<String.Element>

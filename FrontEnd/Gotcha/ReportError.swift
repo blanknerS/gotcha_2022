@@ -28,6 +28,7 @@ struct ReportError: View {
                         "Problem",
                         text: $givenName
                     )
+                    .padding()
                     .disableAutocorrection(true)
                 }
                 Button("Send"){
