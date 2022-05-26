@@ -32,4 +32,17 @@ func loadUser(){ //pass uid later
     }
 }
 
+//func tagOut(taggingout, lastwords){ // expects uid of person tagging out as input
 
+    // pseudocode
+       
+//    let chaser = taggingout.chaser
+//    chaser.tags += 1
+//    chaser.target = taggingout.target
+//
+//    taggingout.alive = false
+//    taggingout.lastwords = lastwords
+//    taggingout.target = null
+//    taggingout.ToTO = String(Date())
+
+//}
