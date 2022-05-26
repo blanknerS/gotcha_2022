@@ -34,7 +34,7 @@ func loadUser(){ //pass uid later
 
 //func tagOut(taggingout, lastwords){ // expects uid of person tagging out as input
 
-    // pseudocode
+//    pseudocode
        
 //    let chaser = taggingout.chaser
 //    chaser.tags += 1
@@ -44,5 +44,9 @@ func loadUser(){ //pass uid later
 //    taggingout.lastwords = lastwords
 //    taggingout.target = null
 //    taggingout.ToTO = String(Date())
+
+//    need to create lastWordsList later for line below, that is working name for now
+
+//    lastWordsList.append(lastwords)
 
 //}
