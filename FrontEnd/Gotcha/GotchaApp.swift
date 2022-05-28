@@ -12,7 +12,7 @@ import Firebase
 @main
 struct GotchaApp: App {
     init() {
-        FirebaseApp.configure()
+//        FirebaseApp.configure() //need PLIST
         
 //                db.collection("users").getDocuments() { (querySnapshot, err) in
 //                    if let err = err {

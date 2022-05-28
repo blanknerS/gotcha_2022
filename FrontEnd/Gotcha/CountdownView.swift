@@ -35,14 +35,14 @@ struct CountdownView: View {
                 .padding(.bottom, 10)
             VStack{
                 GifImageView(name: "anonymous-glitch")
-        //                .scaledToFit()
-        //                .layoutPriority(1)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                        .scaledToFit()
+                        .layoutPriority(1)
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.black)
                     .cornerRadius(20)
                     .padding()
             }
-//                .padding(.bottom, 10)
+            .frame(width: .infinity, height: .infinity)
             Spacer(minLength: 30)
             Text("GOTCHA IN")
                 .glowBorder(color: .black, lineWidth: 5)
@@ -144,7 +144,12 @@ struct CountdownView: View {
 
 struct CountdownView_Previews: PreviewProvider {
     static var previews: some View {
-        CountdownView(user: "Blake", referenceDate: Date()) //NOT SURE HOW TO GET DATE TIME OBJECT OF FUTURE DATE...
+        CountdownView(user: "Blake", referenceDate: Date())
+            .previewDevice("iPhone 11")
+        
+        //NOT SURE HOW TO GET DATE TIME OBJECT OF FUTURE DATE...
+        CountdownView(user: "Blake", referenceDate: Date())
+            .previewDevice("iPhone SE")
     }
 }
 
