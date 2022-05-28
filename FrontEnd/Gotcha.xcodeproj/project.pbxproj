@@ -11,6 +11,7 @@
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
 		49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4B715284006AA00C93A66 /* BackendFuncs.swift */; };
+		49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */; };
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
 		FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389F283A843E0026AB2D /* ReportError.swift */; };
 		FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0938A1283A88DD0026AB2D /* PopUp.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
+		49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		FF09389F283A843E0026AB2D /* ReportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportError.swift; sourceTree = "<group>"; };
 		FF0938A1283A88DD0026AB2D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
+				49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
@@ -289,6 +292,7 @@
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
 				FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */,
+				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,25 +8,111 @@
 import Foundation
 import FirebaseFirestore
 
-func initFirebase(){
-    
+
+//Needs to be async and have the proper returns
+func firstName(uid: String) async -> String{
+    //Init firebase db
     let db = Firestore.firestore()
     
-    let docRef = db.document("data/Andrew_Rodriguez23@milton.edu")
-
-
-    docRef.getDocument {snapshot, error in
-
-        guard let data = snapshot?.data(), error == nil else{
-            return
-        }
-        
-        print(data)
-        
+    //init reference to the document for that user
+    let docRef = db.document("data/" + uid)
     
+    //make our returning variable
+    var retVal = "" as String
     
+    //Do this async-ly
+    do{
+        //try to get the document and save it to the data var
+        let data = try await docRef.getDocument()
+        
+        //extract the name as a string from the document
+        let name = data.get("firstName") as? String
+        
+        //unwrap the name and save it to our return var
+        retVal = name!
     }
+    
+    //if that doesnt work its an error
+    catch{
+        print("err")
+    }
+    //return the return var
+    return(retVal)
 }
+
+// THAT FORMAT IS FOLLOWED FOR ALL OTHER FUNCTIONS BELOW
+
+//Function that returns tag count
+func tags(uid: String) async -> Int{
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    
+    var retVal = 0 as Int
+    
+    do{
+        let data = try await docRef.getDocument()
+        let tags = data.get("tags") as? Int
+        
+        //unwrap the int a little differently
+        if let tags = tags {
+            retVal = tags + 0
+        }
+    }
+    catch{
+        print("err")
+    }
+    
+    return(retVal)
+}
+
+func targ(uid: String) async -> String {
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    
+    var retVal = "" as String
+    
+    do{
+        let data = try await docRef.getDocument()
+        let targ = data.get("target") as? String
+        
+        retVal = targ!
+    }
+    
+    catch{
+        print("err")
+    }
+    
+    return(retVal)
+}
+
+func fullName(uid: String) async -> String {
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    
+    var retVal = "" as String
+    
+    do{
+        let data = try await docRef.getDocument()
+        let fN = data.get("firstName") as? String
+        let lN = data.get("lastName") as? String
+        
+        retVal = fN! + " " + lN!
+    }
+    
+    catch{
+        print("err")
+    }
+    
+    return(retVal)
+}
+
+
+
+
+
+
+
+
 
 func updateData(uid: String, field: String, data: Any) {
     
@@ -39,31 +125,6 @@ func updateData(uid: String, field: String, data: Any) {
     docRef.updateData([field: data
                    ])
     
-}
-
-func name(uid: String) -> String {
-    let db = Firestore.firestore()
-    
-    let docRef = db.document("data/" + uid)
-    
-    //read the document and get a 'snapshot' of its current data , if it fails return
-    docRef.getDocument {snapshot, error in
-
-        guard let data = snapshot?.data(), error == nil else{
-            return
-        }
-        
-        print(data)
-        
-        guard let fN = data["firstName"] as? String else{
-            return
-        }
-        
-    }
-    
-    return("Andrew")
-        
-
 }
 
 

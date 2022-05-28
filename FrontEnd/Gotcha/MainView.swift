@@ -9,12 +9,19 @@ import SwiftUI
 import CoreHaptics
 
 struct MainView: View {
+    
+    let user = "Andrew_Rodriguez23@milton.edu"
+
+    
+    
 
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.dynamicTypeSize) var typeSize
 //    @State private var engine: CHHapticEngine?
 //    @State private var leaderBoard: List = ["HEYYEH", "LWHEFL", "jf"]
     var body: some View {
+        
+        
         
         let backgroundGradient = LinearGradient(
             colors: [Color("lightBlue"), Color("secondBlue")],
@@ -30,9 +37,12 @@ struct MainView: View {
             TagOutView()
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
-            CountdownView(user: name(uid: "Andrew_Rodriguez23@milton.edu"), referenceDate: Date())
+            
+                CountdownView(user: user, referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
+                
+        
 //                .scaledToFit()
         }
         .accentColor(Color("mediumBlue"))
