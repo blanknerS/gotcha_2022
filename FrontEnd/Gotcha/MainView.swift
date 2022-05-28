@@ -30,7 +30,7 @@ struct MainView: View {
             TagOutView()
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
-            CountdownView(user: "TERRY", referenceDate: Date())
+            CountdownView(user: name(uid: "Andrew_Rodriguez23@milton.edu"), referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
 //                .scaledToFit()

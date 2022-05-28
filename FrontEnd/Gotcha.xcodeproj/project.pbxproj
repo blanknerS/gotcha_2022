@@ -10,7 +10,7 @@
 		17E57EBA283EABDB00424A1E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EB9283EABDB00424A1E /* FirebaseDatabase */; };
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
-		FF0721B5283EBA6C00029011 /* BackendAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0721B4283EBA6C00029011 /* BackendAll.swift */; };
+		49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4B715284006AA00C93A66 /* BackendFuncs.swift */; };
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
 		FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389F283A843E0026AB2D /* ReportError.swift */; };
 		FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0938A1283A88DD0026AB2D /* PopUp.swift */; };
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF0721B4283EBA6C00029011 /* BackendAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAll.swift; sourceTree = "<group>"; };
+		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		FF09389F283A843E0026AB2D /* ReportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportError.swift; sourceTree = "<group>"; };
 		FF0938A1283A88DD0026AB2D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
-				FF0721B4283EBA6C00029011 /* BackendAll.swift */,
+				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
@@ -315,13 +315,13 @@
 			files = (
 				FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */,
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
+				49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */,
 				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
-				FF0721B5283EBA6C00029011 /* BackendAll.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
 				FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
