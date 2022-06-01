@@ -16,6 +16,7 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
+            Spacer(minLength: 35)
             VStack (alignment: .center){
                 HStack{
                     Image("blakeProfile")
@@ -36,15 +37,16 @@ struct ProfileView: View {
             Spacer(minLength: 50)
 //            VStack(alignment: .center){
             List{
-                Section(header: Text("Stats")){
+                Section(header: Text("Stats").font(.headline)){
                     Text("Your Target:\n YAMAN HABIP")
                         .multilineTextAlignment(.center)
                         .padding()
                         .font(.title2)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .foregroundColor(Color("white"))
-                        .background(Color("pink"))
+                        .background(Color("darkGrey"))
                         .cornerRadius(20)
+                        .shadow(color: Color("darkRed"), radius: 4, x: 4, y: 4)
                         
                     Text("Number of Tags: \n5")
                         .multilineTextAlignment(.center)
@@ -52,20 +54,24 @@ struct ProfileView: View {
                         .font(.title2)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .foregroundColor(Color("white"))
-                        .background(Color("lightGrey"))
+                        .background(Color("darkGrey"))
                         .cornerRadius(20)
+                        .shadow(color: Color("darkBlue"), radius: 4, x: 4, y: 4)
                 }
-                .listRowBackground(Color("lightPurple"))
+                .shadow(color: .white, radius: 2, x: 2, y: 2)
+                .padding(10)
+                .cornerRadius(20)
+                .listRowBackground(Color("darkGrey"))
             }
             .onAppear {
                 // Set the default to clear
                 UITableView.appearance().backgroundColor = .clear
             }
-//            }
+//            }x
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(Color("darkPurple"))
+        .background(Color("darkGrey"))
         
     }
 }
@@ -74,6 +80,6 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .preferredColorScheme(.dark)
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portrait)
     }
 }
