@@ -131,10 +131,10 @@ struct HalvedCircularBar: View {
             _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
                 withAnimation() {
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                    if self.circleProgress == 100{
+                    if self.circleProgress == 1.0{
 //                        dead.toggle()
                     }
-                    if pressing && self.circleProgress <= 100{
+                    if self.pressing && self.circleProgress <= 1.0{
                         self.circleProgress += 0.02
                         if self.circleProgress >= 1.0 {
                             timer.invalidate()
@@ -145,6 +145,7 @@ struct HalvedCircularBar: View {
                     }
                     if pressing == false && self.circleProgress >= 0{
                         self.circleProgress -= 0.025
+//                        self.circleProgress = 0
                     }
                 }
             }
