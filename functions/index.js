@@ -9,6 +9,6 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.tagOut = functions.https.onRequest((request, response) => {
-    functions.logger.info("Tag out logs!", {structuredData: true});
-    response.send("Tagging out...");
+  functions.logger.info("Tag out logs!", {structuredData: true});
+  response.send("Tagging out...");
 });
