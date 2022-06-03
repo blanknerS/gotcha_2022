@@ -10,9 +10,10 @@ import CoreHaptics
 
 struct MainView: View {
     
-    let user = "Andrew_Rodriguez23@milton.edu"
+    
 
     
+
     
 
     @Environment(\.horizontalSizeClass) var sizeClass
@@ -22,6 +23,8 @@ struct MainView: View {
     var body: some View {
         
         
+        var name = ""
+
         
         let backgroundGradient = LinearGradient(
             colors: [Color("lightBlue"), Color("secondBlue")],
@@ -38,7 +41,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Tag Out", systemImage: "xmark.seal.fill")}
             
-                CountdownView(user: user, referenceDate: Date())
+                CountdownView(user: name, referenceDate: Date())
                 .tabItem {
                     Label("Countdown", systemImage: "timer")}
                 
@@ -47,6 +50,20 @@ struct MainView: View {
         }
         .accentColor(Color("mediumBlue"))
         .background(backgroundGradient)
+        
+        
+    
+        .onAppear{
+            let user = "Andrew_Rodriguez23@milton.edu"
+
+            Task{
+                await print(firstName(uid: user))
+                name = await firstName(uid: user)
+            }
+                        
+                        
+        }
+
     }
 }
 
@@ -58,6 +75,20 @@ struct MainView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
