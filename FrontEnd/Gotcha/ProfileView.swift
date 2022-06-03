@@ -137,6 +137,13 @@ struct HalvedCircularBar: View {
                     if pressing && self.circleProgress <= 1.0{
                         self.circleProgress += 0.02  // Add to bound on trim
                         if self.circleProgress >= 1.0 {  // 
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    if self.circleProgress == 1.0{
+//                        dead.toggle()
+                    }
+                    if self.pressing && self.circleProgress <= 1.0{
+                        self.circleProgress += 0.02
+                        if self.circleProgress >= 1.0 {
                             timer.invalidate()
                         }
                         if self.circleProgress >= 0.5{
@@ -145,6 +152,7 @@ struct HalvedCircularBar: View {
                     }
                     if pressing == false && self.circleProgress >= 0{
                         self.circleProgress -= 0.025
+//                        self.circleProgress = 0
                     }
                 }
             }
