@@ -58,7 +58,8 @@ struct MainView: View {
 
             Task{
                 await print(firstName(uid: user))
-                name = await firstName(uid: user)
+//                THIS WAS BROKEN!
+//                name = await firstName(uid: user)
             }
                         
                         

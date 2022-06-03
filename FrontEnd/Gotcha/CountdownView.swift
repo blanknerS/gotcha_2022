@@ -28,7 +28,7 @@ struct CountdownView: View {
         
         VStack (spacing: 10){
             Spacer(minLength: 30)
-            Text("WELCOME "+ user) //THIS WILL MAKE IT CALLED FROM DB: \(user)" .uppercased()
+            Text("WELCOME \(user)") //THIS WILL MAKE IT CALLED FROM DB:  .uppercased()
                 .glowBorder(color: .black, lineWidth: 5)
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
