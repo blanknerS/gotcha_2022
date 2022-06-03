@@ -103,24 +103,24 @@ struct HalvedCircularBar: View {
 //    @StateObject var dead: Bool = false
     
     var body: some View {
-            VStack {
-                ZStack {
+            VStack {  // Stack built top to bottom
+                ZStack {  // Stack built back to front
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                    Circle()
+                    Circle()  // Background circle
                         .foregroundColor(Color("offGrey"))
-                    Circle()
+                    Circle()  // Surrounding circle trimline: moves from 0 position to 100
                         .trim(from: 0.0, to: circleProgress)
                         .stroke(Color("salmon"), lineWidth: 5)
-                        .frame(width: 150-15*2, height: 150-15*2)
+                        .frame(width: 150-15*2, height: 150-15*2)  // Slightly larger than prev. circle
                         .rotationEffect(Angle(degrees: -90))
                              //...
-                    Button("Tag Out"){}
-                        ._onButtonGesture { pressing in
+                    Button("Tag Out"){}  // On top of circle - lower on the ZStack
+                        ._onButtonGesture { pressing in  // Press gesture
                                         self.pressing = pressing
                                     } perform: {
-                                        impactMed.impactOccurred()
+                                        impactMed.impactOccurred()  // Screen vibrating
 //                                        pressing.toggle()
-                                        self.startLoading()
+                                        self.startLoading()  // Start progressing trimline
                                     }
                                     .foregroundColor(Color("offWhite"))
                                     
@@ -128,15 +128,15 @@ struct HalvedCircularBar: View {
             }
         }
     func startLoading() {
-            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in  // Timer based - adds every 0.1sec held down
                 withAnimation() {
-                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)  // Haptics
                     if self.circleProgress == 100{
 //                        dead.toggle()
                     }
-                    if pressing && self.circleProgress <= 100{
-                        self.circleProgress += 0.02
-                        if self.circleProgress >= 1.0 {
+                    if pressing && self.circleProgress <= 1.0{
+                        self.circleProgress += 0.02  // Add to bound on trim
+                        if self.circleProgress >= 1.0 {  // 
                             timer.invalidate()
                         }
                         if self.circleProgress >= 0.5{
