@@ -10,6 +10,8 @@ import FirebaseFirestore
 
 struct ProfileView: View {
     
+//    @EnvironmentObject private var bool: dead
+    
     let backgroundGradient = LinearGradient(
         colors: [Color("lightBlue"), Color("secondBlue")],
         startPoint: .top, endPoint: .bottom)
@@ -82,7 +84,8 @@ struct ProfileView: View {
                     }
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                HalvedCircularBar()
+//                if dead
+                    HalvedCircularBar()
                         .padding()
                 }
             }
@@ -94,56 +97,58 @@ struct ProfileView: View {
 
 struct HalvedCircularBar: View {
     
-    @State var started: Bool = false
+    @State private var pressing: Bool = false
     @State var progress: CGFloat = 0.0
+    @State var circleProgress: CGFloat = 0.0
+//    @StateObject var dead: Bool = false
     
     var body: some View {
-        VStack {
-            ZStack {
-                Circle()
-                    .trim(from: 0.0, to: 0.5)
-                    .stroke(Color("lightGrey"), style: StrokeStyle(lineWidth: 12.0, dash: [8]))
-                    .frame(width: 100, height: 100)
-                    .rotationEffect(Angle(degrees: -180))
-                Circle()
-                    .trim(from: 0.0, to: progress/2)
-                    .stroke(Color("darkRed"), lineWidth: 12.0)
-                    .frame(width: 100, height: 100)
-                    .rotationEffect(Angle(degrees: -180))
-                Text("\(Int(self.progress*100))%")
-                    .font(.title3)
-                    .foregroundColor(Color("lightGrey"))
-            }
-            HStack{
-                let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                Text("CLICK")
-                    .onLongPressGesture{
-                        impactMed.impactOccurred()
-                        started.toggle()
-                        self.startLoading()}
-                Text("STOP")
-                    .onTapGesture {
-                        impactMed.impactOccurred()
-                        started = false
-                        self.progress = 0
+            VStack {
+                ZStack {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    Circle()
+                        .foregroundColor(Color("offGrey"))
+                    Circle()
+                        .trim(from: 0.0, to: circleProgress)
+                        .stroke(Color("salmon"), lineWidth: 5)
+                        .frame(width: 150-15*2, height: 150-15*2)
+                        .rotationEffect(Angle(degrees: -90))
+                             //...
+                    Button("Tag Out"){}
+                        ._onButtonGesture { pressing in
+                                        self.pressing = pressing
+                                    } perform: {
+                                        impactMed.impactOccurred()
+//                                        pressing.toggle()
+                                        self.startLoading()
+                                    }
+                                    .foregroundColor(Color("offWhite"))
+                                    
                     }
             }
-//            .offset(y: -30)
         }
-    }
-    
     func startLoading() {
-        _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-            withAnimation() {
-                if started{
-                    self.progress += 0.01
-                    if self.progress >= 1.0 {
-                        timer.invalidate()
+            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                withAnimation() {
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    if self.circleProgress == 100{
+//                        dead.toggle()
+                    }
+                    if pressing && self.circleProgress <= 100{
+                        self.circleProgress += 0.02
+                        if self.circleProgress >= 1.0 {
+                            timer.invalidate()
+                        }
+                        if self.circleProgress >= 0.5{
+                            impactMed.impactOccurred()
+                        }
+                    }
+                    if pressing == false && self.circleProgress >= 0{
+                        self.circleProgress -= 0.025
                     }
                 }
             }
         }
-    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
