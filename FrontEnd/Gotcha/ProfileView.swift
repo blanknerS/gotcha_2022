@@ -100,6 +100,9 @@ struct HalvedCircularBar: View {
     @State private var pressing: Bool = false
     @State var progress: CGFloat = 0.0
     @State var circleProgress: CGFloat = 0.0
+    
+    @State private var isUnlocked = false
+    @State private var isDetectingLongPress = false
 //    @StateObject var dead: Bool = false
     
     var body: some View {
@@ -114,38 +117,64 @@ struct HalvedCircularBar: View {
                         .frame(width: 150-15*2, height: 150-15*2)  // Slightly larger than prev. circle
                         .rotationEffect(Angle(degrees: -90))
                              //...
-                    Button("Tag Out"){}  // On top of circle - lower on the ZStack
-                        ._onButtonGesture { pressing in  // Press gesture
-                                        self.pressing = pressing
-                                    } perform: {
-                                        impactMed.impactOccurred()  // Screen vibrating
-//                                        pressing.toggle()
-                                        self.startLoading()  // Start progressing trimline
-                                    }
-                                    .foregroundColor(Color("offWhite"))
+                    
+                    Image(systemName: isUnlocked ? "checkmark.seal.fill" : "xmark.seal.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))
+                        .rotationEffect(.degrees(isDetectingLongPress ? 360 : 0))
+                        .animation(isDetectingLongPress ?
+                                   Animation.easeInOut(duration: 1.5)
+                                        .repeatCount(2, autoreverses: true) : nil)
+                                .onLongPressGesture(minimumDuration: 3.0, pressing: { (isPressing) in
+                                    self.isDetectingLongPress = isPressing
+                                }, perform: {
+                                    impactMed.impactOccurred()
+                                    isUnlocked.toggle()
+                                    self.startLoading()
+                                    print("DONE")
+                                })
+//                    Button("Tag Out"){}  // On top of circle - lower on the ZStack
+//                        ._onButtonGesture { pressing in  // Press gesture
+//                                        self.pressing = pressing
+//                                    } perform: {
+//                                        impactMed.impactOccurred()  // Screen vibrating
+////                                        pressing.toggle()
+//                                        self.startLoading()  // Start progressing trimline
+//                                    }
+//                                    .foregroundColor(Color("offWhite"))
+                    
                                     
                     }
+                Text(isDetectingLongPress ? "LONG PRESS" : "REMOVED")
+                Text(isUnlocked ? "Tagged Out" : "Alive")
             }
         }
     func startLoading() {
-            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in  // Timer based - adds every 0.1sec held down
+        _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in  // Timer based - adds every 0.1sec held down
                 withAnimation() {
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
                     if self.circleProgress == 1.0{
 //                        dead.toggle()
                     }
-                    if self.pressing && self.circleProgress <= 1.0{
-                        self.circleProgress += 0.02
-                        if self.circleProgress >= 1.0 {
+                    if pressing{
+                        if self.circleProgress <= 1.0{
+                            self.circleProgress += 0.02
+                        }
+                        if self.circleProgress >= 1.0{
                             timer.invalidate()
                         }
                         if self.circleProgress >= 0.5{
                             impactMed.impactOccurred()
                         }
                     }
-                    if pressing == false && self.circleProgress >= 0{
-                        self.circleProgress -= 0.025
-//                        self.circleProgress = 0
+                    if pressing == false{
+                        if self.circleProgress > 0{
+                            self.circleProgress -= 0.025
+                        }
+//                        if self.circleProgress < 0 {
+//                            timer.invalidate()
+//                        }
                     }
                 }
             }
