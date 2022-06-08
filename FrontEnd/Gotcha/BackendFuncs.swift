@@ -30,10 +30,7 @@ func firstName(uid: String) async -> String{
         
         //unwrap the name and save it to our return var
         retVal = name!
-    }
-    
-    //if that doesnt work its an error
-    catch{
+    }catch{//if that doesnt work its an error
         print("err")
     }
     //return the return var
@@ -170,8 +167,6 @@ func tagOut(uid: String, lW: String){
         updateData(uid: personTaggingOut, field: "lastWords", data: lW )
     
         
-        
-       
         
         
        
