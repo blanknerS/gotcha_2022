@@ -18,13 +18,14 @@ struct MainView: View {
 //    @StateObject var userAuth: UserAuthModel =  UserAuthModel()
     @StateObject var model = UserAuthModel() //I went with this way of calling the Class within the UserAuth file rather than the above method
     
-    fileprivate func SignOutButton() -> Button<Text> {
-        Button(action: {
-            model.signOut()
-        }) {
-            Text("Sign Out")
-        }
-    }
+//    SIGN OUT FUNCTION
+//    fileprivate func SignOutButton() -> Button<Text> {
+//        Button(action: {
+//            model.signOut()
+//        }) {
+//            Text("Sign Out")
+//        }
+//    }
     
     var body: some View {
         
@@ -32,7 +33,7 @@ struct MainView: View {
         var name = ""
 
         VStack{
-            SignOutButton()
+//            SignOutButton()
             ZStack{
                 if model.isLoggedIn{
                     TabView {

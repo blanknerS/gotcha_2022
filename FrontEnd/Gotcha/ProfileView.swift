@@ -35,7 +35,7 @@ struct ProfileView: View {
 //                                .resizable()
 //                                .aspectRatio(contentMode: .fit)
                                 .clipShape(Circle())
-                                .frame(width: 150, height: 150)
+                                .frame(width: 100, height: 100)
                         }
                         HStack{
                             Text("\(model_passed.email)")
@@ -136,20 +136,18 @@ struct HalvedCircularBar: View {
                                     self.startLoading()
                                     print("DONE")
                                 })
-//                    Button("Tag Out"){}  // On top of circle - lower on the ZStack
-//                        ._onButtonGesture { pressing in  // Press gesture
-//                                        self.pressing = pressing
-//                                    } perform: {
-//                                        impactMed.impactOccurred()  // Screen vibrating
-////                                        pressing.toggle()
-//                                        self.startLoading()  // Start progressing trimline
-//                                    }
-//                                    .foregroundColor(Color("offWhite"))
                     
                                     
                     }
-                Text(isDetectingLongPress ? "LONG PRESS" : "REMOVED")
-                Text(isUnlocked ? "Tagged Out" : "Alive")
+                    .padding(.top, 8)
+                    .padding(.bottom, 10)
+                Text(isDetectingLongPress ? "TAGGING OUT" : "")
+                    .font(.title3)
+                    .foregroundColor(Color("white"))
+                    .glowBorder(color: Color("darkRed"), lineWidth: 5)
+                Text(isUnlocked ? "You have tagged out" : "")
+                    .font(.title3)
+                    .foregroundColor(Color("white"))
             }
         }
     func startLoading() {
@@ -182,10 +180,11 @@ struct HalvedCircularBar: View {
             }
         }
 }
-//
+
 //struct ProfileView_Previews: PreviewProvider {
+////    @StateObject var model = UserAuthModel()
 //    static var previews: some View {
-//        ProfileView(model_passed: UserAuthModel())
+//        ProfileView(model_passed: model)
 //            .preferredColorScheme(.dark)
 //            .previewInterfaceOrientation(.portrait)
 //    }
