@@ -38,6 +38,7 @@ struct MainView: View {
                 if model.isLoggedIn{
                     TabView {
                         ProfileView(model_passed: model)
+//                        ProfileView()
                             .tabItem {
                                 Label("Your Info", systemImage: "face.smiling.fill")}
                         

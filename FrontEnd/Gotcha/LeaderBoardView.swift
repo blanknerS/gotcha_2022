@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LeaderBoardView: View {
     
-    let backgroundGradient = LinearGradient(
-        colors: [Color("lightBlue"), Color("secondBlue")],
-        startPoint: .top, endPoint: .bottom)
+//    let backgroundGradient = LinearGradient(
+//        colors: [Color("lightBlue"), Color("secondBlue")],
+//        startPoint: .top, endPoint: .bottom)
     
     struct Leader: Identifiable{
         
@@ -30,9 +30,6 @@ struct LeaderBoardView: View {
     //populate this list with Leaders in the given format
     
     var leaders: [Leader] = [
-        
-        Leader(name: "Player1", tags: "1"),
-        Leader(name: "Player2", tags: "2"),
         Leader(name: "Player3", tags: "3"),
         Leader(name: "Player4", tags: "4")
         
@@ -52,37 +49,85 @@ struct LeaderBoardView: View {
 //        UITableView.appearance().backgroundColor = .clear
 //        UITableViewCell.appearance().backgroundColor = .clear
         
-        List{
-            Section(header: Text("LeaderBoard")){
-                ForEach(leaders) { leader in
+        VStack{
+            
+            List{
+                Section(){
+                    VStack(alignment: .leading){
+                        Label("Leaderboard", systemImage: "list.number")
+                            .foregroundColor(Color("lightGrey"))
+                    }
+                    .listRowSeparator(.hidden)
                     HStack{
-                        Text(leader.name)
-                            .foregroundColor(Color("black"))
                         Spacer()
-                        Label(leader.tags, systemImage: "checkmark.shield.fill")
-                            .foregroundColor(Color("darkGrey"))
+                        Image("trophies")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: 250, maxHeight: 100)
+                            .padding(.top, 8)
+                        Spacer()
+                    }
+                    .padding(.bottom)
+                    HStack{ //first
+                        Text("Blake")
+                            .foregroundColor(Color("gold"))
+                        Spacer()
+                        Label("33", systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("gold"))
+                    }
+                    HStack{ //second
+                        Text("Yaman")
+                            .foregroundColor(Color("silver"))
+                        Spacer()
+                        Label("22", systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("silver"))
+                    }
+                    HStack{ //third
+                        Text("Andrew")
+                            .foregroundColor(Color("bronze"))
+                        Spacer()
+                        Label("10", systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("bronze"))
+                    }
+                    
+                    ForEach(leaders) { leader in
+                        HStack{
+                            Text(leader.name)
+                                .foregroundColor(Color("mediumGrey"))
+                            Spacer()
+                            Label(leader.tags, systemImage: "checkmark.shield.fill")
+                                .foregroundColor(Color("mediumGrey"))
+                        }
                     }
                 }
-                .listRowBackground(Color("white"))
-            }
-            Section(header: Text("Last Words")){
-                ForEach(lastWords) { word in
-                    HStack{
-                        Text(word.sentence)
-                        Spacer()
-                        Text("- \(word.author)")
+                .listRowBackground(Color("darkestGrey"))
+                
+                Section(){
+                    VStack(alignment: .leading){
+                        Label("Last Words", systemImage: "highlighter")
+                            .foregroundColor(Color("lightGrey"))
+                    }
+                    .listRowSeparator(.hidden)
+                    .padding(.top, 4)
+                    .padding(.bottom, 8)
+                    ForEach(lastWords) { word in
+                        HStack{
+                            Text(word.sentence)
+                            Spacer()
+                            Text("- \(word.author)")
+                        }
+                        .foregroundColor(Color("mediumGrey"))
                     }
                 }
-                .listRowBackground(Color("darkGrey"))
+                .listRowBackground(Color("darkestGrey"))
             }
-        }
-        
-        .navigationTitle("Leader Board")
-        .padding()
-        .background(backgroundGradient.ignoresSafeArea())
-        .onAppear {
-            // Set the default to clear
-            UITableView.appearance().backgroundColor = .clear
+            
+            .navigationTitle("Leader Board")
+            .padding()
+            .onAppear {
+                // Set the default to clear
+                UITableView.appearance().backgroundColor = .clear
+            }
         }
     }
 }

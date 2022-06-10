@@ -31,11 +31,8 @@
 		FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */; };
 		FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */; };
 		FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FF6F0284F800000BC747B /* UserAuth.swift */; };
-		FFB801DB28518EFF00EC3F08 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB801DA28518EFF00EC3F08 /* google.png */; };
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
-		FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */; };
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
-		FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +76,8 @@
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF8FF6EB284F7DF400BC747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF8FF6F0284F800000BC747B /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
-		FFB801DA28518EFF00EC3F08 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
-		FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (1).gif"; sourceTree = "<group>"; };
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
-		FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (2).gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,13 +145,10 @@
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF09389F283A843E0026AB2D /* ReportError.swift */,
-				FFB801DA28518EFF00EC3F08 /* google.png */,
 				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
-				FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */,
 				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
-				FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
@@ -305,12 +296,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
-				FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */,
-				FFB801DB28518EFF00EC3F08 /* google.png in Resources */,
 				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

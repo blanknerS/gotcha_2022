@@ -9,14 +9,13 @@ import SwiftUI
 import FirebaseFirestore
 
 struct ProfileView: View {
-    
-//    @EnvironmentObject private var bool: dead
-    
+        
     let backgroundGradient = LinearGradient(
         colors: [Color("lightBlue"), Color("secondBlue")],
         startPoint: .top, endPoint: .bottom)
     
     let model_passed: UserAuthModel
+    
     
     var body: some View {
         List{
@@ -32,52 +31,41 @@ struct ProfileView: View {
                     VStack (alignment: .center){
                         HStack{
                             AsyncImage(url: URL(string: "\(model_passed.profilePicUrl)"))
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
+//                            Image("google")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .clipShape(Circle())
                                 .frame(width: 100, height: 100)
                         }
                         HStack{
                             Text("\(model_passed.email)")
-        //                        .padding()
+//                            Text("BLAKE")
                                 .font(.title)
                                 .foregroundColor(Color("white"))
-        //                        .background(Color("lightPurple"))
                                 .cornerRadius(20)
                         }
                     }
-//                    Spacer(minLength: 50)
                     VStack{
                         Text("🎯 YAMAN HABIP")
                             .fixedSize()
                             .multilineTextAlignment(.center)
-//                            .padding()
                             .font(.title3)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .foregroundColor(Color("lightGrey"))
-    //                        .background(Color("offGrey"))
                             .cornerRadius(20)
-//                            .shadow(color: Color("darkRed"), radius: 4, x: 4, y: 4)
                         
                         Text("#️⃣ 5 tags")
                             .multilineTextAlignment(.center)
                             .fixedSize()
-//                            .padding()
                             .font(.title3)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .foregroundColor(Color("lightGrey"))
-    //                        .background(Color("offGrey"))
                             .cornerRadius(20)
-//                            .shadow(color: Color("darkBlue"), radius: 4, x: 4, y: 4)
-                        
-        //                .shadow(color: .white, radius: 2, x: 2, y: 2)
                     }
-    //
                 }
-//                .padding()
             }
+            .listRowBackground(Color("darkestGrey"))
             .padding()
-//            I WANTED HEXAGON BUTTON BUT IDC ENOUGH ANYMORRE
             Section(){
                 VStack{
                     VStack(alignment: .leading){
@@ -86,12 +74,12 @@ struct ProfileView: View {
                     }
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-//                if dead
                     HalvedCircularBar()
                         .padding()
                 }
             }
-            .padding(.top ,15)
+            .listRowBackground(Color("darkestGrey"))
+            .padding(.top , 15)
             .padding(.leading ,15)
         }
     }
@@ -105,7 +93,6 @@ struct HalvedCircularBar: View {
     
     @State private var isUnlocked = false
     @State private var isDetectingLongPress = false
-//    @StateObject var dead: Bool = false
     
     var body: some View {
             VStack {  // Stack built top to bottom
@@ -155,7 +142,6 @@ struct HalvedCircularBar: View {
                 withAnimation() {
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
                     if self.circleProgress == 1.0{
-//                        dead.toggle()
                     }
                     if pressing{
                         if self.circleProgress <= 1.0{
@@ -172,19 +158,16 @@ struct HalvedCircularBar: View {
                         if self.circleProgress > 0{
                             self.circleProgress -= 0.025
                         }
-//                        if self.circleProgress < 0 {
-//                            timer.invalidate()
-//                        }
                     }
                 }
             }
         }
 }
-
+//
 //struct ProfileView_Previews: PreviewProvider {
 ////    @StateObject var model = UserAuthModel()
 //    static var previews: some View {
-//        ProfileView(model_passed: model)
+//        ProfileView()
 //            .preferredColorScheme(.dark)
 //            .previewInterfaceOrientation(.portrait)
 //    }
