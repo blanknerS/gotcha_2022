@@ -45,9 +45,6 @@ struct MainView: View {
                         LeaderBoardView()
                             .tabItem {
                                 Label("Leaderboard", systemImage: "crown.fill")}
-                        TagOutView()
-                            .tabItem {
-                                Label("Tag Out", systemImage: "xmark.seal.fill")}
                         
                             CountdownView(user: name, referenceDate: Date())
                             .tabItem {
