@@ -9,50 +9,64 @@ import SwiftUI
 import CoreHaptics
 
 struct MainView: View {
-    
-    
-
-    
-
-    
 
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.dynamicTypeSize) var typeSize
 //    @State private var engine: CHHapticEngine?
 //    @State private var leaderBoard: List = ["HEYYEH", "LWHEFL", "jf"]
+    
+//    @StateObject var userAuth: UserAuthModel =  UserAuthModel()
+    @StateObject var model = UserAuthModel() //I went with this way of calling the Class within the UserAuth file rather than the above method
+    
+    fileprivate func SignOutButton() -> Button<Text> {
+        Button(action: {
+            model.signOut()
+        }) {
+            Text("Sign Out")
+        }
+    }
+    
     var body: some View {
         
         
         var name = ""
 
-        
-        let backgroundGradient = LinearGradient(
-            colors: [Color("lightBlue"), Color("secondBlue")],
-            startPoint: .top, endPoint: .bottom)
-        TabView {
-            ProfileView()
-                .tabItem {
-                    Label("Your Info", systemImage: "face.smiling.fill")}
-            
-            LeaderBoardView()
-                .tabItem {
-                    Label("Leaderboard", systemImage: "crown.fill")}
-            TagOutView()
-                .tabItem {
-                    Label("Tag Out", systemImage: "xmark.seal.fill")}
-            
-                CountdownView(user: name, referenceDate: Date())
-                .tabItem {
-                    Label("Countdown", systemImage: "timer")}
-                
-        
-//                .scaledToFit()
+        VStack{
+            SignOutButton()
+            ZStack{
+                if model.isLoggedIn{
+                    TabView {
+                        ProfileView(model_passed: model)
+                            .tabItem {
+                                Label("Your Info", systemImage: "face.smiling.fill")}
+                        
+                        LeaderBoardView()
+                            .tabItem {
+                                Label("Leaderboard", systemImage: "crown.fill")}
+                        TagOutView()
+                            .tabItem {
+                                Label("Tag Out", systemImage: "xmark.seal.fill")}
+                        
+                            CountdownView(user: name, referenceDate: Date())
+                            .tabItem {
+                                Label("Countdown", systemImage: "timer")}
+//                        THIS IS JUST TO TEST SIGNING OUT!
+//                        LoginView(model: model)
+//                            .tabItem{
+//                                Label("Loging", systemImage: "face.smiling")
+//                            }
+                            
+                    
+            //                .scaledToFit()
+                    }
+                    .accentColor(Color("mediumBlue"))
+                }
+//                THIS is the conditional LoginView display
+                if !model.isLoggedIn{ //trouble right now is I need to refresh the view...
+                    LoginView(model_passed: model)
+                }
+            }
         }
-        .accentColor(Color("mediumBlue"))
-        .background(backgroundGradient)
-        
-        
-    
         .onAppear{
             let user = "Andrew_Rodriguez23@milton.edu"
 
@@ -61,9 +75,8 @@ struct MainView: View {
 //                THIS WAS BROKEN!
 //                name = await firstName(uid: user)
             }
-                        
-                        
         }
+        
 
     }
 }

@@ -16,6 +16,8 @@ struct ProfileView: View {
         colors: [Color("lightBlue"), Color("secondBlue")],
         startPoint: .top, endPoint: .bottom)
     
+    let model_passed: UserAuthModel
+    
     var body: some View {
         List{
             Section(){
@@ -36,7 +38,7 @@ struct ProfileView: View {
                                 .frame(width: 150, height: 150)
                         }
                         HStack{
-                            Text("Blake")
+                            Text("\(model_passed.email)")
         //                        .padding()
                                 .font(.title)
                                 .foregroundColor(Color("white"))
@@ -126,7 +128,7 @@ struct HalvedCircularBar: View {
                         .animation(isDetectingLongPress ?
                                    Animation.easeInOut(duration: 1.5)
                                         .repeatCount(2, autoreverses: true) : nil)
-                                .onLongPressGesture(minimumDuration: 3.0, pressing: { (isPressing) in
+                                .onLongPressGesture(minimumDuration: 3.0, maximumDistance: 100 ,pressing: { (isPressing) in
                                     self.isDetectingLongPress = isPressing
                                 }, perform: {
                                     impactMed.impactOccurred()
@@ -180,11 +182,11 @@ struct HalvedCircularBar: View {
             }
         }
 }
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-            .preferredColorScheme(.dark)
-            .previewInterfaceOrientation(.portrait)
-    }
-}
+//
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView(model_passed: UserAuthModel())
+//            .preferredColorScheme(.dark)
+//            .previewInterfaceOrientation(.portrait)
+//    }
+//}

@@ -27,28 +27,36 @@ struct CountdownView: View {
     var body: some View {
         
         VStack (spacing: 10){
-            Spacer(minLength: 30)
-            Text("WELCOME \(user)") //THIS WILL MAKE IT CALLED FROM DB:  .uppercased()
-                .glowBorder(color: .black, lineWidth: 5)
-                .foregroundColor(Color.white)
-                .font(.largeTitle)
-                .padding(.bottom, 10)
-            VStack{
-                GifImageView(name: "anonymous-glitch")
-//                        .scaledToFit()
-                    .layoutPriority(1)
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.black)
-                    .cornerRadius(20)
-                    .padding()
+//            Text("WELCOME" + "JWHLWNLWJLNWELNCELWNLWKNC".uppercased())
+            HStack{
+                Text("WELCOME ") //THIS WILL MAKE IT CALLED FROM DB:
+                    .glowBorder(color: .black, lineWidth: 5)
+                    .foregroundColor(Color.white)
+                    .font(.largeTitle)
+                    .padding(.bottom, 10)
+                
+                Text("\(user)".uppercased()) //THIS WILL MAKE IT CALLED FROM DB:
+                    .glowBorder(color: .black, lineWidth: 5)
+                    .foregroundColor(Color("offWhite"))
+                    .font(.largeTitle)
+                    .padding(.bottom, 10)
             }
-//            .aspectRatio(contentMode: .fit)
-            .frame(width: .infinity, height: .infinity)
-            Spacer(minLength: 30)
+            .offset(y: -40)
+            GifImageView(name: "anonymous-glitch")
+//                .aspectRatio(contentMode: .fit)
+//                        .scaledToFit()
+                .layoutPriority(1)
+                .frame(maxWidth: .infinity, maxHeight: 260)
+                .background(Color.black)
+                .cornerRadius(20)
+                .padding()
+//            .frame(width: .infinity, height: .infinity)
+//            Spacer(minLength: 200)
             Text("GOTCHA IN")
                 .glowBorder(color: .black, lineWidth: 5)
                 .foregroundColor(Color("white"))
                 .font(.title)
+                .offset(y: 10)
 //                .padding(.top, 80)
             
             HStack{
@@ -80,7 +88,7 @@ struct CountdownView: View {
             .cornerRadius(20)
             .foregroundColor(Color.white)
             .font(.largeTitle)
-            .offset(y:10)
+            .offset(y:20)
             .onAppear(perform: {
                 _ = self.timer
             })
@@ -92,27 +100,29 @@ struct CountdownView: View {
             }
             .padding()
             .foregroundColor(Color("darkGrey"))
-            Spacer()
-            ZStack{
-                Button("Report Problem"){
-                    showPopUp.toggle()
-                    print("Clicked")
-                }
-    //            .offset(y:60)
-                .padding(8)
-                .background(Color("mediumGrey"))
-                .foregroundColor(Color("lightGrey"))
-    //            .glowBorder(color: .black, lineWidth: 2)
-                .cornerRadius(20)
-                .opacity(showPopUp ? 0 : 1)
-                
-                Color.clear
-                    .modifier(Popup(isPresented: showPopUp,
-                                    content: { ReportError(showPopUp: $showPopUp) }))
-//                    .frame(width: 200, height: 130, alignment: .center)
-//                    .background(Color.black)
-            }
+            .offset(y: 10)
+//            Spacer()
+//            ZStack{
+//                Button("Report Problem"){
+//                    showPopUp.toggle()
+//                    print("Clicked")
+//                }
+//    //            .offset(y:60)
+//                .padding(8)
+//                .background(Color("mediumGrey"))
+//                .foregroundColor(Color("lightGrey"))
+//    //            .glowBorder(color: .black, lineWidth: 2)
+//                .cornerRadius(20)
+//                .opacity(showPopUp ? 0 : 1)
+//                
+//                Color.clear
+//                    .modifier(Popup(isPresented: showPopUp,
+//                                    content: { ReportError(showPopUp: $showPopUp) }))
+////                    .frame(width: 200, height: 130, alignment: .center)
+////                    .background(Color.black)
+//            }
         }
+        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("lightGrey"))
     }

@@ -28,6 +28,11 @@
 		FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B97282D69E4003BE9BF /* LoginView.swift */; };
 		FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B99282D69F1003BE9BF /* MainView.swift */; };
 		FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */; };
+		FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */; };
+		FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */; };
+		FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FF6F0284F800000BC747B /* UserAuth.swift */; };
+		FFB801DB28518EFF00EC3F08 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB801DA28518EFF00EC3F08 /* google.png */; };
+		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
 		FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */; };
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 		FFE7195B283C053D008299EC /* ezgif.com-gif-maker (2).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */; };
@@ -72,6 +77,10 @@
 		FF7A0B97282D69E4003BE9BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FF7A0B99282D69F1003BE9BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
+		FF8FF6EB284F7DF400BC747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF8FF6F0284F800000BC747B /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		FFB801DA28518EFF00EC3F08 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 		FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (1).gif"; sourceTree = "<group>"; };
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 		FFE7195A283C053D008299EC /* ezgif.com-gif-maker (2).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (2).gif"; sourceTree = "<group>"; };
@@ -82,7 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */,
 				17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */,
 				17E57EBA283EABDB00424A1E /* FirebaseDatabase in Frameworks */,
 				17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */,
 			);
@@ -129,14 +140,18 @@
 		FF7A0B6C282D67F1003BE9BF /* Gotcha */ = {
 			isa = PBXGroup;
 			children = (
+				FF8FF6EB284F7DF400BC747B /* Info.plist */,
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
+				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF09389F283A843E0026AB2D /* ReportError.swift */,
+				FFB801DA28518EFF00EC3F08 /* google.png */,
 				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
@@ -195,6 +210,8 @@
 				17E57EB9283EABDB00424A1E /* FirebaseDatabase */,
 				17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */,
 				17E57EBD283EABDC00424A1E /* FirebaseFirestore */,
+				FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */,
+				FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */,
 			);
 			productName = Gotcha;
 			productReference = FF7A0B6A282D67F1003BE9BF /* Gotcha.app */;
@@ -270,6 +287,7 @@
 			mainGroup = FF7A0B61282D67F1003BE9BF;
 			packageReferences = (
 				17E57EB8283EABDB00424A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FF8FF6E6284F7DDC00BC747B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = FF7A0B6B282D67F1003BE9BF /* Products */;
 			projectDirPath = "";
@@ -292,6 +310,7 @@
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
 				FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */,
+				FFB801DB28518EFF00EC3F08 /* google.png in Resources */,
 				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,8 +340,10 @@
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
 				49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
+				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */,
+				FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */,
 				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
@@ -490,6 +511,7 @@
 				DEVELOPMENT_TEAM = 7KB24DX3LW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gotcha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -519,6 +541,7 @@
 				DEVELOPMENT_TEAM = 7KB24DX3LW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gotcha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -663,6 +686,14 @@
 				version = 8.9.1;
 			};
 		};
+		FF8FF6E6284F7DDC00BC747B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -680,6 +711,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 17E57EB8283EABDB00424A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8FF6E6284F7DDC00BC747B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8FF6E6284F7DDC00BC747B /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
