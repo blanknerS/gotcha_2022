@@ -31,9 +31,9 @@ struct ProfileView: View {
                     
                     VStack (alignment: .center){
                         HStack{
-                            Image("blakeProfile")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            AsyncImage(url: URL(string: "\(model_passed.profilePicUrl)"))
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
                                 .clipShape(Circle())
                                 .frame(width: 150, height: 150)
                         }
