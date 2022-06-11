@@ -45,7 +45,7 @@ struct LeaderBoardView: View {
             Section(){
                 VStack(alignment: .leading){
                     Label("Leaderboard", systemImage: "list.number")
-                        .foregroundColor(Color("lightGrey"))
+                        .foregroundColor(Color("titleGrey"))
                 }
                 .padding(.top)
                 .padding(.bottom, 5)
@@ -97,7 +97,7 @@ struct LeaderBoardView: View {
             Section(){
                 VStack(alignment: .leading){
                     Label("Last Words", systemImage: "highlighter")
-                        .foregroundColor(Color("lightGrey"))
+                        .foregroundColor(Color("titleGrey"))
                 }
                 .listRowSeparator(.hidden)
                 .padding(.top)
@@ -108,7 +108,7 @@ struct LeaderBoardView: View {
                         Spacer()
                         Text("- \(word.author)")
                     }
-                    .foregroundColor(Color("mediumGrey"))
+                    .foregroundColor(Color("lightGrey"))
                 }
             }
             .listRowBackground(Color("darkGrey"))
