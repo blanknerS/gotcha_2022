@@ -280,3 +280,5 @@ FrontEnd/Gotcha.xcodeproj/project.pbxproj
 *.xcuserstate
 FrontEnd/Gotcha/BuildConfig.swift
 FrontEnd/Gotcha.xcodeproj/project.pbxproj
+*.pbxproj
+*.xcuserstate
