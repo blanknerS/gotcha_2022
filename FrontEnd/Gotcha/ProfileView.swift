@@ -9,13 +9,8 @@ import SwiftUI
 import FirebaseFirestore
 
 struct ProfileView: View {
-        
-    let backgroundGradient = LinearGradient(
-        colors: [Color("lightBlue"), Color("secondBlue")],
-        startPoint: .top, endPoint: .bottom)
     
     let model_passed: UserAuthModel
-    
     
     var body: some View {
         List{
@@ -30,15 +25,15 @@ struct ProfileView: View {
                     
                     VStack (alignment: .center){
                         HStack{
-                            AsyncImage(url: URL(string: "\(model_passed.profilePicUrl)"))
+                                AsyncImage(url: URL(string: "\(model_passed.profilePicUrl)"))
 //                            Image("google")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
                                 .clipShape(Circle())
                                 .frame(width: 100, height: 100)
                         }
                         HStack{
-                            Text("\(model_passed.email)")
+                                Text("\(model_passed.email)")
 //                            Text("BLAKE")
                                 .font(.title)
                                 .foregroundColor(Color("white"))
@@ -64,8 +59,9 @@ struct ProfileView: View {
                     }
                 }
             }
-            .listRowBackground(Color("darkestGrey"))
+            .listRowBackground(Color("darkGrey"))
             .padding()
+            
             Section(){
                 VStack{
                     VStack(alignment: .leading){
@@ -73,14 +69,17 @@ struct ProfileView: View {
                             .foregroundColor(Color("lightGrey"))
                     }
                     .padding(.bottom, 8)
+                    .padding(.top, 10)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     HalvedCircularBar()
                         .padding()
                 }
             }
-            .listRowBackground(Color("darkestGrey"))
-            .padding(.top , 15)
-            .padding(.leading ,15)
+            .listRowBackground(Color("darkGrey"))
+            .padding()
+        }
+        .onAppear(){
+            UITableView.appearance().backgroundColor = UIColor(Color("offBlack"))
         }
     }
 }
@@ -123,8 +122,6 @@ struct HalvedCircularBar: View {
                                     self.startLoading()
                                     print("DONE")
                                 })
-                    
-                                    
                     }
                     .padding(.top, 8)
                     .padding(.bottom, 10)

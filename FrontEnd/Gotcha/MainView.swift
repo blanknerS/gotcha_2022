@@ -49,19 +49,12 @@ struct MainView: View {
                             CountdownView(user: name, referenceDate: Date())
                             .tabItem {
                                 Label("Countdown", systemImage: "timer")}
-//                        THIS IS JUST TO TEST SIGNING OUT!
-//                        LoginView(model: model)
-//                            .tabItem{
-//                                Label("Loging", systemImage: "face.smiling")
-//                            }
-                            
-                    
-            //                .scaledToFit()
+
                     }
                     .accentColor(Color("mediumBlue"))
                 }
 //                THIS is the conditional LoginView display
-                if !model.isLoggedIn{ //trouble right now is I need to refresh the view...
+                if !model.isLoggedIn{
                     LoginView(model_passed: model)
                 }
             }
@@ -71,12 +64,8 @@ struct MainView: View {
 
             Task{
                 await print(firstName(uid: user))
-//                THIS WAS BROKEN!
-//                name = await firstName(uid: user)
             }
         }
-        
-
     }
 }
 
