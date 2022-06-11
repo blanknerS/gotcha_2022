@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		179C9A412852F2380076798C /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C9A402852F2380076798C /* BuildConfig.swift */; };
 		17E57EBA283EABDB00424A1E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EB9283EABDB00424A1E /* FirebaseDatabase */; };
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
@@ -31,7 +32,12 @@
 		FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */; };
 		FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */; };
 		FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FF6F0284F800000BC747B /* UserAuth.swift */; };
+<<<<<<< Updated upstream
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
+=======
+		FFB801DB28518EFF00EC3F08 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB801DA28518EFF00EC3F08 /* google.png */; };
+		FFE71957283C0481008299EC /* ezgif.com-gif-maker (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */; };
+>>>>>>> Stashed changes
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		179C9A402852F2380076798C /* BuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuildConfig.swift; path = ../../../../../Downloads/BuildConfig.swift; sourceTree = "<group>"; };
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
 		49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
@@ -76,7 +83,12 @@
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF8FF6EB284F7DF400BC747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF8FF6F0284F800000BC747B /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+=======
+		FFB801DA28518EFF00EC3F08 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		FFE71956283C0480008299EC /* ezgif.com-gif-maker (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-gif-maker (1).gif"; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +153,7 @@
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
-				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
+				179C9A402852F2380076798C /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF09389F283A843E0026AB2D /* ReportError.swift */,
@@ -324,11 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179C9A412852F2380076798C /* BuildConfig.swift in Sources */,
 				FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */,
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
 				49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
-				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */,
 				FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */,
