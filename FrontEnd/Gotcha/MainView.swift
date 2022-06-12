@@ -9,68 +9,55 @@ import SwiftUI
 import CoreHaptics
 
 struct MainView: View {
-
-    @Environment(\.horizontalSizeClass) var sizeClass
-    @Environment(\.dynamicTypeSize) var typeSize
-//    @State private var engine: CHHapticEngine?
-//    @State private var leaderBoard: List = ["HEYYEH", "LWHEFL", "jf"]
     
-//    @StateObject var userAuth: UserAuthModel =  UserAuthModel()
-    @StateObject var model = UserAuthModel() //I went with this way of calling the Class within the UserAuth file rather than the above method
+    @StateObject var model = UserAuthModel() //Make object of the Auth Model
     
-//    SIGN OUT FUNCTION
-//    fileprivate func SignOutButton() -> Button<Text> {
-//        Button(action: {
-//            model.signOut()
-//        }) {
-//            Text("Sign Out")
-//        }
-//    }
     
     var body: some View {
         
+        var name = "" //variale that is passed into countdown view
         
-        var name = ""
-
         VStack{
-//            SignOutButton()
-            ZStack{
-                if model.isLoggedIn{
-                    TabView {
-                        ProfileView(model_passed: model)
+            ZStack{ //Builds back to front as it reads
+                if model.isLoggedIn{ //if the user is logged in through oauth
+                    TabView { //make tab view with:
+                        ProfileView(model_passed: model) //Profile View
 //                        ProfileView()
-                            .tabItem {
+                            .preferredColorScheme(.dark)
+                            .tabItem { //added to tab bar @ bottom of screen
                                 Label("Your Info", systemImage: "face.smiling.fill")}
                         
-                        LeaderBoardView()
-                            .tabItem {
+                        LeaderBoardView() //Leader Board View
+                            .preferredColorScheme(.dark)
+                            .tabItem { //added to tab bar @ bottom of screen
                                 Label("Leaderboard", systemImage: "crown.fill")}
                         
-                            CountdownView(user: name, referenceDate: Date())
-                            .tabItem {
+                            CountdownView(user: name, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!!
+                            .preferredColorScheme(.dark)
+                            .tabItem { //added to tab bar @ bottom of screen
                                 Label("Countdown", systemImage: "timer")}
 
                     }
-                    .accentColor(Color("mediumBlue"))
+                    .accentColor(Color("mediumBlue")) //tab bar button color when tab is being viewed
                 }
-//                THIS is the conditional LoginView display
-                if !model.isLoggedIn{
-                    LoginView(model_passed: model)
+//                Conditional LoginView display
+                if !model.isLoggedIn{ // //if user NOT logged in
+                    LoginView(model_passed: model) //Login View
+                        .preferredColorScheme(.dark)
                 }
             }
         }
-        .onAppear{
-            let user = "Andrew_Rodriguez23@milton.edu"
+        .onAppear{ //when screen is shown
+            let user = "Andrew_Rodriguez23@milton.edu" //pass user name for cuontdown !!change it to model.givenName!!
 
-            Task{
+            Task{ //tasks to backend
                 await print(firstName(uid: user))
             }
         }
     }
 }
 
-
-
+//Preview provider
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()

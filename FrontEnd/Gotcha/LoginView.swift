@@ -10,40 +10,36 @@ import GoogleSignIn
 import GoogleSignInSwift
 
 struct LoginView: View {
-    //DONT PUSH + make secure!
-    let signInConfig = GIDConfiguration(clientID: BuildConfig.googleKey) //clietn ID that I already have, OAuth with app --> kinda API key
-//    @StateObject var userAuth: UserAuthModel =  UserAuthModel() //this is the variable which calls the UserAuth File
+    
+    let signInConfig = GIDConfiguration(clientID: BuildConfig.googleKey) //configure OAuth to gotcha group
     @State private var username = ""
     
-    let model_passed: UserAuthModel
-
+    let model_passed: UserAuthModel //get OAuth model from Main screen
        
-       fileprivate func SignOutButton() -> Button<Text> {
+       fileprivate func SignOutButton() -> Button<Text> { //Signoutt button if needed in future
            Button(action: {
                model_passed.signOut()
            }) {
                Text("Sign Out")
            }
        }
-    
        
-       fileprivate func ProfilePic() -> some View {
+       fileprivate func ProfilePic() -> some View { //get url of profile picture from user
            AsyncImage(url: URL(string: model_passed.profilePicUrl))
                .frame(width: 100, height: 100)
        }
        
-       fileprivate func UserInfo() -> Text {
+       fileprivate func UserInfo() -> Text { //get email and name
            return Text(model_passed.email + " " + model_passed.givenName)
-           
        }
     
     var body: some View {
         VStack{
-            if(model_passed.isLoggedIn) {
-                UserInfo()
-                SignOutButton()
-            } else {
-                Button(action: {
+            if(model_passed.isLoggedIn) { //if logged in
+                UserInfo() //User Info
+                SignOutButton() //Sign Out Button
+            } else { //if not logged in:
+                Button(action: { //OAUTH STUFF @Tommy haha
                     model_passed.signIn()}, label: {Image(uiImage: UIImage(named: "google")!)
                        .resizable()
                        .frame(maxWidth: 200, maxHeight:200)
@@ -61,12 +57,10 @@ struct LoginView: View {
                         }
                 .onAppear {
                           GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-                            // Check if `user` exists; otherwise, do something with `error`
                           }
                 }
                 .onChange(of: model_passed.isLoggedIn) { newValue in //This is the cmopletino function!
                     if(model_passed.isLoggedIn){
-//                        need a refresh here I think
                         username = model_passed.email
                         print("logged in: " + username)
                     } else {
@@ -74,8 +68,6 @@ struct LoginView: View {
                         print("logged out: " + username)
                     }
                 }
-                    
-                        
                 .environmentObject(model_passed)
     }
     
