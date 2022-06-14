@@ -22,12 +22,12 @@ struct CountdownView: View {
     
     var body: some View {
         VStack (spacing: 10){
-            Text("WELCOME \(user)".uppercased()) //Text of User Name
+            Text("WELCOME  \(user)".uppercased()) //Text of User Name
                 .glowBorder(color: .black, lineWidth: 5) //glowBorder is a swift file that adds unnique styling
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
                 .padding(.bottom, 10)
-                .offset(y: -40) //move welcome up screen by 40
+                .offset(y: -20) //move welcome up screen by 40
             
             GifImageView(name: "anonymous-glitch") //Special WebView that displays GIF
                 .layoutPriority(1)

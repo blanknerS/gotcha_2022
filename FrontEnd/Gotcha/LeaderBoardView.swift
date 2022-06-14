@@ -17,6 +17,7 @@ struct LeaderBoardView: View {
         
         let name: String
         let tags: String
+        let pos: String
         let id = UUID()
     }
     
@@ -27,8 +28,13 @@ struct LeaderBoardView: View {
     }
         
     var leaders: [Leader] = [ //make list of Leader Objects
-        Leader(name: "Player3", tags: "3"),
-        Leader(name: "Player4", tags: "4")
+        Leader(name: "Player3", tags: "3", pos: "4"),
+        Leader(name: "Player4", tags: "4", pos: "5"),
+        Leader(name: "Player5", tags: "3", pos: "6"),
+        Leader(name: "Player6", tags: "3", pos: "7"),
+        Leader(name: "Player7", tags: "3", pos: "8"),
+        Leader(name: "Player8", tags: "3", pos: "9"),
+        
     ]
     
     var lastWords: [Words] = [ //make list of Word Objects
@@ -63,6 +69,9 @@ struct LeaderBoardView: View {
                 .padding(.bottom)
                 
                 HStack{ //first place
+                    Text("1st") //name
+                        .foregroundColor(Color("gold"))
+                    Spacer()
                     Text("Blake") //name
                         .foregroundColor(Color("gold"))
                     Spacer()
@@ -70,6 +79,9 @@ struct LeaderBoardView: View {
                         .foregroundColor(Color("gold"))
                 }
                 HStack{ //second place
+                    Text("2nd")
+                        .foregroundColor(Color("silver"))
+                    Spacer()
                     Text("Yaman")
                         .foregroundColor(Color("silver"))
                     Spacer()
@@ -77,21 +89,32 @@ struct LeaderBoardView: View {
                         .foregroundColor(Color("silver"))
                 }
                 HStack{ //third place
+                    Text("3rd")
+                        .foregroundColor(Color("bronze"))
+                    Spacer()
                     Text("Andrew")
                         .foregroundColor(Color("bronze"))
                     Spacer()
                     Label("10", systemImage: "checkmark.shield.fill")
                         .foregroundColor(Color("bronze"))
                 }
-                ForEach(leaders) { leader in //rest of players on leaderboard
-                    HStack{
-                        Text(leader.name) //name
-                            .foregroundColor(Color("mediumGrey"))
-                        Spacer()
-                        Label(leader.tags, systemImage: "checkmark.shield.fill") //tags
-                            .foregroundColor(Color("mediumGrey"))
+                ScrollView{
+                    ForEach(leaders) { leader in //rest of players on leaderboard
+                        HStack{
+                            Text("\(leader.pos)th")
+                                .foregroundColor(Color("mediumGrey"))
+                            Spacer()
+                            Text(leader.name) //name
+                                .foregroundColor(Color("mediumGrey"))
+                            Spacer()
+                            Label(leader.tags, systemImage: "checkmark.shield.fill") //tags
+                                .foregroundColor(Color("mediumGrey"))
+                        }
+                        .frame(height: 30)
+                        Divider()
                     }
                 }
+                .frame(height: 125)
             }
             .listRowBackground(Color("darkGrey"))
             
@@ -103,15 +126,19 @@ struct LeaderBoardView: View {
                 .listRowSeparator(.hidden)
                 .padding(.top)
                 .padding(.bottom, 5)
-                
-                ForEach(lastWords) { word in //ALL Last Words !! Only want to show like 5 here!!
-                    HStack{
-                        Text(word.sentence)
-                        Spacer()
-                        Text("- \(word.author)")
+                ScrollView{
+                    ForEach(lastWords) { word in //ALL Last Words !! Only want to show like 5 here!!
+                        HStack{
+                            Text(word.sentence)
+                            Spacer()
+                            Text("- \(word.author)")
+                        }
+                        .foregroundColor(Color("lightGrey"))
+                        .frame(height: 40)
+                        Divider()
                     }
-                    .foregroundColor(Color("lightGrey"))
                 }
+                .frame(height: 200)
             }
             .listRowBackground(Color("darkGrey"))
         }
