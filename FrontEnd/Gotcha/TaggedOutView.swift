@@ -18,6 +18,7 @@ struct TaggedOutView: View {
     
     let textLimit = 55
         
+    
     var body: some View {
         VStack (alignment: .center){
             Spacer()
