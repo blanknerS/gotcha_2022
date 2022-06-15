@@ -9,11 +9,16 @@
 
 import SwiftUI
 import CoreHaptics
+import AVKit
 
 struct MainView: View {
     
     @StateObject var model = UserAuthModel() //Make object of the Auth Model
+    @State private var isOut: Bool = false
+    @State private var show_glitch_screen: Bool = false
+    @State private var show_tag_screen: Bool = true
     
+    @State var audioPlayer: AVAudioPlayer!
     
     var body: some View {
                 
@@ -21,11 +26,13 @@ struct MainView: View {
             ZStack{ //Builds back to front as it reads
                 if model.isLoggedIn{ //if the user is logged in through oauth
                     TabView { //make tab view with:
-                        ProfileView(model_passed: model) //Profile View
-//                        ProfileView()
-                            .preferredColorScheme(.dark)
-                            .tabItem { //added to tab bar @ bottom of screen
-                                Label("Your Info", systemImage: "face.smiling.fill")}
+                        if !isOut{ //only show if not tagged out !!CHANGE TO DB!!
+                            ProfileView(model_passed: model, isOut_passed: $isOut, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer) //Profile View
+    //                        ProfileView()
+                                .preferredColorScheme(.dark)
+                                .tabItem { //added to tab bar @ bottom of screen
+                                    Label("Your Info", systemImage: "face.smiling.fill")}
+                        }
                         
                         LeaderBoardView() //Leader Board View
                             .preferredColorScheme(.dark)
@@ -45,9 +52,47 @@ struct MainView: View {
                     LoginView(model_passed: model) //Login View
                         .preferredColorScheme(.dark)
                 }
+                if isOut{
+                    ZStack{
+                        
+                        TabView{
+                            LeaderBoardView() //Leader Board View
+                                .preferredColorScheme(.dark)
+                                .tabItem { //added to tab bar @ bottom of screen
+                                    Label("Leaderboard", systemImage: "crown.fill")}
+                        }
+                        .accentColor(Color("mediumBlue")) //tab bar button color when tab is being viewed
+                        
+                        if show_tag_screen{
+                            VStack{
+                                TaggedOutView(tagged_view: $show_tag_screen, audioPlayer: $audioPlayer)
+                            .background(.black)
+                            .frame(width: .infinity, height: .infinity, alignment: .center)
+                            
+                            }
+                        }
+                        if show_glitch_screen{
+                            VStack{
+                                GifImageView(name: "death-gif-4")
+                                    .frame(width: .infinity, height: .infinity, alignment: .center)
+                                GifImageView(name: "death-gif-4")
+                                    .frame(width: .infinity, height: .infinity, alignment: .bottom)
+                                    .offset(y: -15)
+                            }
+                            .background(Color("black"))
+                            .frame(width: .infinity, height: .infinity, alignment: .center)
+                            .onAppear {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                                self.show_glitch_screen.toggle()
+                                            }
+                                        }
+                            }
+                    }
+                }
             }
         }
         .onAppear{ //when screen is shown
+            
             let user = "Andrew_Rodriguez23@milton.edu" //pass user name for cuontdown !!change it to model.givenName!!
 
             Task{ //tasks to backend

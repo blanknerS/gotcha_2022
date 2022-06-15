@@ -11,6 +11,10 @@ import FirebaseFirestore
 struct ProfileView: View {
     
     let model_passed: UserAuthModel //inherit model from Oauth
+    @Binding var isOut_passed: Bool
+    @Binding var glitch_bool: Bool
+    
+    @Binding var audioPlayer: AVAudioPlayer!
     
     var body: some View {
         List{ //List SubView
@@ -71,8 +75,8 @@ struct ProfileView: View {
                     .padding(.bottom, 8)
                     .padding(.top, 10)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    TagButton() //Special View for Tag Out Button
-                        .padding()
+                    TagButton(isOut: $isOut_passed, glitch_on: $glitch_bool, audioPlayer: $audioPlayer) //Special View for Tag Out Button
+//                        .padding()
                 }
             }
             .listRowBackground(Color("darkGrey"))
@@ -85,14 +89,21 @@ struct ProfileView: View {
 }
 
 //Specialized Tag Out Button
+
+import AVKit
+
 struct TagButton: View {
     
     @State private var pressing: Bool = false
     @State var progress: CGFloat = 0.0
     @State var circleProgress: CGFloat = 0.0
     
-    @State private var isOut = false
+    @Binding var isOut: Bool
+    @Binding var glitch_on: Bool
+    
     @State private var isDetectingLongPress = false
+    
+    @Binding var audioPlayer: AVAudioPlayer!
     
     var body: some View {
             VStack {  // VSTACK: Button and Tagginng Out Texts
@@ -117,8 +128,11 @@ struct TagButton: View {
                                 .onLongPressGesture(minimumDuration: 3.0, maximumDistance: 100 ,pressing: { (isPressing) in
                                     self.isDetectingLongPress = isPressing
                                 }, perform: {
+                                    self.audioPlayer.play()
+//                                    self.audioPlayer.numberOfLoops = 1
                                     impactMed.impactOccurred()
                                     isOut.toggle() //TAG OUT = TRUE
+                                    glitch_on.toggle()
                                     self.startLoading()
                                     print("DONE")
                                 })
@@ -128,12 +142,22 @@ struct TagButton: View {
                 
                 Text(isDetectingLongPress ? "TAGGING OUT" : "") //IF PRESSING BUTTON: Display Text
                     .font(.title3)
+                    .offset(y: 10)
                     .foregroundColor(Color("white"))
                     .glowBorder(color: Color("darkRed"), lineWidth: 5)
                 
                 Text(isOut ? "You have tagged out" : "") //IF TAGGED OUT: Display Text
                     .font(.title3)
                     .foregroundColor(Color("white"))
+            }
+            .onAppear(){
+                let sound = Bundle.main.path(forResource: "death-audio", ofType: "mp3")
+                self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(.playback)
+                } catch(let error) {
+                    print(error.localizedDescription)
+                }
             }
         }
     

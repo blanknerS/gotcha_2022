@@ -38,7 +38,7 @@ struct LeaderBoardView: View {
     ]
     
     var lastWords: [Words] = [ //make list of Word Objects
-        Words(sentence: "BLEH BLEH ALW", author: "Blake"),
+        Words(sentence: "BLEH BLEH ALW wlhfelwhflwhflwhflwlfhwelfjlwehjfkwhekf", author: "Blake"),
         Words(sentence: "BLEH jldvnle", author: "Yaman"),
         Words(sentence: "lwoiefnweflw", author: "Andrew"),
         Words(sentence: "BLFJh3oI", author: "Ryan"),
@@ -68,37 +68,43 @@ struct LeaderBoardView: View {
                 }
                 .padding(.bottom)
                 
-                HStack{ //first place
-                    Text("1st") //name
-                        .foregroundColor(Color("gold"))
-                    Spacer()
-                    Text("Blake") //name
-                        .foregroundColor(Color("gold"))
-                    Spacer()
-                    Label("33", systemImage: "checkmark.shield.fill") //tags
-                        .foregroundColor(Color("gold"))
-                }
-                HStack{ //second place
-                    Text("2nd")
-                        .foregroundColor(Color("silver"))
-                    Spacer()
-                    Text("Yaman")
-                        .foregroundColor(Color("silver"))
-                    Spacer()
-                    Label("22", systemImage: "checkmark.shield.fill")
-                        .foregroundColor(Color("silver"))
-                }
-                HStack{ //third place
-                    Text("3rd")
-                        .foregroundColor(Color("bronze"))
-                    Spacer()
-                    Text("Andrew")
-                        .foregroundColor(Color("bronze"))
-                    Spacer()
-                    Label("10", systemImage: "checkmark.shield.fill")
-                        .foregroundColor(Color("bronze"))
-                }
                 ScrollView{
+                    HStack{ //first place
+                        Text("1st") //name
+                            .foregroundColor(Color("gold"))
+                        Spacer()
+                        Text("Blake") //name
+                            .foregroundColor(Color("gold"))
+                        Spacer()
+                        Label("33", systemImage: "checkmark.shield.fill") //tags
+                            .foregroundColor(Color("gold"))
+                    }
+                    .frame(height: 40)
+                    Divider()
+                    HStack{ //second place
+                        Text("2nd")
+                            .foregroundColor(Color("silver"))
+                        Spacer()
+                        Text("Yaman")
+                            .foregroundColor(Color("silver"))
+                        Spacer()
+                        Label("22", systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("silver"))
+                    }
+                    .frame(height: 40)
+                    Divider()
+                    HStack{ //third place
+                        Text("3rd")
+                            .foregroundColor(Color("bronze"))
+                        Spacer()
+                        Text("Andrew")
+                            .foregroundColor(Color("bronze"))
+                        Spacer()
+                        Label("10", systemImage: "checkmark.shield.fill")
+                            .foregroundColor(Color("bronze"))
+                    }
+                    .frame(height: 40)
+                    Divider()
                     ForEach(leaders) { leader in //rest of players on leaderboard
                         HStack{
                             Text("\(leader.pos)th")
@@ -114,7 +120,7 @@ struct LeaderBoardView: View {
                         Divider()
                     }
                 }
-                .frame(height: 125)
+                .frame(height: 180)
             }
             .listRowBackground(Color("darkGrey"))
             
@@ -138,7 +144,7 @@ struct LeaderBoardView: View {
                         Divider()
                     }
                 }
-                .frame(height: 200)
+                .frame(height: 180)
             }
             .listRowBackground(Color("darkGrey"))
         }
