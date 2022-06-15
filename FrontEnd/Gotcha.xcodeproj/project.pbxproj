@@ -18,7 +18,6 @@
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
 		FF3991942839476200963F86 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991932839476200963F86 /* CountdownView.swift */; };
-		FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
 		FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */; };
@@ -31,7 +30,11 @@
 		FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */; };
 		FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */; };
 		FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FF6F0284F800000BC747B /* UserAuth.swift */; };
+		FF9C9D39285A222200274AB2 /* death-gif-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF9C9D38285A222200274AB2 /* death-gif-4.gif */; };
+		FF9C9D3F285A684E00274AB2 /* death-audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */; };
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
+		FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFB801E2285928B700EC3F08 /* death-gif.gif */; };
+		FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801E8285934D600EC3F08 /* TaggedOutView.swift */; };
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +64,6 @@
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
-		FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
 		FF7A0B71282D67F4003BE9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +78,11 @@
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF8FF6EB284F7DF400BC747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF8FF6F0284F800000BC747B /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		FF9C9D38285A222200274AB2 /* death-gif-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif-4.gif"; sourceTree = "<group>"; };
+		FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "death-audio.mp3"; sourceTree = "<group>"; };
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		FFB801E2285928B700EC3F08 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif.gif"; sourceTree = "<group>"; };
+		FFB801E8285934D600EC3F08 /* TaggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedOutView.swift; sourceTree = "<group>"; };
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,14 +147,17 @@
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FFB801E8285934D600EC3F08 /* TaggedOutView.swift */,
 				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
+				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
+				FFB801E2285928B700EC3F08 /* death-gif.gif */,
+				FF9C9D38285A222200274AB2 /* death-gif-4.gif */,
 				FF09389F283A843E0026AB2D /* ReportError.swift */,
 				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
-				FF5DBBD4282DE0C0007DC544 /* TagOutView.swift */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
@@ -298,7 +307,10 @@
 			files = (
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
+				FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */,
+				FF9C9D39285A222200274AB2 /* death-gif-4.gif in Resources */,
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
+				FF9C9D3F285A684E00274AB2 /* death-audio.mp3 in Resources */,
 				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,12 +344,12 @@
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */,
 				FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */,
-				FF5DBBD5282DE0C0007DC544 /* TagOutView.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
 				FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
+				FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +515,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,6 +546,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
