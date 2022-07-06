@@ -93,11 +93,7 @@ struct MainView: View {
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
-            let user = "Andrew_Rodriguez23@milton.edu" //pass user name for cuontdown !!change it to model.givenName!!
-
-            Task{ //tasks to backend
-                await print(firstName(uid: user))
-            }
+       
         }
         .refreshable { //when the screen is reloaded
         //            reload the user information here

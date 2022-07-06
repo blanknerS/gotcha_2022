@@ -16,6 +16,14 @@ struct ProfileView: View {
     
     @Binding var audioPlayer: AVAudioPlayer!
     
+    
+    @State private var target: String = " "
+    @State private var pTags: String = " "
+
+    
+    
+    
+    
     var body: some View {
         List{ //List SubView
             Section(){ //SECTION: Profile
@@ -38,14 +46,17 @@ struct ProfileView: View {
                         }
                         HStack{ //Name
                                 Text("\(model_passed.givenName)") //name from Oauth Model
-//                            Text("BLAKE")
                                 .font(.title)
                                 .foregroundColor(Color("white"))
                                 .cornerRadius(20)
                         }
                     }
+                    
+                    
+                    
+                    
                     VStack{ //VSTACK: Tagret and Total Tags
-                        Text("🎯 YAMAN HABIP") //Target
+                        Text(target) //Target
                             .fixedSize()
                             .multilineTextAlignment(.center)
                             .font(.title3)
@@ -53,7 +64,7 @@ struct ProfileView: View {
                             .foregroundColor(Color("lightGrey"))
                             .cornerRadius(20)
                         
-                        Text("#️⃣ 5 tags") //Tags
+                        Text(pTags) //Tags
                             .multilineTextAlignment(.center)
                             .fixedSize()
                             .font(.title3)
@@ -84,8 +95,28 @@ struct ProfileView: View {
         }
         .onAppear(){
             UITableView.appearance().backgroundColor = UIColor(Color("offBlack")) //change View Backgrounnd
+           
+            
+            Task{ //tasks to backend
+                
+                let uid = "Andrew_Rodriguez23@milton.edu"
+                await print(firstName(uid: uid))
+                await print(targ(uid: uid))
+                
+                target = await(fullName(uid: targ(uid: uid)))
+                
+                pTags = await tags(uid: uid)
+                print(pTags)
+                
+                
+            }
+        
         }
+        
+        
     }
+    
+
 }
 
 //Specialized Tag Out Button
