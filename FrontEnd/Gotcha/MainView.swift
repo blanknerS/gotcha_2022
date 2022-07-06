@@ -20,6 +20,10 @@ struct MainView: View {
     
     @State var audioPlayer: AVAudioPlayer!
     
+    @State private var target_name: String
+    @State private var tag_count: Int
+    @State private var target_email: String
+    
     var body: some View {
                 
         VStack{
