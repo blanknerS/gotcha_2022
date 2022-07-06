@@ -45,7 +45,7 @@ struct MainView: View {
                                 Label("Countdown", systemImage: "timer")}
 
                     }
-                    .accentColor(Color("mediumBlue")) //tab bar button color when tab is being viewed
+                    .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
                 }
 //                Conditional LoginView display
                 if !model.isLoggedIn{ // //if user NOT logged in
@@ -61,7 +61,7 @@ struct MainView: View {
                                 .tabItem { //added to tab bar @ bottom of screen
                                     Label("Leaderboard", systemImage: "crown.fill")}
                         }
-                        .accentColor(Color("mediumBlue")) //tab bar button color when tab is being viewed
+                        .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
                         
                         if show_tag_screen{
                             VStack{
@@ -91,7 +91,7 @@ struct MainView: View {
                 }
             }
         }
-        .onAppear{ //when screen is shown
+        .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
             let user = "Andrew_Rodriguez23@milton.edu" //pass user name for cuontdown !!change it to model.givenName!!
 
@@ -99,6 +99,9 @@ struct MainView: View {
                 await print(firstName(uid: user))
             }
         }
+        .refreshable { //when the screen is reloaded
+        //            reload the user information here
+                }
     }
 }
 
