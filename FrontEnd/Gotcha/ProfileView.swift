@@ -17,9 +17,8 @@ struct ProfileView: View {
     @Binding var audioPlayer: AVAudioPlayer!
     
     
-    @State private var target: String = " "
-    @State private var pTags: String = " "
-
+    @Binding var target_name: String
+    @Binding var tag_count: Int
     
     
     
@@ -52,11 +51,11 @@ struct ProfileView: View {
                         }
                     }
                     
-                    
+                
                     
                     
                     VStack{ //VSTACK: Tagret and Total Tags
-                        Text(target) //Target
+                        Text(target_name) //Target
                             .fixedSize()
                             .multilineTextAlignment(.center)
                             .font(.title3)
@@ -64,7 +63,7 @@ struct ProfileView: View {
                             .foregroundColor(Color("lightGrey"))
                             .cornerRadius(20)
                         
-                        Text(pTags) //Tags
+                        Text("\(tag_count)") //Tags
                             .multilineTextAlignment(.center)
                             .fixedSize()
                             .font(.title3)
@@ -97,19 +96,7 @@ struct ProfileView: View {
             UITableView.appearance().backgroundColor = UIColor(Color("offBlack")) //change View Backgrounnd
            
             
-            Task{ //tasks to backend
-                
-                let uid = "Andrew_Rodriguez23@milton.edu"
-                await print(firstName(uid: uid))
-                await print(targ(uid: uid))
-                
-                target = await(fullName(uid: targ(uid: uid)))
-                
-                pTags = await tags(uid: uid)
-                print(pTags)
-                
-                
-            }
+           
         
         }
         
@@ -165,7 +152,11 @@ struct TagButton: View {
                                     isOut.toggle() //TAG OUT = TRUE
                                     glitch_on.toggle()
                                     self.startLoading()
-                                    print("DONE")
+                                    let uid = "Andrew_Rodriguez23@milton.edu"
+                                    let lW = "yaman is a bitch boy"
+                                    
+                                    print("tag out should be running(*!@$(*$!&(*$@!P*$*&!P&*$&*(@$!P(!&*@$$(&*!")
+                                    tagOut(uid: uid, lW: lW)
                                 })
                     }
                     .padding(.top, 8)

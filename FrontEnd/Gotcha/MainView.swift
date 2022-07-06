@@ -20,9 +20,9 @@ struct MainView: View {
     
     @State var audioPlayer: AVAudioPlayer!
     
-    @State private var target_name: String
-    @State private var tag_count: Int
-    @State private var target_email: String
+    @State private var target_name: String =  ""
+    @State private var tag_count: Int = 0
+    @State private var target_email: String = ""
     
     var body: some View {
                 
@@ -31,7 +31,7 @@ struct MainView: View {
                 if model.isLoggedIn{ //if the user is logged in through oauth
                     TabView { //make tab view with:
                         if !isOut{ //only show if not tagged out !!CHANGE TO DB!!
-                            ProfileView(model_passed: model, isOut_passed: $isOut, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer) //Profile View
+                            ProfileView(model_passed: model, isOut_passed: $isOut, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count) //Profile View
     //                        ProfileView()
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
@@ -97,6 +97,19 @@ struct MainView: View {
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
+            Task{ //tasks to backend
+                
+                let uid = "Andrew_Rodriguez23@milton.edu"
+                target_name = await fullName(uid: targ(uid: uid))
+                tag_count = await tags(uid: uid)
+            
+                
+                
+            }
+            
+            
+            
+            
        
         }
         .refreshable { //when the screen is reloaded
@@ -105,10 +118,10 @@ struct MainView: View {
     }
 }
 
-//Preview provider
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .preferredColorScheme(.dark)
-    }
-}
+////Preview provider
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

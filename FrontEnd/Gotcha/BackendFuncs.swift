@@ -138,7 +138,7 @@ func tagOut(uid: String, lW: String){
             return
         }
         
-        print(data)
+      
         
         guard let targ = data["target"] as? String else{
             return
@@ -149,22 +149,20 @@ func tagOut(uid: String, lW: String){
         guard let tags = data["tags"] as? Int else{
             return
         }
-        guard let fN = data["firstName"] as? Bool else{
-            return
-        }
-        guard let lastWords = data["lastWords"] as? String else{
-            return
-        }
-
-        let personTaggingOut = uid
+      
+        print(chase)
+        print(targ)
+        print(uid)
         
         updateData(uid: chase, field: "target", data: targ)
         updateData(uid: chase, field: "tags", data: tags+1)
         
         updateData(uid: targ, field: "chaser", data: chase)
         
-        updateData(uid: personTaggingOut, field: "alive", data: false)
-        updateData(uid: personTaggingOut, field: "lastWords", data: lW )
+        
+        
+        updateData(uid: uid, field: "alive", data: false)
+        updateData(uid: uid, field: "lastWords", data: lW )
     
         
         
