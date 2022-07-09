@@ -14,6 +14,7 @@ struct GotchaApp: App {
     init() {
         FirebaseApp.configure() //need PLIST
         
+    
 
     }
 

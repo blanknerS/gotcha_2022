@@ -14,7 +14,7 @@ import AVKit
 struct MainView: View {
     
     @StateObject var model = UserAuthModel() //Make object of the Auth Model
-    @State private var isOut: Bool = false
+    @State private var isIn: Bool = false
     @State private var show_glitch_screen: Bool = false
     @State private var show_tag_screen: Bool = true
     
@@ -23,6 +23,7 @@ struct MainView: View {
     @State private var target_name: String =  ""
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
+    @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
     
     var body: some View {
                 
@@ -30,8 +31,8 @@ struct MainView: View {
             ZStack{ //Builds back to front as it reads
                 if model.isLoggedIn{ //if the user is logged in through oauth
                     TabView { //make tab view with:
-                        if !isOut{ //only show if not tagged out !!CHANGE TO DB!!
-                            ProfileView(model_passed: model, isOut_passed: $isOut, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count) //Profile View
+                        if isIn{ //only show if not tagged out !!CHANGE TO DB!!
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count) //Profile View
     //                        ProfileView()
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
@@ -56,7 +57,7 @@ struct MainView: View {
                     LoginView(model_passed: model) //Login View
                         .preferredColorScheme(.dark)
                 }
-                if isOut{
+                if !isIn{
                     ZStack{
                         
                         TabView{
@@ -69,7 +70,7 @@ struct MainView: View {
                         
                         if show_tag_screen{
                             VStack{
-                                TaggedOutView(tagged_view: $show_tag_screen, audioPlayer: $audioPlayer)
+                                TaggedOutView(tagged_view: $show_tag_screen, audioPlayer: $audioPlayer, UID: $UID)
                             .background(.black)
                             .frame(width: .infinity, height: .infinity, alignment: .center)
                             
@@ -98,11 +99,13 @@ struct MainView: View {
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
             Task{ //tasks to backend
+        
+                target_name = await fullName(uid: targ(uid: UID))
+                tag_count = await tags(uid: UID)
                 
-                let uid = "Andrew_Rodriguez23@milton.edu"
-                target_name = await fullName(uid: targ(uid: uid))
-                tag_count = await tags(uid: uid)
-            
+                isIn = await lifeStatus(uid: UID)
+                
+          
                 
                 
             }

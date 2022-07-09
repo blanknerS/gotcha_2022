@@ -15,6 +15,7 @@ struct TaggedOutView: View {
     @Binding var tagged_view: Bool
     
     @Binding var audioPlayer: AVAudioPlayer!
+    @Binding var UID: String
     
     let textLimit = 55
         
@@ -50,6 +51,10 @@ struct TaggedOutView: View {
                         Button("Send"){
                             self.audioPlayer.stop()
                             print("Last words: \(finalWords)")
+                        
+                            //Tag out with database
+                            tagOut(uid: UID, lW: finalWords)
+                            
                             tagged_view.toggle()
                             finalWords = ""
                         }

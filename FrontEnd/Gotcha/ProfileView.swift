@@ -85,7 +85,7 @@ struct ProfileView: View {
                     .padding(.bottom, 8)
                     .padding(.top, 10)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    TagButton(isOut: $isOut_passed, glitch_on: $glitch_bool, audioPlayer: $audioPlayer) //Special View for Tag Out Button
+                    TagButton(isIn: $isOut_passed, glitch_on: $glitch_bool, audioPlayer: $audioPlayer) //Special View for Tag Out Button
 //                        .padding()
                 }
             }
@@ -116,7 +116,7 @@ struct TagButton: View {
     @State var progress: CGFloat = 0.0
     @State var circleProgress: CGFloat = 0.0
     
-    @Binding var isOut: Bool
+    @Binding var isIn: Bool
     @Binding var glitch_on: Bool
     
     @State private var isDetectingLongPress = false
@@ -135,7 +135,7 @@ struct TagButton: View {
                         .frame(width: 150-15*2, height: 150-15*2)  // Slightly larger than prev. circle
                         .rotationEffect(Angle(degrees: -90))
                     
-                    Image(systemName: isOut ? "checkmark.seal.fill" : "xmark.seal.fill")
+                    Image(systemName: isIn ? "checkmark.seal.fill" : "xmark.seal.fill")
                         .resizable()
                         .frame(width: 100, height: 100)
                         .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))
@@ -149,14 +149,10 @@ struct TagButton: View {
                                     self.audioPlayer.play()
 //                                    self.audioPlayer.numberOfLoops = 1
                                     impactMed.impactOccurred()
-                                    isOut.toggle() //TAG OUT = TRUE
+                                    isIn.toggle() //TAG OUT = TRUE
                                     glitch_on.toggle()
                                     self.startLoading()
-                                    let uid = "Andrew_Rodriguez23@milton.edu"
-                                    let lW = "yaman is a bitch boy"
-                                    
-                                    print("tag out should be running(*!@$(*$!&(*$@!P*$*&!P&*$&*(@$!P(!&*@$$(&*!")
-                                    tagOut(uid: uid, lW: lW)
+                                  
                                 })
                     }
                     .padding(.top, 8)
@@ -168,7 +164,7 @@ struct TagButton: View {
                     .foregroundColor(Color("white"))
                     .glowBorder(color: Color("darkRed"), lineWidth: 5)
                 
-                Text(isOut ? "You have tagged out" : "") //IF TAGGED OUT: Display Text
+                Text(isIn ? "You have tagged out" : "") //IF TAGGED OUT: Display Text
                     .font(.title3)
                     .foregroundColor(Color("white"))
             }

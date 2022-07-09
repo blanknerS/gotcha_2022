@@ -10,6 +10,25 @@ import FirebaseFirestore
 
 
 //Needs to be async and have the proper returns
+
+func lifeStatus(uid: String) async -> Bool{
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    var retVal = true as Bool
+    
+    do {
+        let data = try await docRef.getDocument()
+        
+        let life = data.get("alive") as? Bool
+        
+        retVal = life!
+        
+    }catch{
+        print("err")
+    }
+    
+    return retVal
+}
 func firstName(uid: String) async -> String{
     //Init firebase db
     let db = Firestore.firestore()
@@ -128,46 +147,50 @@ func updateData(uid: String, field: String, data: Any) {
 func tagOut(uid: String, lW: String){
     //Reference to a specific firebase document within the collection users
     let db = Firestore.firestore()
-    
     let docRef = db.document("data/" + uid)
     
-    //read the document and get a 'snapshot' of its current data , if it fails return
+    //okay so just read the UID data
     docRef.getDocument {snapshot, error in
 
         guard let data = snapshot?.data(), error == nil else{
             return
         }
-        
-      
-        
+        //save their target and chaser as targ and chase
         guard let targ = data["target"] as? String else{
             return
         }
         guard let chase = data["chaser"] as? String else{
             return
         }
-        guard let tags = data["tags"] as? Int else{
-            return
+        
+        
+        //go in a read their chasers tags and increase it by one tag
+        let docRef = db.document("data/" + chase)
+        
+        docRef.getDocument {snapshot, error in
+    
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+            
+            guard let tags = data["tags"] as? Int else{
+                return
+            }
+    
+            updateData(uid: chase, field: "tags", data: tags+1)
+            
         }
-      
-        print(chase)
-        print(targ)
-        print(uid)
-        
+       
+        //chase the chaser target and the targets chaser
         updateData(uid: chase, field: "target", data: targ)
-        updateData(uid: chase, field: "tags", data: tags+1)
-        
         updateData(uid: targ, field: "chaser", data: chase)
         
-        
-        
+        //update the uid's stuff
         updateData(uid: uid, field: "alive", data: false)
         updateData(uid: uid, field: "lastWords", data: lW )
     
         
-        
-        
-       
+    
     
     }
     
