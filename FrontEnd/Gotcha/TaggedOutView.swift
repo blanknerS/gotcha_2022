@@ -49,8 +49,12 @@ struct TaggedOutView: View {
                     HStack{
                         Spacer()
                         Button("Send"){
-                            self.audioPlayer.stop()
-                            print("Last words: \(finalWords)")
+//                            if self.audioPlayer.isPlaying{
+//                                self.audioPlayer.stop()
+//                            }
+                            finalWords.censor()
+                            print("first attempt: ", finalWords)
+                            print("Last words: \(finalWords.censored())")
                         
                             //Tag out with database
                             tagOut(uid: UID, lW: finalWords)

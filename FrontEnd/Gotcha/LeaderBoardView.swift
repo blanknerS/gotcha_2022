@@ -150,6 +150,7 @@ struct LeaderBoardView: View {
         }
     }
 }
+
         
 //Preview Provider
 struct LeaderBoardView_Previews: PreviewProvider {

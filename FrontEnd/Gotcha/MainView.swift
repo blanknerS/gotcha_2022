@@ -24,6 +24,7 @@ struct MainView: View {
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
     @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
+    @State private var hasLastWords: Bool = false
     
     var body: some View {
                 
@@ -68,30 +69,32 @@ struct MainView: View {
                         }
                         .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
                         
-                        if show_tag_screen{
-                            VStack{
-                                TaggedOutView(tagged_view: $show_tag_screen, audioPlayer: $audioPlayer, UID: $UID)
-                            .background(.black)
-                            .frame(width: .infinity, height: .infinity, alignment: .center)
-                            
+                        if !hasLastWords{
+                            if show_tag_screen{
+                                VStack{
+                                    TaggedOutView(tagged_view: $show_tag_screen, audioPlayer: $audioPlayer, UID: $UID)
+                                .background(.black)
+                                .frame(width: .infinity, height: .infinity, alignment: .center)
+                                
+                                }
                             }
-                        }
-                        if show_glitch_screen{
-                            VStack{
-                                GifImageView(name: "death-gif-4")
-                                    .frame(width: .infinity, height: .infinity, alignment: .center)
-                                GifImageView(name: "death-gif-4")
-                                    .frame(width: .infinity, height: .infinity, alignment: .bottom)
-                                    .offset(y: -15)
-                            }
-                            .background(Color("black"))
-                            .frame(width: .infinity, height: .infinity, alignment: .center)
-                            .onAppear {
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                                                self.show_glitch_screen.toggle()
+                            if show_glitch_screen{
+                                VStack{
+                                    GifImageView(name: "death-gif-4")
+                                        .frame(width: .infinity, height: .infinity, alignment: .center)
+                                    GifImageView(name: "death-gif-4")
+                                        .frame(width: .infinity, height: .infinity, alignment: .bottom)
+                                        .offset(y: -15)
+                                }
+                                .background(Color("black"))
+                                .frame(width: .infinity, height: .infinity, alignment: .center)
+                                .onAppear {
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                                    self.show_glitch_screen.toggle()
+                                                }
                                             }
-                                        }
-                            }
+                                }
+                        }
                     }
                 }
             }
@@ -104,6 +107,12 @@ struct MainView: View {
                 tag_count = await tags(uid: UID)
                 
                 isIn = await lifeStatus(uid: UID)
+                
+//                let lastWords = await lW(uid: UID)
+//                if lastWords != ""{
+//                    hasLastWords = true
+//                }
+                
                 
           
                 
