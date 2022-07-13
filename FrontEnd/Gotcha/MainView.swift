@@ -12,25 +12,26 @@ import CoreHaptics
 import AVKit
 
 struct MainView: View {
-    
+        
     @StateObject var model = UserAuthModel() //Make object of the Auth Model
-    @State private var isIn: Bool = false
+    @State private var isIn: Bool = true
     @State private var show_glitch_screen: Bool = false
     @State private var show_tag_screen: Bool = true
+    @State private var isLoading: Bool = true
     
     @State var audioPlayer: AVAudioPlayer!
     
     @State private var target_name: String =  ""
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
-    @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
+    @State private var UID: String = "Pia_Franken23@milton.edu"
     @State private var hasLastWords: Bool = false
     
     var body: some View {
                 
         VStack{
             ZStack{ //Builds back to front as it reads
-                if model.isLoggedIn{ //if the user is logged in through oauth
+                if model.isLoggedIn && model.partOfMilton{ //if the user is logged in through oauth
                     TabView { //make tab view with:
                         if isIn{ //only show if not tagged out !!CHANGE TO DB!!
                             ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count) //Profile View
@@ -49,6 +50,11 @@ struct MainView: View {
                             .preferredColorScheme(.dark)
                             .tabItem { //added to tab bar @ bottom of screen
                                 Label("Countdown", systemImage: "timer")}
+                        
+                        SignOutView(model_passed: model) //Leader Board View
+                            .preferredColorScheme(.dark)
+                            .tabItem { //added to tab bar @ bottom of screen
+                                Label("Sign Out", systemImage: "person.crop.circle.fill.badge.xmark")}
 
                     }
                     .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
@@ -58,14 +64,18 @@ struct MainView: View {
                     LoginView(model_passed: model) //Login View
                         .preferredColorScheme(.dark)
                 }
-                if !isIn{
+                if !isIn && model.partOfMilton && model.isLoggedIn{
                     ZStack{
-                        
                         TabView{
                             LeaderBoardView() //Leader Board View
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
                                     Label("Leaderboard", systemImage: "crown.fill")}
+                            
+                            SignOutView(model_passed: model) //Leader Board View
+                                .preferredColorScheme(.dark)
+                                .tabItem { //added to tab bar @ bottom of screen
+                                    Label("Sign Out", systemImage: "person.crop.circle.fill.badge.xmark")}
                         }
                         .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
                         
@@ -97,6 +107,9 @@ struct MainView: View {
                         }
                     }
                 }
+                if isLoading{
+                    LoadingView()
+                }
             }
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
@@ -107,22 +120,16 @@ struct MainView: View {
                 tag_count = await tags(uid: UID)
                 
                 isIn = await lifeStatus(uid: UID)
+                                
+                let lastWords = await lWStatus(uid: UID)
+                if lastWords != ""{
+                    hasLastWords = true
+                }
                 
-//                let lastWords = await lW(uid: UID)
-//                if lastWords != ""{
-//                    hasLastWords = true
-//                }
-                
-                
-          
-                
-                
+                if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil{
+                    self.isLoading.toggle()
+                }
             }
-            
-            
-            
-            
-       
         }
         .refreshable { //when the screen is reloaded
         //            reload the user information here

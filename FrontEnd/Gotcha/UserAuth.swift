@@ -23,6 +23,7 @@ class UserAuthModel: ObservableObject {
     @Published var profilePicUrl: String = ""
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
+    @Published var partOfMilton: Bool = false
     
     init(){
         check()
@@ -39,11 +40,21 @@ class UserAuthModel: ObservableObject {
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
             self.isLoggedIn = true
+            if self.email.contains("milton.edu"){
+                self.partOfMilton = true
+            }
+            else{
+                self.partOfMilton = false
+                self.signOut()
+            }
+            print(partOfMilton)
+            
         }else{
             self.isLoggedIn = false
             self.givenName = "Not Logged In"
             self.email = ""
             self.profilePicUrl =  ""
+            self.partOfMilton = false
         }
     }
     

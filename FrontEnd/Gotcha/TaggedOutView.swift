@@ -17,6 +17,8 @@ struct TaggedOutView: View {
     @Binding var audioPlayer: AVAudioPlayer!
     @Binding var UID: String
     
+    @State var basicText: String = "Last Words"
+    
     let textLimit = 55
         
     
@@ -31,12 +33,12 @@ struct TaggedOutView: View {
                         .foregroundColor(Color("lightGrey"))
                         .font(.largeTitle)
                     Spacer()
-                    Text("What are your final words?")
+                    Text("What are your last words?")
                         .foregroundColor(Color("lightGrey"))
                         .font(.headline)
                     HStack (alignment: .center){
                         Spacer()
-                        TextField("Last Words", text: $finalWords)
+                        TextField("\(basicText)", text: $finalWords)
                             .onReceive(Just(finalWords)) { _ in limitText(textLimit) }
                             .padding()
                             .multilineTextAlignment(.center)
@@ -49,18 +51,21 @@ struct TaggedOutView: View {
                     HStack{
                         Spacer()
                         Button("Send"){
-//                            if self.audioPlayer.isPlaying{
-//                                self.audioPlayer.stop()
-//                            }
-                            finalWords.censor()
-                            print("first attempt: ", finalWords)
-                            print("Last words: \(finalWords.censored())")
-                        
-                            //Tag out with database
-                            tagOut(uid: UID, lW: finalWords)
+                            if self.audioPlayer.isPlaying{
+                                self.audioPlayer.stop()
+                            }
+                            if finalWords != ""{
+                                finalWords.censor()
+                                print("first attempt: ", finalWords)
+                                print("Last words: \(finalWords.censored())")
                             
-                            tagged_view.toggle()
-                            finalWords = ""
+                                //Tag out with database
+                                tagOut(uid: UID, lW: finalWords)
+                                tagged_view.toggle()
+                            }
+                            else{
+                                basicText = "Please write something"
+                            }
                         }
                         .frame(width: 80, height: 40)
                         .foregroundColor(Color("titleGrey"))

@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var username = ""
     
     let model_passed: UserAuthModel //get OAuth model from Main screen
-       
+           
        fileprivate func SignOutButton() -> Button<Text> { //Signoutt button if needed in future
            Button(action: {
                model_passed.signOut()

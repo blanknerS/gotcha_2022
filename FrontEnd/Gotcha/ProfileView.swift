@@ -50,12 +50,9 @@ struct ProfileView: View {
                                 .cornerRadius(20)
                         }
                     }
-                    
-                
-                    
-                    
+
                     VStack{ //VSTACK: Tagret and Total Tags
-                        Text(target_name) //Target
+                        Text("🎯 " + target_name) //Target
                             .fixedSize()
                             .multilineTextAlignment(.center)
                             .font(.title3)
@@ -63,7 +60,7 @@ struct ProfileView: View {
                             .foregroundColor(Color("lightGrey"))
                             .cornerRadius(20)
                         
-                        Text("\(tag_count)") //Tags
+                        Text("#️⃣ \(tag_count)") //Tags
                             .multilineTextAlignment(.center)
                             .fixedSize()
                             .font(.title3)
@@ -95,9 +92,6 @@ struct ProfileView: View {
         .onAppear(){
             UITableView.appearance().backgroundColor = UIColor(Color("offBlack")) //change View Backgrounnd
            
-            
-           
-        
         }
         
         
@@ -164,7 +158,7 @@ struct TagButton: View {
                     .foregroundColor(Color("white"))
                     .glowBorder(color: Color("darkRed"), lineWidth: 5)
                 
-                Text(isIn ? "You have tagged out" : "") //IF TAGGED OUT: Display Text
+                Text(isIn ?  "" : "You have tagged out") //IF TAGGED OUT: Display Text
                     .font(.title3)
                     .foregroundColor(Color("white"))
             }
