@@ -25,6 +25,6 @@ struct SignOutView: View {
 
 //struct signOut_Previews: PreviewProvider {
 //    static var previews: some View {
-//        signOut()
+//        SignOutView()
 //    }
 //}

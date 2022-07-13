@@ -18,13 +18,14 @@ struct MainView: View {
     @State private var show_glitch_screen: Bool = false
     @State private var show_tag_screen: Bool = true
     @State private var isLoading: Bool = true
+    @State private var gotchaTime: Bool = false
     
     @State var audioPlayer: AVAudioPlayer!
     
     @State private var target_name: String =  ""
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
-    @State private var UID: String = "Pia_Franken23@milton.edu"
+    @State private var UID: String = "Blake_Ankner23@milton.edu"
     @State private var hasLastWords: Bool = false
     
     var body: some View {
@@ -46,7 +47,7 @@ struct MainView: View {
                             .tabItem { //added to tab bar @ bottom of screen
                                 Label("Leaderboard", systemImage: "crown.fill")}
                         
-                        CountdownView(user: model.givenName, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
+                        CountdownView(user: model.givenName, dDay: $gotchaTime, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
                             .preferredColorScheme(.dark)
                             .tabItem { //added to tab bar @ bottom of screen
                                 Label("Countdown", systemImage: "timer")}
@@ -113,6 +114,9 @@ struct MainView: View {
             }
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
+            
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            AppDelegate.orientationLock = .portrait
             
             Task{ //tasks to backend
         

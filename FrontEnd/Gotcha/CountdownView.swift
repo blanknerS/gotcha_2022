@@ -12,6 +12,7 @@ struct CountdownView: View {
     
     @State var nowDate: Date = Date() //Current Date that updates with screen
     @State var user : String //User name inherited from View call
+    @Binding var dDay: Bool
     
     var referenceDate: Date //gotcha date referenced later
     var timer: Timer { //Make a one second timer
@@ -44,6 +45,7 @@ struct CountdownView: View {
             
             HStack{ //Countdown Clock Stack
                 let result = countDownString() //call function that gets time until gotcha
+                // I HAVE THE DDAY ON RESULT.5 ! I NOW NEED TO PASS THAT TO THE DDAY VAR SOMEHOW....
                 BounceAnimationView(text: result.0, startTime: 0.0) //Bounce animation is a special swift file styliing
                     .padding()
                     .background(Color("darkGrey"))
@@ -89,24 +91,49 @@ struct CountdownView: View {
         .background(Color("lightGrey"))
     }
     
-    func countDownString() -> (String, String, String, String) { //counttdown function
+    func countDownString() -> (String, String, String, String, Bool) { //counttdown function
+        
+        var GOTCHA_TIME = false
         
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
-        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
+//        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
+        let myDate = dateFormatter.date(from: "2022-07-13T13:16")! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
             .dateComponents([.day, .hour, .minute, .second],
                             from: nowDate,
                             to: myDate)
+//        converting optional(int) to int
+        let int_day = Int(components.day ?? 00)
+        let int_hour = Int(components.hour ?? 00)
+        let int_minute = Int(components.minute ?? 00)
+        let int_second = Int(components.second ?? 00)
+
+//        print("day: \(int_day) || hour: \(int_hour) || minute: \(int_minute) || tenMin: \(self.tenMinutes)") //BUG TESTER!
+        
+        
+        if int_day == 1 && int_second == 0{
+            print("T-One Day") //add notification trigger here
+        }
+        if int_day == 0 && int_hour == 1 && int_second == 0{
+            print("T-One Hour") //add notification trigger here
+        }
+        if int_day == 0 && int_hour == 0 && int_minute == 10 && int_second == 0{
+            print("T-10 Minutes") //add notification trigger here
+        }
+        if int_day == 0 && int_hour == 0 && int_minute == 0 && int_second == 0{
+            GOTCHA_TIME = true
+        }
+        
         let days = String(format: "%02d", components.day ?? 00)
         let hours = String(format: "%02d", components.hour ?? 00)
         let minutes = String(format: "%02d", components.minute ?? 00)
         let seconds = String(format: "%02d", components.second ?? 00)
         
-        return (days, hours, minutes, seconds)
+        return (days, hours, minutes, seconds, GOTCHA_TIME)
     }
 }
 
@@ -151,11 +178,11 @@ struct BounceAnimationView: View {
     }
 }
 
-//PREVIEW PROVIDER
-struct CountdownView_Previews: PreviewProvider {
-    static var previews: some View {
-        CountdownView(user: "Blake", referenceDate: Date())
-    }
-}
+////PREVIEW PROVIDER
+//struct CountdownView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CountdownView(user: "Blake", referenceDate: Date())
+//    }
+//}
 
 
