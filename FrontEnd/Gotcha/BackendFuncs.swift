@@ -29,6 +29,35 @@ func lifeStatus(uid: String) async -> Bool{
     
     return retVal
 }
+
+func lWStatus(uid: String) async -> String{
+    let db = Firestore.firestore()
+    
+    //init reference to the document for that user
+    let docRef = db.document("data/" + uid)
+    
+    //make our returning variable
+    var retVal = "" as String
+    
+    //Do this async-ly
+    do{
+        //try to get the document and save it to the data var
+        let data = try await docRef.getDocument()
+        
+        //extract the name as a string from the document
+        let lW = data.get("lastWords") as? String
+        
+        //unwrap the name and save it to our return var
+        retVal = lW!
+    }catch{//if that doesnt work its an error
+        print("err")
+    }
+    //return the return var
+    return(retVal)
+}
+
+
+
 func firstName(uid: String) async -> String{
     //Init firebase db
     let db = Firestore.firestore()
