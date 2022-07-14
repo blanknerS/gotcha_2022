@@ -18,6 +18,7 @@
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
 		FF3991942839476200963F86 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991932839476200963F86 /* CountdownView.swift */; };
+		FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65706B287E8E2C005EABDF /* SignOutView.swift */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
 		FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */; };
@@ -35,6 +36,9 @@
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
 		FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFB801E2285928B700EC3F08 /* death-gif.gif */; };
 		FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801E8285934D600EC3F08 /* TaggedOutView.swift */; };
+		FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */; };
+		FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCD793E287E2919000B4E67 /* Profanity.json */; };
+		FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD7941287E6F98000B4E67 /* LoadingView.swift */; };
 		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +68,7 @@
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		FF65706B287E8E2C005EABDF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
 		FF7A0B71282D67F4003BE9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +88,9 @@
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 		FFB801E2285928B700EC3F08 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif.gif"; sourceTree = "<group>"; };
 		FFB801E8285934D600EC3F08 /* TaggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedOutView.swift; sourceTree = "<group>"; };
+		FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
+		FFCD793E287E2919000B4E67 /* Profanity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
+		FFCD7941287E6F98000B4E67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,10 +151,14 @@
 				FF8FF6EB284F7DF400BC747B /* Info.plist */,
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */,
+				FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */,
+				FFCD793E287E2919000B4E67 /* Profanity.json */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
+				FF65706B287E8E2C005EABDF /* SignOutView.swift */,
+				FFCD7941287E6F98000B4E67 /* LoadingView.swift */,
 				FFB801E8285934D600EC3F08 /* TaggedOutView.swift */,
 				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
@@ -305,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
 				FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */,
@@ -339,10 +352,13 @@
 				FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */,
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
 				49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */,
+				FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
+				FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */,
 				FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */,
+				FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */,
 				FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,

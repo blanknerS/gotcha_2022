@@ -98,8 +98,8 @@ struct CountdownView: View {
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
-//        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
-        let myDate = dateFormatter.date(from: "2022-07-13T13:16")! //TESTING DATE!!!!
+        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
+//        let myDate = dateFormatter.date(from: "2022-07-13T13:16")! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
