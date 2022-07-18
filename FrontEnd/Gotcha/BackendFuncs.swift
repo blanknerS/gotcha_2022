@@ -217,13 +217,32 @@ func tagOut(uid: String, lW: String){
         //update the uid's stuff
         updateData(uid: uid, field: "alive", data: false)
         updateData(uid: uid, field: "lastWords", data: lW )
-    
         
+        
+        db.collection("lastWords").document().setData([
+            uid : lW
+        ]) 
+
     
     
     }
     
+
     
+}
+
+func lWBoard() async {
+    let db = Firestore.firestore()
+    
+    db.collection("lastWords").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in querySnapshot!.documents {
+                print(document.data())
+            }
+        }
+    }
 
     
 }

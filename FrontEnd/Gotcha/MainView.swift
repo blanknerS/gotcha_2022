@@ -25,7 +25,7 @@ struct MainView: View {
     @State private var target_name: String =  ""
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
-    @State private var UID: String = "Blake_Ankner23@milton.edu"
+    @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
     @State private var hasLastWords: Bool = false
     
     var body: some View {
@@ -133,6 +133,8 @@ struct MainView: View {
                 if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil{
                     self.isLoading.toggle()
                 }
+                
+                await lWBoard()
             }
         }
         .refreshable { //when the screen is reloaded
