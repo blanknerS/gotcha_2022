@@ -119,6 +119,8 @@ struct MainView: View {
             AppDelegate.orientationLock = .portrait
             
             Task{ //tasks to backend
+                print("THIS IS TO DOUBLECHECK")
+                print(await lWBoard())
         
                 target_name = await fullName(uid: targ(uid: UID))
                 tag_count = await tags(uid: UID)
@@ -134,7 +136,7 @@ struct MainView: View {
                     self.isLoading.toggle()
                 }
                 
-                print(await lWBoard())
+             
             }
         }
         .refreshable { //when the screen is reloaded

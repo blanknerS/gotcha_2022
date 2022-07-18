@@ -152,8 +152,7 @@ struct LeaderBoardView: View {
         .onAppear{
             
             Task{
-                await lWBoard() 
-                print(lastWords)
+    
             }
         }
     }
