@@ -58,6 +58,7 @@ struct TaggedOutView: View {
                                 finalWords.censor()
                                 print("first attempt: ", finalWords)
                                 print("Last words: \(finalWords.censored())")
+                                
                             
                                 //Tag out with database
                                 tagOut(uid: UID, lW: finalWords)

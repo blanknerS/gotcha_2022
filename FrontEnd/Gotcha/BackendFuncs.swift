@@ -154,11 +154,6 @@ func fullName(uid: String) async -> String {
 
 
 
-
-
-
-
-
 func updateData(uid: String, field: String, data: Any) {
     
     let db = Firestore.firestore()
@@ -220,7 +215,8 @@ func tagOut(uid: String, lW: String){
         
         
         db.collection("lastWords").document().setData([
-            uid : lW
+            "Author": uid,
+             "Lw" : lW
         ]) 
 
     
@@ -231,18 +227,33 @@ func tagOut(uid: String, lW: String){
     
 }
 
+public struct Words: Identifiable, Codable{ //setup Word object
+    let sentence: String
+    let author: String
+    public var id = UUID()
+}
+
 func lWBoard() async {
     let db = Firestore.firestore()
+    var allWords = [Words]()
     
     db.collection("lastWords").getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
             for document in querySnapshot!.documents {
-                print(document.data())
+                let lastWords = document.data()["Lw"]
+                let author = document.data()["Author"]
+                allWords.append(Words(sentence: lastWords as! String, author: author as! String))
+//                print(type(of: allWords))
             }
+//            print("new")
+//            print(type(of: allWords))
         }
     }
-
-    
+    print("*******")
+    print(allWords)
+    print(type(of: allWords))
+    print("*******")
+//    return allWords
 }

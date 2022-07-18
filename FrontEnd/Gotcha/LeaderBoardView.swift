@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct LeaderBoardView: View {
     
@@ -21,7 +22,7 @@ struct LeaderBoardView: View {
         let id = UUID()
     }
     
-    struct Words: Identifiable{ //setup Word object
+    public struct Words: Identifiable, Codable{ //setup Word object
         let sentence: String
         let id = UUID()
         let author: String
@@ -36,15 +37,15 @@ struct LeaderBoardView: View {
         Leader(name: "Player8", tags: "3", pos: "9"),
         
     ]
+//
+//    var lastWords: [Words] = [
+//        Words(sentence: "KHW#FL", author: "Blake"),
+//        Words(sentence: "KHW#FL", author: "Blake")
+//    ]
     
-    var lastWords: [Words] = [ //make list of Word Objects
-        Words(sentence: "BLEH BLEH ALW wlhfelwhflwhflwhflwlfhwelfjlwehjfkwhekf", author: "Blake"),
-        Words(sentence: "BLEH jldvnle", author: "Yaman"),
-        Words(sentence: "lwoiefnweflw", author: "Andrew"),
-        Words(sentence: "BLFJh3oI", author: "Ryan"),
+    @State private var lastWords: [Gotcha.Words] = [
+//        Gotcha.Words(sentence: " ", author: " "),
     ]
-    
-    @State private var ids = Set<UUID>()
     
     var body: some View {
         List{
@@ -147,6 +148,13 @@ struct LeaderBoardView: View {
                 .frame(height: 180)
             }
             .listRowBackground(Color("darkGrey"))
+        }
+        .onAppear{
+            
+            Task{
+                await lWBoard() 
+                print(lastWords)
+            }
         }
     }
 }
