@@ -152,7 +152,10 @@ struct LeaderBoardView: View {
         .onAppear{
             
             Task{
-    
+                lastWords = await lWBoard()
+                print("***VIEW PRINT:***")
+                print(lastWords)
+                print("***STOPE VIEW PRINT***")
             }
         }
     }

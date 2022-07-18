@@ -244,7 +244,7 @@ func lWBoard() async -> [Words]{
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print(document.data())
+//                    print(document.data())
                     
                     let lastWords = document.get("Lw")
                     let author = document.get("Author")
@@ -253,19 +253,15 @@ func lWBoard() async -> [Words]{
                 }
             }
         }
-        
-    
-        
     }
         
     catch{
         print("Err")
     }
     
-    print("RETURNING THIS")
+    print("***START FXN PRINT:***")
     print(allWords)
+    print("***STOP FXN PRINT***")
 
     return allWords
-    
-    
 }
