@@ -134,7 +134,7 @@ struct MainView: View {
                     self.isLoading.toggle()
                 }
                 
-                await lWBoard()
+                print(await lWBoard())
             }
         }
         .refreshable { //when the screen is reloaded

@@ -232,17 +232,40 @@ func tagOut(uid: String, lW: String){
 }
 
 func lWBoard() async {
+    
+    struct Words: Identifiable{ //setup Word object
+        let sentence: String
+        let id = UUID()
+        let author: String
+    }
+    
+    
+    
+    
+    
+    
     let db = Firestore.firestore()
+    
+    var lastWords: [Any] = [ //make list of Word Objects
+    ]
     
     db.collection("lastWords").getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
             for document in querySnapshot!.documents {
-                print(document.data())
+                
+                lastWords.append(document.data())
+                
+                //IF WE DO A GLOBAL LIST MAKE SURE TO BLANK IT EACH TIME 
+        
+                
             }
         }
+        
+      
     }
+
 
     
 }
