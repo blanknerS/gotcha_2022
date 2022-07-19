@@ -217,51 +217,6 @@ func tagOut(uid: String, lW: String){
         db.collection("lastWords").document().setData([
             "Author": uid,
              "Lw" : lW
-        ]) 
-
-    
-    
+        ])
     }
-    
-
-    
-}
-
-public struct Words: Identifiable, Codable{ //setup Word object
-    let sentence: String
-    let author: String
-    public var id = UUID()
-}
-
-func lWBoard() async -> [Words]{
-    let db = Firestore.firestore()
-    var allWords = [Words]()
-    
-    do{
-        
-        try await db.collection("lastWords").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-//                    print(document.data())
-                    
-                    let lastWords = document.get("Lw")
-                    let author = document.get("Author")
-                    
-                    allWords.append(Words(sentence: lastWords as! String, author: author as! String))
-                }
-            }
-        }
-    }
-        
-    catch{
-        print("Err")
-    }
-    
-    print("***START FXN PRINT:***")
-    print(allWords)
-    print("***STOP FXN PRINT***")
-
-    return allWords
 }
