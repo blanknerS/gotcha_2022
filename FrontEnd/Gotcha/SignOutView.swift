@@ -13,13 +13,26 @@ struct SignOutView: View {
     
     var body: some View {
         VStack{
-            Button(action: {
-                model_passed.signOut()
-            }) {
-                Text("Sign Out")
+            ZStack{
+                Circle()
+                    .foregroundColor(Color("offGrey"))
+                    .frame(maxWidth: 220, maxHeight:220)
+                    .scaledToFit()
+                Button(action: { //OAUTH STUFF @Tommy haha
+                    model_passed.signOut()}, label: {Image(systemName: "peacesign")
+                       .resizable()
+                       .foregroundColor(Color("titleGrey"))
+                       .frame(maxWidth: 200, maxHeight:200)
+                       .scaledToFit()})
             }
+            .padding(.bottom, 5)
+            Text("Sign Out")
+                .foregroundColor(Color("lightGrey"))
+                .font(.title)
+                .padding()
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("darkGrey"))
     }
 }
 

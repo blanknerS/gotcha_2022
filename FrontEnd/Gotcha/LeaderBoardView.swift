@@ -52,6 +52,10 @@ struct LeaderBoardView: View {
         Leader(name: " ", tags: 0, pos: 10),
     ]
     
+    @State private var isPresented: Bool = false
+    @State private var clickedSentence: String = ""
+    @State private var clickedAuthor: String = ""
+    
     var body: some View {
         List{
             Section(){ //LEADER BOARD
@@ -142,12 +146,26 @@ struct LeaderBoardView: View {
                     ForEach(lastWords) { word in //ALL Last Words !! Only want to show like 5 here!!
                         HStack{
                             Text(word.sentence)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .lineLimit(2)
                             Spacer()
                             Text("- \(word.author)")
+                        }
+                        .onTapGesture{
+                            print("clicked: \(word.sentence)")
+                            clickedSentence = word.sentence
+                            clickedAuthor = word.author
+                            isPresented.toggle()
                         }
                         .foregroundColor(Color("lightGrey"))
                         .frame(height: 40)
                         Divider()
+                    }
+                }
+                .popup(isPresented: $isPresented) {
+                    BottomPopupView{
+                        ClickedLastWordsView(words: clickedSentence, author: clickedAuthor)
+                            .task(delayText)
                     }
                 }
                 .frame(height: 180)
@@ -217,6 +235,11 @@ struct LeaderBoardView: View {
         leaders = data
         //Do what you want
     }
+    private func delayText() async {
+            // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
+            try? await Task.sleep(nanoseconds: 4_500_000_000)
+            isPresented = false
+        }
 }
 
 //Preview Provider
@@ -224,5 +247,33 @@ struct LeaderBoardView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderBoardView()
             .preferredColorScheme(.dark)
+    }
+}
+
+struct OverlayModifier<OverlayView: View>: ViewModifier {
+    
+    @Binding var isPresented: Bool
+    let overlayView: OverlayView
+    
+    init(isPresented: Binding<Bool>, @ViewBuilder overlayView: @escaping () -> OverlayView) {
+        self._isPresented = isPresented
+        self.overlayView = overlayView()
+    }
+    
+    func body(content: Content) -> some View {
+        content.overlay(isPresented ? overlayView : nil)
+    }
+}
+
+extension View {
+    
+    func popup<OverlayView: View>(isPresented: Binding<Bool>,
+                                  blurRadius: CGFloat = 3,
+                                  blurAnimation: Animation? = .linear,
+                                  @ViewBuilder overlayView: @escaping () -> OverlayView) -> some View {
+        return blur(radius: isPresented.wrappedValue ? blurRadius : 0)
+//            .animation(blurAnimation)
+            .allowsHitTesting(!isPresented.wrappedValue)
+            .modifier(OverlayModifier(isPresented: isPresented, overlayView: overlayView))
     }
 }
