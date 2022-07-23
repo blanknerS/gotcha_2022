@@ -28,6 +28,8 @@ struct MainView: View {
     @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
     @State private var hasLastWords: Bool = false
     
+    let game_started = UserDefaults.standard.bool(forKey: "game_on")
+    
     var body: some View {
                 
         VStack{
@@ -35,7 +37,7 @@ struct MainView: View {
                 if model.isLoggedIn && model.partOfMilton{ //if the user is logged in through oauth
                     TabView { //make tab view with:
                         if isIn{ //only show if not tagged out !!CHANGE TO DB!!
-                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count) //Profile View
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count,leaderBoard_pos: 10) //Profile View
     //                        ProfileView()
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
@@ -46,11 +48,6 @@ struct MainView: View {
                             .preferredColorScheme(.dark)
                             .tabItem { //added to tab bar @ bottom of screen
                                 Label("Leaderboard", systemImage: "crown.fill")}
-                        
-                        CountdownView(user: model.givenName, dDay: $gotchaTime, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
-                            .preferredColorScheme(.dark)
-                            .tabItem { //added to tab bar @ bottom of screen
-                                Label("Countdown", systemImage: "timer")}
                         
                         SignOutView(model_passed: model) //Leader Board View
                             .preferredColorScheme(.dark)
@@ -108,12 +105,20 @@ struct MainView: View {
                         }
                     }
                 }
+                if !gotchaTime && !game_started{
+                    CountdownView(user: model.givenName, dDay: $gotchaTime, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
+                        .preferredColorScheme(.dark)
+                        .tabItem { //added to tab bar @ bottom of screen
+                            Label("Countdown", systemImage: "timer")}
+                }
                 if isLoading{
                     LoadingView()
                 }
             }
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
+            
+//            UserDefaults.standard.set(false, forKey: "game_on")
             
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
             AppDelegate.orientationLock = .portrait
@@ -130,7 +135,9 @@ struct MainView: View {
                     hasLastWords = true
                 }
                 
-                if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil{
+                print(gotchaTime)
+                
+                if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil && game_started != nil{
                     self.isLoading.toggle()
                 }
                 
@@ -141,6 +148,10 @@ struct MainView: View {
         //            reload the user information here
                 }
     }
+}
+
+struct UsefulValues {
+    static var cornerRadius = 30.0
 }
 
 ////Preview provider

@@ -27,9 +27,37 @@ struct SignOutView: View {
             }
             .padding(.bottom, 5)
             Text("Sign Out")
-                .foregroundColor(Color("lightGrey"))
+                .foregroundColor(Color("titleGrey"))
                 .font(.title)
                 .padding()
+            Divider().frame(maxWidth: 200, maxHeight:30)
+                .foregroundColor(Color("lightGrey"))
+//            IT SUPPORT
+            Link(destination: URL(string: "mailto:gotchaatmilton@gmail.com?bcc=blake_ankner23@milton.edu,andrew_rodriguez23@milton.edu,yaman_habip23@milton.edu")!) {
+                HStack{
+                    Image(systemName: "iphone.slash")
+                    Text("-- I.T. Help")
+                }
+                .padding(10)
+                .foregroundColor(Color("titleGrey"))
+                .background(Color("offGrey"))
+                .frame(width: .infinity, height: .infinity, alignment: .bottom)
+                .cornerRadius(5)
+                .font(.title3)
+            }
+//            SGA SUPPORT
+            Link(destination: URL(string: "mailto:robin_storey23@milton.edu,victor_chen23@milton.edu")!) {
+                HStack{
+                    Image(systemName: "exclamationmark.shield.fill")
+                    Text("-- SGA Help")
+                }
+                .padding(10)
+                .foregroundColor(Color("titleGrey"))
+                .background(Color("offGrey"))
+                .frame(width: .infinity, height: .infinity, alignment: .bottom)
+                .cornerRadius(5)
+                .font(.title3)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("darkGrey"))

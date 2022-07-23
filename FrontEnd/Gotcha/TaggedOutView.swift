@@ -61,7 +61,7 @@ struct TaggedOutView: View {
                                 
                             
                                 //Tag out with database
-                                tagOut(uid: UID, lW: finalWords)
+                                tagOut(uid: UID, lW: finalWords, TimeStanp: "\(Date.now)")
                                 tagged_view.toggle()
                             }
                             else{

@@ -168,7 +168,7 @@ func updateData(uid: String, field: String, data: Any) {
 }
 
 
-func tagOut(uid: String, lW: String){
+func tagOut(uid: String, lW: String, TimeStanp: String){
     //Reference to a specific firebase document within the collection users
     let db = Firestore.firestore()
     let docRef = db.document("data/" + uid)
@@ -214,9 +214,9 @@ func tagOut(uid: String, lW: String){
         updateData(uid: uid, field: "lastWords", data: lW )
         
         
-        db.collection("lastWords").document().setData([
+        db.collection("lastWords").document(TimeStanp).setData([
             "Author": uid,
-             "Lw" : lW
+             "Lw" : lW,
         ])
     }
 }

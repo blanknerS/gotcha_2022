@@ -7,17 +7,29 @@
 
 import SwiftUI
 import MessageUI
+import AVKit
+
 
 struct CountdownView: View {
     
     @State var nowDate: Date = Date() //Current Date that updates with screen
     @State var user : String //User name inherited from View call
+    
     @Binding var dDay: Bool
+    
+    @State var audioPlayer: AVAudioPlayer!
     
     var referenceDate: Date //gotcha date referenced later
     var timer: Timer { //Make a one second timer
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             self.nowDate = Date()
+            self.dDay = countDownString().4
+            if !self.audioPlayer.isPlaying && !self.dDay{
+                self.audioPlayer.play()
+            }
+            if self.dDay{
+                self.audioPlayer.stop()
+            }
         }
     }
     
@@ -75,6 +87,13 @@ struct CountdownView: View {
             .offset(y:20)
             .onAppear(perform: {
                 _ = self.timer
+                let sound = Bundle.main.path(forResource: "clock-ticking-audio", ofType: "mp3")
+                self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(.playback)
+                } catch(let error) {
+                    print(error.localizedDescription)
+                }
             })
             HStack{
                 Text("Days")
@@ -93,13 +112,13 @@ struct CountdownView: View {
     
     func countDownString() -> (String, String, String, String, Bool) { //counttdown function
         
-        var GOTCHA_TIME = false
+        var gotchaDay: Bool = false
         
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
-        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
-//        let myDate = dateFormatter.date(from: "2022-07-13T13:16")! //TESTING DATE!!!!
+//        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
+        let myDate = dateFormatter.date(from: "2022-07-22T00:36")! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
@@ -124,8 +143,10 @@ struct CountdownView: View {
         if int_day == 0 && int_hour == 0 && int_minute == 10 && int_second == 0{
             print("T-10 Minutes") //add notification trigger here
         }
-        if int_day == 0 && int_hour == 0 && int_minute == 0 && int_second == 0{
-            GOTCHA_TIME = true
+        if int_day <= 0 && int_hour <= 0 && int_minute <= 0 && int_second <= 0{
+            gotchaDay = true
+            UserDefaults.standard.set(true, forKey: "game_on")
+//            print("gotcha_time: \(gotchaDay)")
         }
         
         let days = String(format: "%02d", components.day ?? 00)
@@ -133,7 +154,7 @@ struct CountdownView: View {
         let minutes = String(format: "%02d", components.minute ?? 00)
         let seconds = String(format: "%02d", components.second ?? 00)
         
-        return (days, hours, minutes, seconds, GOTCHA_TIME)
+        return (days, hours, minutes, seconds, gotchaDay)
     }
 }
 
