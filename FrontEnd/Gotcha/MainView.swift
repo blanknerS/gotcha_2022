@@ -13,7 +13,7 @@ import AVKit
 
 struct MainView: View {
         
-    @StateObject var model = UserAuthModel() //Make object of the Auth Model
+    let model: UserAuthModel //Make object of the Auth Model
     @State private var isIn: Bool = true
     @State private var show_glitch_screen: Bool = false
     @State private var show_tag_screen: Bool = true
@@ -27,7 +27,7 @@ struct MainView: View {
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
     @State private var numTabs: Int = 3
-    @State private var UID: String = "blake_ankner23@milton.edu"
+    @Binding  var UID: String
     
     @State private var selectedTab = 0
     
@@ -44,6 +44,9 @@ struct MainView: View {
                         if isIn{
                             ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count,leaderBoard_pos: 10) //Profile View
     //                        ProfileView()
+                                .onAppear{
+                                    print(UID + "<-- UID")
+                                }
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
                                     Image(systemName: "person.fill")
@@ -161,10 +164,10 @@ struct MainView: View {
                             }
                         }
                 }
-                if !model.isLoggedIn{ // //if user NOT logged in
-                    LoginView(model_passed: model, UID: $UID) //Login View
-                        .preferredColorScheme(.dark)
-                }
+//                if !model.isLoggedIn{ // //if user NOT logged in
+//                    LoginView(model_passed: model, UID: $UID) //Login View
+//                        .preferredColorScheme(.dark)
+//                }
             }
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!

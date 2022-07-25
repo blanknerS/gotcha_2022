@@ -12,7 +12,8 @@ import Firebase
 @main
 struct GotchaApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-//    @StateObject var model = UserAuthModel()
+    @StateObject var model = UserAuthModel()
+    @State private var UID = ""
     init() {
         FirebaseApp.configure() //need PLIST
     }
@@ -20,7 +21,14 @@ struct GotchaApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack{
-                MainView()
+                if !model.isLoggedIn{ // //if user NOT logged in
+                    LoginView(model_passed: model, UID: $UID) //Login View
+                        .onDisappear{UID = model.email}
+                        .preferredColorScheme(.dark)
+                }
+                else{
+                    MainView(model: model,UID: $UID)
+                }
             }
         }
     }

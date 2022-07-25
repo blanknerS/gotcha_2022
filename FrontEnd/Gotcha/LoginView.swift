@@ -59,6 +59,7 @@ struct LoginView: View {
                         }
                 .onAppear {
                           GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                              UID = model_passed.email
                           }
                 }
                 .onChange(of: model_passed.isLoggedIn) { newValue in //This is the cmopletino function!
