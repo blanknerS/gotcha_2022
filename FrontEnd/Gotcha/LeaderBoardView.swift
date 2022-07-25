@@ -38,11 +38,15 @@ struct LeaderBoardView: View {
 //
 //    ]
 
-    @State private var lastWords: [Words] = []
+    @State private var lastWords: [Words] = [
+        Words(sentence: "BLAH BLAH", author: "Blake"),
+        Words(sentence: "BLAH BLAH", author: "Andrew"),
+        Words(sentence: "BLAH BLAH", author: "Terry"),
+    ]
     @State private var leaders: [Leader] = [
-        Leader(name: " ", tags: 0, pos: 1),
-        Leader(name: " ", tags: 0, pos: 2),
-        Leader(name: " ", tags: 0, pos: 3),
+        Leader(name: "", tags: 0, pos: 1),
+        Leader(name: "", tags: 0, pos: 2),
+        Leader(name: "", tags: 0, pos: 3),
         Leader(name: " ", tags: 0, pos: 4),
         Leader(name: " ", tags: 0, pos: 5),
         Leader(name: " ", tags: 0, pos: 6),
@@ -58,119 +62,192 @@ struct LeaderBoardView: View {
     
     var body: some View {
         List{
-            Section(){ //LEADER BOARD
-                VStack(alignment: .leading){ //cutsom section header
-                    Label("Leaderboard", systemImage: "list.number")
-                        .foregroundColor(Color("titleGrey"))
-                }
-                .padding(.top)
-                .padding(.bottom, 5)
-                .listRowSeparator(.hidden)
-                
-                HStack{ //HSTACK: Centering the trophy images
-                    Spacer()
-                    Image("trophies")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: 250, maxHeight: 100)
-                        .padding(.top, 8)
-                    Spacer()
-                }
-                .padding(.bottom)
-                
-                ScrollView{
-                    HStack{ //first place
-                        Text("1st") //name
-                            .foregroundColor(Color("gold"))
-                        Spacer()
-                        Text(leaders[0].name) //name
-                            .foregroundColor(Color("gold"))
-                        Spacer()
-                        Label("\(leaders[0].tags)", systemImage: "checkmark.shield.fill") //tags
-                            .foregroundColor(Color("gold"))
-                    }
-                    .frame(height: 40)
-                    Divider()
-                    HStack{ //second place
-                        Text("2nd")
-                            .foregroundColor(Color("silver"))
-                        Spacer()
-                        Text(leaders[1].name)
-                            .foregroundColor(Color("silver"))
-                        Spacer()
-                        Label("\(leaders[1].tags)", systemImage: "checkmark.shield.fill")
-                            .foregroundColor(Color("silver"))
-                    }
-                    .frame(height: 40)
-                    Divider()
-                    HStack{ //third place
-                        Text("3rd")
-                            .foregroundColor(Color("bronze"))
-                        Spacer()
-                        Text(leaders[2].name)
-                            .foregroundColor(Color("bronze"))
-                        Spacer()
-                        Label("\(leaders[2].tags)", systemImage: "checkmark.shield.fill")
-                            .foregroundColor(Color("bronze"))
-                    }
-                    .frame(height: 40)
-                    Divider()
-                    ForEach(3..<10) { i in //rest of players on leaderboard
-                        HStack{
-                            Text("\(i+1)th")
-                                .foregroundColor(Color("mediumGrey"))
-                            Spacer()
-                            Text(self.leaders[i].name) //name
-                                .foregroundColor(Color("mediumGrey"))
-                            Spacer()
-                            Label("\(self.leaders[i].tags)", systemImage: "checkmark.shield.fill") //tags
-                                .foregroundColor(Color("mediumGrey"))
-                        }
-                        .frame(height: 30)
-                        Divider()
-                    }
-                }
-                .frame(height: 180)
+            HStack(){
+                Text("Leaderboard")
+                    .font(Font.title2.bold())
             }
-            .listRowBackground(Color("darkGrey"))
+            VStack{
+                Section(){ //LEADER BOARD
+                    HStack{ //HSTACK: Centering the trophy images
+                        Spacer()
+                        Image("trophies")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: 250, maxHeight: 100)
+                            .padding(.top, 8)
+                        Spacer()
+                    }
+                    .padding(.bottom)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            HStack{
+                                VStack{
+                                    HStack{
+                                        Text("1st")
+                                            .font(.caption)
+                                            .frame(width: .infinity, height: .infinity, alignment: .leading)
+                                        Spacer()
+                                    }
+                                    ZStack{
+                                        Circle()
+                                            .foregroundColor(Color("offGold"))
+                                            .frame(width: 65, height: 65)
+                                        Text("\(leaders[0].tags)")
+                                            .foregroundColor(Color("white"))
+                                            .font(.system(size: 35, weight: .bold))
+
+                                    }
+                                    Text(leaders[0].name)
+                                }
+                            }
+                            .padding()
+                            .background(Color("gold"))
+                            .cornerRadius(UsefulValues.cornerRadius)
+                            .frame(width: 140, height: .infinity)
+                            
+                            HStack{
+                                VStack{
+                                    HStack{
+                                        Text("2nd")
+                                            .font(.caption)
+                                            .frame(width: .infinity, height: .infinity, alignment: .leading)
+                                        Spacer()
+                                    }
+                                    ZStack{
+                                        Circle()
+                                            .foregroundColor(Color("offGrey"))
+                                            .frame(width: 65, height: 65)
+                                        Text("\(leaders[1].tags)")
+                                            .foregroundColor(Color("white"))
+                                            .font(.system(size: 35, weight: .bold))
+
+                                    }
+                                    Text(leaders[1].name)
+                                }
+                            }
+                            .padding()
+                            .background(Color("silver"))
+                            .cornerRadius(UsefulValues.cornerRadius)
+                            .frame(width: 140, height: .infinity)
+                            
+                            HStack{
+                                VStack{
+                                    HStack{
+                                        Text("3rd")
+                                            .font(.caption)
+                                            .frame(width: .infinity, height: .infinity, alignment: .leading)
+                                        Spacer()
+                                    }
+                                    ZStack{
+                                        Circle()
+                                            .foregroundColor(Color("brown"))
+                                            .frame(width: 65, height: 65)
+                                        Text("\(leaders[2].tags)")
+                                            .foregroundColor(Color("white"))
+                                            .font(.system(size: 35, weight: .bold))
+
+                                    }
+                                    Text(leaders[2].name)
+                                }
+                            }
+                            .padding()
+                            .background(Color("bronze"))
+                            .cornerRadius(UsefulValues.cornerRadius)
+                            .frame(width: 140, height: .infinity)
+                            
+                            ForEach(3..<10) { i in //rest of players on leaderboard
+                                HStack{
+                                    VStack{
+                                        HStack{
+                                            Text("\(i+1)th")
+                                                .font(.caption)
+                                                .frame(width: .infinity, height: .infinity, alignment: .leading)
+                                            Spacer()
+                                        }
+                                        ZStack{
+                                            Circle()
+                                                .foregroundColor(Color("offGrey"))
+                                                .frame(width: 65, height: 65)
+                                            Text("\(self.leaders[i].tags)")
+                                                .foregroundColor(Color("white"))
+                                                .font(.system(size: 35, weight: .bold))
+                                        }
+                                        Text(self.leaders[i].name)
+                                    }
+                                }
+                                .padding()
+                                .background(Color("titleGrey"))
+                                .opacity(0.6)
+                                .cornerRadius(UsefulValues.cornerRadius)
+                                .frame(width: 140, height: .infinity)
+                            }
+                        }
+                    }
+                }
+            }
+            .padding()
+            .background(Color("darkGrey"))
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color("darkestGrey").opacity(0.0))
+            .cornerRadius(UsefulValues.cornerRadius)
             
-            Section(){ // LAST WORDS
-                VStack(alignment: .leading){
-                    Label("Last Words", systemImage: "highlighter")
-                        .foregroundColor(Color("titleGrey"))
-                }
-                .listRowSeparator(.hidden)
-                .padding(.top)
-                .padding(.bottom, 5)
-                ScrollView{
-                    ForEach(lastWords) { word in //ALL Last Words !! Only want to show like 5 here!!
-                        HStack{
-                            Text(word.sentence)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .lineLimit(2)
-                            Spacer()
-                            Text("- \(word.author)")
-                        }
-                        .onTapGesture{
-                            print("clicked: \(word.sentence)")
-                            clickedSentence = word.sentence
-                            clickedAuthor = word.author
-                            isPresented.toggle()
-                        }
-                        .foregroundColor(Color("lightGrey"))
-                        .frame(height: 40)
-                        Divider()
-                    }
-                }
-                .popup(isPresented: $isPresented) {
-                    BottomPopupView{
-                        ClickedLastWordsView(words: clickedSentence, author: clickedAuthor)
-                            .task(delayText)
-                    }
-                }
-                .frame(height: 180)
+            HStack(){
+                Text("Last Words")
+                    .font(Font.title2.bold())
             }
-            .listRowBackground(Color("darkGrey"))
+            .padding(.top)
+            
+            VStack{
+                Section(){
+                    ScrollView(.vertical, showsIndicators: false){
+                        VStack{
+                            ForEach(lastWords) { word in
+                                VStack{
+                                    HStack{
+                                        Text(word.sentence)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                            .lineLimit(2)
+                                            .foregroundColor(Color("white"))
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        Spacer(minLength: 150)
+                                        Text("-\(word.author)")
+                                            .font(.caption)
+                                            .foregroundColor(Color("offWhite"))
+                                            .opacity(0.5)
+                                    }
+                                }
+                                .padding()
+                                .background(Color("lightGrey"))
+                                .cornerRadius(UsefulValues.cornerRadius)
+                                .frame(maxHeight: 100)
+                                .onTapGesture{
+                                    print("clicked: \(word.sentence)")
+                                    clickedSentence = word.sentence
+                                    clickedAuthor = word.author
+                                    isPresented.toggle()
+                                }
+                            }
+                        }
+                    }
+                    .popup(isPresented: $isPresented) {
+                        BottomPopupView{
+                            ClickedLastWordsView(words: clickedSentence, author: clickedAuthor)
+                                .task(delayText)
+                        }
+                    }
+                    .frame(height: 180)
+                }
+                .frame(maxHeight: .infinity)
+                .listRowBackground(Color("darkestGrey").opacity(0.3))
+            }
+            .padding()
+            .background(Color("titleGrey").opacity(0.0))
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color("white").opacity(0.0))
+            .cornerRadius(UsefulValues.cornerRadius)
         }
         .onAppear{
             Task{
@@ -186,7 +263,7 @@ struct LeaderBoardView: View {
     
     func readLastWords(){
         let db = Firestore.firestore()
-        db.collection("lastWords").getDocuments() { (querySnapshot, err) in
+        db.collection("lastWords").order(by: "TimeStamp", descending: true).getDocuments() { (querySnapshot, err) in
             var allWords: [Words] = []
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -200,6 +277,7 @@ struct LeaderBoardView: View {
                     allWords.append(Words(sentence: lastWords as! String, author: author as! String))
                 }
             }
+//            allWords.reverse()
             self.didFetchData(data: allWords)
         }
     }

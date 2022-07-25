@@ -12,13 +12,16 @@ import Firebase
 @main
 struct GotchaApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//    @StateObject var model = UserAuthModel()
     init() {
         FirebaseApp.configure() //need PLIST
     }
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ZStack{
+                MainView()
+            }
         }
     }
 }

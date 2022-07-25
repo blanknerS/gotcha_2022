@@ -13,7 +13,8 @@ import AVKit
 struct CountdownView: View {
     
     @State var nowDate: Date = Date() //Current Date that updates with screen
-    @State var user : String //User name inherited from View call
+    
+    let model: UserAuthModel
     
     @Binding var dDay: Bool
     
@@ -35,7 +36,7 @@ struct CountdownView: View {
     
     var body: some View {
         VStack (spacing: 10){
-            Text("WELCOME  \(user)".uppercased()) //Text of User Name
+            Text("WELCOME  \(model.givenName)".uppercased()) //Text of User Name
                 .glowBorder(color: .black, lineWidth: 5) //glowBorder is a swift file that adds unnique styling
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
@@ -118,7 +119,7 @@ struct CountdownView: View {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
 //        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
-        let myDate = dateFormatter.date(from: "2022-07-22T00:36")! //TESTING DATE!!!!
+        let myDate = dateFormatter.date(from: "2022-07-23T23:46")! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar

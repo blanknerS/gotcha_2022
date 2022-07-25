@@ -11,11 +11,12 @@ import AVKit
 
 struct TaggedOutView: View {
     
+    let model_passed: UserAuthModel
+    
     @State var finalWords: String = ""
     @Binding var tagged_view: Bool
     
     @Binding var audioPlayer: AVAudioPlayer!
-    @Binding var UID: String
     
     @State var basicText: String = "Last Words"
     
@@ -61,7 +62,7 @@ struct TaggedOutView: View {
                                 
                             
                                 //Tag out with database
-                                tagOut(uid: UID, lW: finalWords, TimeStanp: "\(Date.now)")
+                                tagOut(uid: model_passed.givenName, lW: finalWords, TimeStanp: Date.now)
                                 tagged_view.toggle()
                             }
                             else{

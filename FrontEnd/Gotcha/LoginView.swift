@@ -12,9 +12,11 @@ import GoogleSignInSwift
 struct LoginView: View {
     
     let signInConfig = GIDConfiguration(clientID: BuildConfig.googleKey) //configure OAuth to gotcha group
-    @State private var username = ""
-    
+//    @State private var username = ""
+//    @Binding var username: String
+        
     let model_passed: UserAuthModel //get OAuth model from Main screen
+    @Binding var UID: String
            
        fileprivate func SignOutButton() -> Button<Text> { //Signoutt button if needed in future
            Button(action: {
@@ -61,11 +63,9 @@ struct LoginView: View {
                 }
                 .onChange(of: model_passed.isLoggedIn) { newValue in //This is the cmopletino function!
                     if(model_passed.isLoggedIn){
-                        username = model_passed.email
-                        print("logged in: " + username)
-                    } else {
-                        username = ""
-                        print("logged out: " + username)
+                        UID = model_passed.email
+                    } else{
+                        print("err")
                     }
                 }
                 .environmentObject(model_passed)
