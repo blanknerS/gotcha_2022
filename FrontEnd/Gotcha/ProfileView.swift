@@ -18,6 +18,7 @@ struct ProfileView: View {
     
     @Binding var target_name: String
     @Binding var tag_count: Int
+    @Binding var name: String
     
     var leaderBoard_pos: Int
     
@@ -42,7 +43,7 @@ struct ProfileView: View {
                             }
                             .padding(.bottom, 8)
     //                                Text("\(model_passed.givenName)") //name from Oauth Model
-                            Text("Blake Ankner")
+                            Text(name)
                                 .font(.title)
                                 .foregroundColor(Color("white"))
                                 .cornerRadius(20)

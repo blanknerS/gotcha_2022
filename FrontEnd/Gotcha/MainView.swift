@@ -43,7 +43,7 @@ struct MainView: View {
                 if model.isLoggedIn && model.partOfMilton{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
                         if isIn{
-                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count,leaderBoard_pos: 10) //Profile View
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name,leaderBoard_pos: 10) //Profile View
     //                        ProfileView()
                                 .onAppear{
 //                                    print(UID + "<-- UID")
@@ -125,7 +125,7 @@ struct MainView: View {
                     }
                 }
                 if !gotchaTime && !game_started{
-                    CountdownView(model: model, dDay: $gotchaTime, referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
+                    CountdownView(model: model, dDay: $gotchaTime, name: $full_name,referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
                         .preferredColorScheme(.dark)
                         .tabItem { //added to tab bar @ bottom of screen
                             Label("Countdown", systemImage: "timer")

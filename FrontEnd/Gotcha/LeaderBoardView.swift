@@ -315,10 +315,7 @@ struct LeaderBoardView: View {
         }
     }
     func didFetchData2(data: [Leader]){
-//        print("called")
-//        print(data)
         leaders = data
-        //Do what you want
     }
     private func delayText() async {
             // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)

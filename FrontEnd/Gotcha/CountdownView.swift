@@ -18,6 +18,8 @@ struct CountdownView: View {
     
     @Binding var dDay: Bool
     
+    @Binding var name: String
+    
     @State var audioPlayer: AVAudioPlayer!
     
     var referenceDate: Date //gotcha date referenced later
@@ -36,7 +38,7 @@ struct CountdownView: View {
     
     var body: some View {
         VStack (spacing: 10){
-            Text("WELCOME  \(model.givenName)".uppercased()) //Text of User Name
+            Text("WELCOME  \(name)".uppercased()) //Text of User Name
                 .glowBorder(color: .black, lineWidth: 5) //glowBorder is a swift file that adds unnique styling
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
