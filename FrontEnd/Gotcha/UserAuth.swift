@@ -47,7 +47,7 @@ class UserAuthModel: ObservableObject {
                 self.partOfMilton = false
                 self.signOut()
             }
-            print(partOfMilton)
+//            print(partOfMilton)
             
         }else{
             self.isLoggedIn = false

@@ -218,13 +218,20 @@ struct LeaderBoardView: View {
                                             .foregroundColor(Color("offWhite"))
                                             .opacity(0.5)
                                     }
+                                    .padding(.top, 5)
+                                    Rectangle()
+                                        .fill(Color("mediumGrey"))
+                                        .frame(height: 1)
+                                        .edgesIgnoringSafeArea(.horizontal)
                                 }
-                                .padding()
-                                .background(Color("lightGrey"))
+                                .padding(.bottom)
+                                .padding(.leading)
+                                .padding(.trailing)
+//                                .background(Color("lightGrey"))
                                 .cornerRadius(UsefulValues.cornerRadius)
                                 .frame(maxHeight: 100)
                                 .onTapGesture{
-                                    print("clicked: \(word.sentence)")
+//                                    print("clicked: \(word.sentence)")
                                     clickedSentence = word.sentence
                                     clickedAuthor = word.author
                                     isPresented.toggle()
@@ -238,13 +245,13 @@ struct LeaderBoardView: View {
                                 .task(delayText)
                         }
                     }
-                    .frame(height: 180)
+                    .frame(height: 200)
                 }
                 .frame(maxHeight: .infinity)
-                .listRowBackground(Color("darkestGrey").opacity(0.3))
+                .listRowBackground(Color("mediumGrey").opacity(0.3))
             }
             .padding()
-            .background(Color("titleGrey").opacity(0.0))
+            .background(Color("mediumGrey").opacity(0.0))
             .listRowSeparator(.hidden)
             .listRowBackground(Color("white").opacity(0.0))
             .cornerRadius(UsefulValues.cornerRadius)
@@ -308,7 +315,7 @@ struct LeaderBoardView: View {
         }
     }
     func didFetchData2(data: [Leader]){
-        print("called")
+//        print("called")
 //        print(data)
         leaders = data
         //Do what you want

@@ -15,6 +15,7 @@ struct TaggedOutView: View {
     
     @State var finalWords: String = ""
     @Binding var tagged_view: Bool
+    @Binding var name: String
     
     @Binding var audioPlayer: AVAudioPlayer!
     
@@ -57,13 +58,15 @@ struct TaggedOutView: View {
                             }
                             if finalWords != ""{
                                 finalWords.censor()
-                                print("first attempt: ", finalWords)
-                                print("Last words: \(finalWords.censored())")
+//                                print("first attempt: ", finalWords)
+//                                print("Last words: \(finalWords.censored())")
                                 
                             
                                 //Tag out with database
-                                tagOut(uid: model_passed.givenName, lW: finalWords, TimeStanp: Date.now)
+                                tagOut(uid: model_passed.email, lW: finalWords, name: name ,TimeStanp: Date.now)
                                 tagged_view.toggle()
+                                print(model_passed.givenName + "has tagged out")
+                                print("UID = \(model_passed.email)")
                             }
                             else{
                                 basicText = "Please write something"

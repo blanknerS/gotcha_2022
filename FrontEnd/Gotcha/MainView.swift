@@ -28,6 +28,7 @@ struct MainView: View {
     @State private var target_email: String = ""
     @State private var numTabs: Int = 3
     @Binding  var UID: String
+    @State private var full_name: String = ""
     
     @State private var selectedTab = 0
     
@@ -45,7 +46,7 @@ struct MainView: View {
                             ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count,leaderBoard_pos: 10) //Profile View
     //                        ProfileView()
                                 .onAppear{
-                                    print(UID + "<-- UID")
+//                                    print(UID + "<-- UID")
                                 }
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
@@ -98,9 +99,9 @@ struct MainView: View {
                         if !hasLastWords{
                             if show_tag_screen{
                                 VStack{
-                                    TaggedOutView(model_passed: model, tagged_view: $show_tag_screen, audioPlayer: $audioPlayer)
-                                .background(.black)
-                                .frame(width: .infinity, height: .infinity, alignment: .center)
+                                    TaggedOutView(model_passed: model, tagged_view: $show_tag_screen, name: $full_name, audioPlayer: $audioPlayer)
+                                        .background(.black)
+                                        .frame(width: .infinity, height: .infinity, alignment: .center)
                                 
                                 }
                             }
@@ -140,6 +141,8 @@ struct MainView: View {
                                     target_name = await fullName(uid: targ(uid: UID))
                                     tag_count = await tags(uid: UID)
                                     
+                                    full_name = await fullName(uid: UID)
+                                    
                                     isIn = await lifeStatus(uid: UID)
                                     
                                     if !isIn{
@@ -154,10 +157,10 @@ struct MainView: View {
                                         hasLastWords = true
                                     }
                                     
-                                    print(gotchaTime)
+//                                    print(gotchaTime)
                                     
                                     if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil && game_started != nil{
-                                        print("In here")
+//                                        print("In here")
                                         self.isLoading.toggle()
                                     }
                                 }

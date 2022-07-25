@@ -17,7 +17,7 @@ class ProfanityResources {
 struct ProfanityDictionary {
     
     static let profaneWords: Set<String> = {
-        print(ProfanityResources.profanityFileURL())
+//        print(ProfanityResources.profanityFileURL())
         guard let fileURL = ProfanityResources.profanityFileURL() else {
             return Set<String>()
         }
@@ -48,7 +48,7 @@ public struct ProfanityFilter {
             
             cleanString = cleanString.replacingOccurrences(of: word, with: cleanWord, options: [.caseInsensitive], range: nil)
         }
-        print(cleanString)
+//        print(cleanString)
         return cleanString
     }
 }
