@@ -13,8 +13,6 @@
 		49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4B715284006AA00C93A66 /* BackendFuncs.swift */; };
 		49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */; };
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
-		FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389F283A843E0026AB2D /* ReportError.swift */; };
-		FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0938A1283A88DD0026AB2D /* PopUp.swift */; };
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
 		FF3991942839476200963F86 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991932839476200963F86 /* CountdownView.swift */; };
@@ -36,6 +34,9 @@
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
 		FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFB801E2285928B700EC3F08 /* death-gif.gif */; };
 		FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801E8285934D600EC3F08 /* TaggedOutView.swift */; };
+		FFC139AD2886EA93004928F8 /* ClickedLastWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */; };
+		FFC139AF2886EC67004928F8 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AE2886EC67004928F8 /* BottomPopupView.swift */; };
+		FFC139B32887A211004928F8 /* clock-ticking-audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */; };
 		FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */; };
 		FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCD793E287E2919000B4E67 /* Profanity.json */; };
 		FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD7941287E6F98000B4E67 /* LoadingView.swift */; };
@@ -63,8 +64,6 @@
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
 		49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
-		FF09389F283A843E0026AB2D /* ReportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportError.swift; sourceTree = "<group>"; };
-		FF0938A1283A88DD0026AB2D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
@@ -88,6 +87,9 @@
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 		FFB801E2285928B700EC3F08 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif.gif"; sourceTree = "<group>"; };
 		FFB801E8285934D600EC3F08 /* TaggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedOutView.swift; sourceTree = "<group>"; };
+		FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedLastWordsView.swift; sourceTree = "<group>"; };
+		FFC139AE2886EC67004928F8 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
+		FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock-ticking-audio.mp3"; sourceTree = "<group>"; };
 		FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		FFCD793E287E2919000B4E67 /* Profanity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
 		FFCD7941287E6F98000B4E67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -127,7 +129,6 @@
 		FF7A0B61282D67F1003BE9BF = {
 			isa = PBXGroup;
 			children = (
-				FF0938A1283A88DD0026AB2D /* PopUp.swift */,
 				FF7A0B6C282D67F1003BE9BF /* Gotcha */,
 				FF7A0B7D282D67F5003BE9BF /* GotchaTests */,
 				FF7A0B87282D67F5003BE9BF /* GotchaUITests */,
@@ -159,18 +160,20 @@
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
 				FF65706B287E8E2C005EABDF /* SignOutView.swift */,
 				FFCD7941287E6F98000B4E67 /* LoadingView.swift */,
+				FFC139AE2886EC67004928F8 /* BottomPopupView.swift */,
 				FFB801E8285934D600EC3F08 /* TaggedOutView.swift */,
 				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
+				FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */,
 				FFB801E2285928B700EC3F08 /* death-gif.gif */,
 				FF9C9D38285A222200274AB2 /* death-gif-4.gif */,
-				FF09389F283A843E0026AB2D /* ReportError.swift */,
 				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
+				FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */,
 				FF7A0B71282D67F4003BE9BF /* Assets.xcassets */,
 				FF7A0B73282D67F5003BE9BF /* Preview Content */,
 			);
@@ -325,6 +328,7 @@
 				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
 				FF9C9D3F285A684E00274AB2 /* death-audio.mp3 in Resources */,
 				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
+				FFC139B32887A211004928F8 /* clock-ticking-audio.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +353,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0938A0283A843F0026AB2D /* ReportError.swift in Sources */,
 				FF39917D2837236900963F86 /* ProfileView.swift in Sources */,
 				49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */,
+				FFC139AD2886EA93004928F8 /* ClickedLastWordsView.swift in Sources */,
 				FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
@@ -362,8 +366,8 @@
 				FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */,
 				FF7A0B98282D69E4003BE9BF /* LoginView.swift in Sources */,
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
+				FFC139AF2886EC67004928F8 /* BottomPopupView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
-				FF0938A2283A88DD0026AB2D /* PopUp.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
 				FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */,
 			);

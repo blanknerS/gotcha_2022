@@ -14,11 +14,11 @@ struct LeaderBoardView: View {
         UITableView.appearance().backgroundColor = UIColor(Color("offBlack"))
     }
     
-    struct Leader: Identifiable{ //setup Leader object
+    struct Leader: Identifiable, Codable{ //setup Leader object
         
         let name: String
-        let tags: String
-        let pos: String
+        let tags: Int
+        let pos: Int
         let id = UUID()
     }
     
@@ -28,24 +28,33 @@ struct LeaderBoardView: View {
         let author: String
     }
         
-    var leaders: [Leader] = [ //make list of Leader Objects
-        Leader(name: "Player3", tags: "3", pos: "4"),
-        Leader(name: "Player4", tags: "4", pos: "5"),
-        Leader(name: "Player5", tags: "3", pos: "6"),
-        Leader(name: "Player6", tags: "3", pos: "7"),
-        Leader(name: "Player7", tags: "3", pos: "8"),
-        Leader(name: "Player8", tags: "3", pos: "9"),
-        
-    ]
+//    var leaders: [Leader] = [ //make list of Leader Objects
+//        Leader(name: "Player3", tags: "3", pos: "4"),
+//        Leader(name: "Player4", tags: "4", pos: "5"),
+//        Leader(name: "Player5", tags: "3", pos: "6"),
+//        Leader(name: "Player6", tags: "3", pos: "7"),
+//        Leader(name: "Player7", tags: "3", pos: "8"),
+//        Leader(name: "Player8", tags: "3", pos: "9"),
 //
-//    var lastWords: [Words] = [
-//        Words(sentence: "KHW#FL", author: "Blake"),
-//        Words(sentence: "KHW#FL", author: "Blake")
 //    ]
-    
-    @State private var lastWords: [Gotcha.Words] = [
-//        Gotcha.Words(sentence: " ", author: " "),
+
+    @State private var lastWords: [Words] = []
+    @State private var leaders: [Leader] = [
+        Leader(name: " ", tags: 0, pos: 1),
+        Leader(name: " ", tags: 0, pos: 2),
+        Leader(name: " ", tags: 0, pos: 3),
+        Leader(name: " ", tags: 0, pos: 4),
+        Leader(name: " ", tags: 0, pos: 5),
+        Leader(name: " ", tags: 0, pos: 6),
+        Leader(name: " ", tags: 0, pos: 7),
+        Leader(name: " ", tags: 0, pos: 8),
+        Leader(name: " ", tags: 0, pos: 9),
+        Leader(name: " ", tags: 0, pos: 10),
     ]
+    
+    @State private var isPresented: Bool = false
+    @State private var clickedSentence: String = ""
+    @State private var clickedAuthor: String = ""
     
     var body: some View {
         List{
@@ -74,10 +83,10 @@ struct LeaderBoardView: View {
                         Text("1st") //name
                             .foregroundColor(Color("gold"))
                         Spacer()
-                        Text("Blake") //name
+                        Text(leaders[0].name) //name
                             .foregroundColor(Color("gold"))
                         Spacer()
-                        Label("33", systemImage: "checkmark.shield.fill") //tags
+                        Label("\(leaders[0].tags)", systemImage: "checkmark.shield.fill") //tags
                             .foregroundColor(Color("gold"))
                     }
                     .frame(height: 40)
@@ -86,10 +95,10 @@ struct LeaderBoardView: View {
                         Text("2nd")
                             .foregroundColor(Color("silver"))
                         Spacer()
-                        Text("Yaman")
+                        Text(leaders[1].name)
                             .foregroundColor(Color("silver"))
                         Spacer()
-                        Label("22", systemImage: "checkmark.shield.fill")
+                        Label("\(leaders[1].tags)", systemImage: "checkmark.shield.fill")
                             .foregroundColor(Color("silver"))
                     }
                     .frame(height: 40)
@@ -98,23 +107,23 @@ struct LeaderBoardView: View {
                         Text("3rd")
                             .foregroundColor(Color("bronze"))
                         Spacer()
-                        Text("Andrew")
+                        Text(leaders[2].name)
                             .foregroundColor(Color("bronze"))
                         Spacer()
-                        Label("10", systemImage: "checkmark.shield.fill")
+                        Label("\(leaders[2].tags)", systemImage: "checkmark.shield.fill")
                             .foregroundColor(Color("bronze"))
                     }
                     .frame(height: 40)
                     Divider()
-                    ForEach(leaders) { leader in //rest of players on leaderboard
+                    ForEach(3..<10) { i in //rest of players on leaderboard
                         HStack{
-                            Text("\(leader.pos)th")
+                            Text("\(i+1)th")
                                 .foregroundColor(Color("mediumGrey"))
                             Spacer()
-                            Text(leader.name) //name
+                            Text(self.leaders[i].name) //name
                                 .foregroundColor(Color("mediumGrey"))
                             Spacer()
-                            Label(leader.tags, systemImage: "checkmark.shield.fill") //tags
+                            Label("\(self.leaders[i].tags)", systemImage: "checkmark.shield.fill") //tags
                                 .foregroundColor(Color("mediumGrey"))
                         }
                         .frame(height: 30)
@@ -137,12 +146,26 @@ struct LeaderBoardView: View {
                     ForEach(lastWords) { word in //ALL Last Words !! Only want to show like 5 here!!
                         HStack{
                             Text(word.sentence)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .lineLimit(2)
                             Spacer()
                             Text("- \(word.author)")
+                        }
+                        .onTapGesture{
+                            print("clicked: \(word.sentence)")
+                            clickedSentence = word.sentence
+                            clickedAuthor = word.author
+                            isPresented.toggle()
                         }
                         .foregroundColor(Color("lightGrey"))
                         .frame(height: 40)
                         Divider()
+                    }
+                }
+                .popup(isPresented: $isPresented) {
+                    BottomPopupView{
+                        ClickedLastWordsView(words: clickedSentence, author: clickedAuthor)
+                            .task(delayText)
                     }
                 }
                 .frame(height: 180)
@@ -150,19 +173,107 @@ struct LeaderBoardView: View {
             .listRowBackground(Color("darkGrey"))
         }
         .onAppear{
-            
             Task{
-    
+                readLastWords()
+                pullLeaderboard()
             }
         }
+        .refreshable {
+            readLastWords()
+            pullLeaderboard()
+        }
     }
+    
+    func readLastWords(){
+        let db = Firestore.firestore()
+        db.collection("lastWords").getDocuments() { (querySnapshot, err) in
+            var allWords: [Words] = []
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                    print(document.data())
+                    
+                    let lastWords = document.get("Lw")
+                    let author = document.get("Author")
+                    
+                    allWords.append(Words(sentence: lastWords as! String, author: author as! String))
+                }
+            }
+            self.didFetchData(data: allWords)
+        }
+    }
+
+    func didFetchData(data: [Words]){
+        lastWords = data
+        //Do what you want
+    }
+    
+    func pullLeaderboard(){
+        let db = Firestore.firestore()
+        
+        db.collection("data").order(by: "tags", descending: true).limit(to: 10).getDocuments() { (querySnapshot, err) in
+            var allBoard: [Leader] = []
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let firstName = document.get("firstName")
+                    let lastName = document.get("lastName")
+                    let name = (firstName as? String ?? "") + " " + (lastName as? String ?? "")
+                    let tags = document.get("tags") as? Int ?? 0
+                    
+                    allBoard.append(Leader(name: name, tags: tags as! Int, pos: tags as! Int))
+                }
+            }
+            self.didFetchData2(data: allBoard)
+        }
+    }
+    func didFetchData2(data: [Leader]){
+        print("called")
+//        print(data)
+        leaders = data
+        //Do what you want
+    }
+    private func delayText() async {
+            // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
+            try? await Task.sleep(nanoseconds: 4_500_000_000)
+            isPresented = false
+        }
 }
 
-        
 //Preview Provider
 struct LeaderBoardView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderBoardView()
             .preferredColorScheme(.dark)
+    }
+}
+
+struct OverlayModifier<OverlayView: View>: ViewModifier {
+    
+    @Binding var isPresented: Bool
+    let overlayView: OverlayView
+    
+    init(isPresented: Binding<Bool>, @ViewBuilder overlayView: @escaping () -> OverlayView) {
+        self._isPresented = isPresented
+        self.overlayView = overlayView()
+    }
+    
+    func body(content: Content) -> some View {
+        content.overlay(isPresented ? overlayView : nil)
+    }
+}
+
+extension View {
+    
+    func popup<OverlayView: View>(isPresented: Binding<Bool>,
+                                  blurRadius: CGFloat = 3,
+                                  blurAnimation: Animation? = .linear,
+                                  @ViewBuilder overlayView: @escaping () -> OverlayView) -> some View {
+        return blur(radius: isPresented.wrappedValue ? blurRadius : 0)
+//            .animation(blurAnimation)
+            .allowsHitTesting(!isPresented.wrappedValue)
+            .modifier(OverlayModifier(isPresented: isPresented, overlayView: overlayView))
     }
 }

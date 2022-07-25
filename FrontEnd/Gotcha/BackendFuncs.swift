@@ -168,7 +168,7 @@ func updateData(uid: String, field: String, data: Any) {
 }
 
 
-func tagOut(uid: String, lW: String){
+func tagOut(uid: String, lW: String, TimeStanp: String){
     //Reference to a specific firebase document within the collection users
     let db = Firestore.firestore()
     let docRef = db.document("data/" + uid)
@@ -214,58 +214,9 @@ func tagOut(uid: String, lW: String){
         updateData(uid: uid, field: "lastWords", data: lW )
         
         
-        db.collection("lastWords").document().setData([
+        db.collection("lastWords").document(TimeStanp).setData([
             "Author": uid,
-             "Lw" : lW
-        ]) 
-
-    
-    
+             "Lw" : lW,
+        ])
     }
-    
-
-    
-}
-
-public struct Words: Identifiable, Codable{ //setup Word object
-    let sentence: String
-    let author: String
-    public var id = UUID()
-}
-
-func lWBoard() async -> [Words]{
-    let db = Firestore.firestore()
-    var allWords = [Words]()
-    
-    do{
-        
-        try await db.collection("lastWords").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print(document.data())
-                    
-                    let lastWords = document.get("Lw")
-                    let author = document.get("Author")
-                    
-                    allWords.append(Words(sentence: lastWords as! String, author: author as! String))
-                }
-            }
-        }
-        
-    
-        
-    }
-        
-    catch{
-        print("Err")
-    }
-    
-    print("RETURNING THIS")
-    print(allWords)
-
-    return allWords
-    
-    
 }

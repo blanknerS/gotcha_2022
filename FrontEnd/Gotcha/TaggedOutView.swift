@@ -19,7 +19,7 @@ struct TaggedOutView: View {
     
     @State var basicText: String = "Last Words"
     
-    let textLimit = 55
+    let textLimit = 65
         
     
     var body: some View {
@@ -61,7 +61,7 @@ struct TaggedOutView: View {
                                 
                             
                                 //Tag out with database
-                                tagOut(uid: UID, lW: finalWords)
+                                tagOut(uid: UID, lW: finalWords, TimeStanp: "\(Date.now)")
                                 tagged_view.toggle()
                             }
                             else{
