@@ -39,6 +39,7 @@ struct CountdownView: View {
     var body: some View {
         VStack (spacing: 10){
             Text("WELCOME  \(name)".uppercased()) //Text of User Name
+                .multilineTextAlignment(.center)
                 .glowBorder(color: .black, lineWidth: 5) //glowBorder is a swift file that adds unnique styling
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
@@ -121,7 +122,7 @@ struct CountdownView: View {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
 //        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
-        let myDate = dateFormatter.date(from: "2022-07-23T23:46")! //TESTING DATE!!!!
+        let myDate = dateFormatter.date(from: "2022-07-25T21:00")! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar

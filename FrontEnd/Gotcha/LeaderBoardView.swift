@@ -156,31 +156,33 @@ struct LeaderBoardView: View {
                             .cornerRadius(UsefulValues.cornerRadius)
                             .frame(width: 140, height: .infinity)
                             
-                            ForEach(3..<10) { i in //rest of players on leaderboard
-                                HStack{
-                                    VStack{
-                                        HStack{
-                                            Text("\(i+1)th")
-                                                .font(.caption)
-                                                .frame(width: .infinity, height: .infinity, alignment: .leading)
-                                            Spacer()
+                            if leaders.count > 3{
+                                ForEach(3..<leaders.count) { i in //rest of players on leaderboard
+                                    HStack{
+                                        VStack{
+                                            HStack{
+                                                Text("\(i+1)th")
+                                                    .font(.caption)
+                                                    .frame(width: .infinity, height: .infinity, alignment: .leading)
+                                                Spacer()
+                                            }
+                                            ZStack{
+                                                Circle()
+                                                    .foregroundColor(Color("offGrey"))
+                                                    .frame(width: 65, height: 65)
+                                                Text("\(self.leaders[i].tags)")
+                                                    .foregroundColor(Color("white"))
+                                                    .font(.system(size: 35, weight: .bold))
+                                            }
+                                            Text(self.leaders[i].name)
                                         }
-                                        ZStack{
-                                            Circle()
-                                                .foregroundColor(Color("offGrey"))
-                                                .frame(width: 65, height: 65)
-                                            Text("\(self.leaders[i].tags)")
-                                                .foregroundColor(Color("white"))
-                                                .font(.system(size: 35, weight: .bold))
-                                        }
-                                        Text(self.leaders[i].name)
                                     }
+                                    .padding()
+                                    .background(Color("titleGrey"))
+                                    .opacity(0.6)
+                                    .cornerRadius(UsefulValues.cornerRadius)
+                                    .frame(width: 140, height: .infinity)
                                 }
-                                .padding()
-                                .background(Color("titleGrey"))
-                                .opacity(0.6)
-                                .cornerRadius(UsefulValues.cornerRadius)
-                                .frame(width: 140, height: .infinity)
                             }
                         }
                     }
@@ -297,7 +299,7 @@ struct LeaderBoardView: View {
     func pullLeaderboard(){
         let db = Firestore.firestore()
         
-        db.collection("data").order(by: "tags", descending: true).limit(to: 10).getDocuments() { (querySnapshot, err) in
+        db.collection("data").order(by: "tags", descending: true).getDocuments() { (querySnapshot, err) in
             var allBoard: [Leader] = []
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -307,8 +309,14 @@ struct LeaderBoardView: View {
                     let lastName = document.get("lastName")
                     let name = (firstName as? String ?? "") + " " + (lastName as? String ?? "")
                     let tags = document.get("tags") as? Int ?? 0
+                    let alive = document.get("alive") as? Bool
                     
-                    allBoard.append(Leader(name: name, tags: tags as! Int, pos: tags as! Int))
+                    if alive ?? false{
+                        allBoard.append(Leader(name: name, tags: tags as! Int, pos: tags as! Int))
+                    }
+                    if allBoard.count >= 3 {
+                        break
+                    }
                 }
             }
             self.didFetchData2(data: allBoard)

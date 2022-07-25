@@ -44,7 +44,7 @@ public struct ProfanityFilter {
         
         for word in string.profaneWords() {
             
-            let cleanWord = "".padding(toLength: word.count, withPad: "🤐", startingAt: 0)
+            let cleanWord = "".padding(toLength: word.count, withPad: "*", startingAt: 0)
             
             cleanString = cleanString.replacingOccurrences(of: word, with: cleanWord, options: [.caseInsensitive], range: nil)
         }
