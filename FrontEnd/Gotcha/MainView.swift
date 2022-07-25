@@ -135,8 +135,8 @@ struct MainView: View {
                     LoadingView()
                         .onAppear{
                             Task{ //tasks to backend
-                                
                 //                UID = model.email
+                                
                                 if model.isLoggedIn{
                                     target_name = await fullName(uid: targ(uid: UID))
                                     tag_count = await tags(uid: UID)
@@ -176,6 +176,9 @@ struct MainView: View {
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
 //            UserDefaults.standard.set(false, forKey: "game_on")
+            if game_started == nil{
+                UserDefaults.standard.set(false, forKey: "game_on")
+            }
             
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color("mediumGrey"))
