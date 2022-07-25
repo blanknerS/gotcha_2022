@@ -25,7 +25,7 @@ struct MainView: View {
     @State private var target_name: String =  ""
     @State private var tag_count: Int = 0
     @State private var target_email: String = ""
-    @State private var UID: String = "Andrew_Rodriguez23@milton.edu"
+    @State private var UID: String = "andrew_rodriguez23@milton.edu"
     @State private var hasLastWords: Bool = false
     
     let game_started = UserDefaults.standard.bool(forKey: "game_on")
