@@ -124,7 +124,7 @@ struct MainView: View {
                         }
                     }
                 }
-                if !gotchaTime && !game_started{
+                if !gotchaTime && (!game_started || game_started == nil){
                     CountdownView(model: model, dDay: $gotchaTime, name: $full_name,referenceDate: Date()) //Countdown View !!WONT BE HERE IN REAL APP!! !!NEED T PASS OUR STORED NAME NOT FROM GOOGLE!!
                         .preferredColorScheme(.dark)
                         .tabItem { //added to tab bar @ bottom of screen
