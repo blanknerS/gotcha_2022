@@ -69,3 +69,13 @@ struct SignOutView: View {
 //        SignOutView()
 //    }
 //}
+
+struct Previews_SignOutView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack{
+            
+            /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+            
+        }
+    }
+}
