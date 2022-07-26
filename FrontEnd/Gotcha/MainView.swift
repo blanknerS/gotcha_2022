@@ -176,11 +176,8 @@ struct MainView: View {
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
             
 //            UserDefaults.standard.set(false, forKey: "game_on")
-//            if game_started == nil{
-//                UserDefaults.standard.set(false, forKey: "game_on")
-//            }
-//            UserDefaults.standard.removeObject(forKey: "game_on")
-            print(UserDefaults.standard.bool(forKey: "game_on"))
+            
+//            print(UserDefaults.standard.bool(forKey: "game_on"))
             
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color("mediumGrey"))
