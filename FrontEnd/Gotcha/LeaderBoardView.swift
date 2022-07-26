@@ -314,7 +314,7 @@ struct LeaderBoardView: View {
                     if alive ?? false{
                         allBoard.append(Leader(name: name, tags: tags as! Int, pos: tags as! Int))
                     }
-                    if allBoard.count >= 3 {
+                    if allBoard.count >= 10 {
                         break
                     }
                 }
