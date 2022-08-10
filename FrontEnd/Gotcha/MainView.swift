@@ -30,6 +30,8 @@ struct MainView: View {
     @Binding  var UID: String
     @State private var full_name: String = ""
     
+    @State private var leaderboard_pos: Int = 0
+    
     @State private var selectedTab = 0
     
     let game_started = UserDefaults.standard.bool(forKey: "game_on")
@@ -133,6 +135,7 @@ struct MainView: View {
                 }
                 if isLoading{
                     LoadingView()
+                        .preferredColorScheme(.dark)
                         .onAppear{
                             Task{ //tasks to backend
                 //                UID = model.email
@@ -183,6 +186,7 @@ struct MainView: View {
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color("mediumGrey"))
             
             AppDelegate.orientationLock = .portrait
+            
         }
         .refreshable { //when the screen is reloaded
             if model.isLoggedIn{

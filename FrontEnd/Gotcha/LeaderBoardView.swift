@@ -44,8 +44,8 @@ struct LeaderBoardView: View {
         Words(sentence: "BLAH BLAH", author: "Terry"),
     ]
     @State private var leaders: [Leader] = [
-        Leader(name: "", tags: 0, pos: 1),
-        Leader(name: "", tags: 0, pos: 2),
+        Leader(name: "Andrew Rodriguez", tags: 10, pos: 1),
+        Leader(name: "Blake Ankner", tags: 0, pos: 2),
         Leader(name: "", tags: 0, pos: 3),
         Leader(name: " ", tags: 0, pos: 4),
         Leader(name: " ", tags: 0, pos: 5),
@@ -66,6 +66,7 @@ struct LeaderBoardView: View {
                 Text("Leaderboard")
                     .font(Font.title2.bold())
             }
+            .background(Color.white.opacity(0.0))
             VStack{
                 Section(){ //LEADER BOARD
                     HStack{ //HSTACK: Centering the trophy images
@@ -81,7 +82,7 @@ struct LeaderBoardView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            HStack{
+                            HStack{ //First Place
                                 VStack{
                                     HStack{
                                         Text("1st")
@@ -99,6 +100,10 @@ struct LeaderBoardView: View {
 
                                     }
                                     Text(leaders[0].name)
+                                        .lineLimit(1)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .font(.footnote)
+                                        .foregroundColor(Color("white"))
                                 }
                             }
                             .padding()
@@ -106,7 +111,7 @@ struct LeaderBoardView: View {
                             .cornerRadius(UsefulValues.cornerRadius)
                             .frame(width: 140, height: .infinity)
                             
-                            HStack{
+                            HStack{ //Second Place
                                 VStack{
                                     HStack{
                                         Text("2nd")
@@ -124,6 +129,10 @@ struct LeaderBoardView: View {
 
                                     }
                                     Text(leaders[1].name)
+                                        .lineLimit(1)
+                                        .multilineTextAlignment(.center)
+                                        .font(.footnote)
+                                        .foregroundColor(Color("white"))
                                 }
                             }
                             .padding()
@@ -131,7 +140,7 @@ struct LeaderBoardView: View {
                             .cornerRadius(UsefulValues.cornerRadius)
                             .frame(width: 140, height: .infinity)
                             
-                            HStack{
+                            HStack{ //third place
                                 VStack{
                                     HStack{
                                         Text("3rd")
@@ -146,9 +155,12 @@ struct LeaderBoardView: View {
                                         Text("\(leaders[2].tags)")
                                             .foregroundColor(Color("white"))
                                             .font(.system(size: 35, weight: .bold))
-
                                     }
                                     Text(leaders[2].name)
+                                        .lineLimit(1)
+                                        .multilineTextAlignment(.center)
+                                        .font(.footnote)
+                                        .foregroundColor(Color("white"))
                                 }
                             }
                             .padding()
@@ -175,6 +187,10 @@ struct LeaderBoardView: View {
                                                     .font(.system(size: 35, weight: .bold))
                                             }
                                             Text(self.leaders[i].name)
+                                                .lineLimit(1)
+                                                .multilineTextAlignment(.center)
+                                                .font(.footnote)
+                                                .foregroundColor(Color("white"))
                                         }
                                     }
                                     .padding()
@@ -250,7 +266,7 @@ struct LeaderBoardView: View {
                     .frame(height: 200)
                 }
                 .frame(maxHeight: .infinity)
-                .listRowBackground(Color("mediumGrey").opacity(0.3))
+                .listRowBackground(Color("mediumGrey").opacity(0.0))
             }
             .padding()
             .background(Color("mediumGrey").opacity(0.0))
@@ -259,6 +275,7 @@ struct LeaderBoardView: View {
             .cornerRadius(UsefulValues.cornerRadius)
         }
         .onAppear{
+//            UITableView.appearance().backgroundColor = UIColor(Color("darkestGrey").opacity(0.0))
             Task{
                 readLastWords()
                 pullLeaderboard()
