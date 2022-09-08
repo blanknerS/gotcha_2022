@@ -27,25 +27,15 @@ struct LeaderBoardView: View {
         let id = UUID()
         let author: String
     }
-        
-//    var leaders: [Leader] = [ //make list of Leader Objects
-//        Leader(name: "Player3", tags: "3", pos: "4"),
-//        Leader(name: "Player4", tags: "4", pos: "5"),
-//        Leader(name: "Player5", tags: "3", pos: "6"),
-//        Leader(name: "Player6", tags: "3", pos: "7"),
-//        Leader(name: "Player7", tags: "3", pos: "8"),
-//        Leader(name: "Player8", tags: "3", pos: "9"),
-//
-//    ]
 
     @State private var lastWords: [Words] = [
-        Words(sentence: "BLAH BLAH", author: "Blake"),
-        Words(sentence: "BLAH BLAH", author: "Andrew"),
-        Words(sentence: "BLAH BLAH", author: "Terry"),
+        Words(sentence: "", author: ""),
+        Words(sentence: "", author: ""),
+        Words(sentence: "", author: ""),
     ]
     @State private var leaders: [Leader] = [
-        Leader(name: "Andrew Rodriguez", tags: 10, pos: 1),
-        Leader(name: "Blake Ankner", tags: 0, pos: 2),
+        Leader(name: "", tags: 0, pos: 1),
+        Leader(name: "", tags: 0, pos: 2),
         Leader(name: "", tags: 0, pos: 3),
         Leader(name: " ", tags: 0, pos: 4),
         Leader(name: " ", tags: 0, pos: 5),
