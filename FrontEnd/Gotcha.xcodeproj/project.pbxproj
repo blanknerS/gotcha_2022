@@ -521,10 +521,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gotcha/Preview Content\"";
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = T3YAXG54LS;
+=======
+				DEVELOPMENT_TEAM = 7B7M7FR7QW;
+>>>>>>> Stashed changes
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
@@ -539,8 +544,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< Updated upstream
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GotchaGang.Gotcha-yh";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotcha2022.Gotcha;
+>>>>>>> Stashed changes
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,10 +562,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gotcha/Preview Content\"";
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = T3YAXG54LS;
+=======
+				DEVELOPMENT_TEAM = 7B7M7FR7QW;
+>>>>>>> Stashed changes
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
@@ -570,8 +585,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< Updated upstream
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GotchaGang.Gotcha-yh";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotcha2022.Gotcha;
+>>>>>>> Stashed changes
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
