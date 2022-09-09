@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178C5F79289082950089D9CD /* death-gif-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 178C5F78289082950089D9CD /* death-gif-4.gif */; };
+		178C5F7B289082D10089D9CD /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 178C5F7A289082D10089D9CD /* anonymous-glitch.gif */; };
 		17E57EBA283EABDB00424A1E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EB9283EABDB00424A1E /* FirebaseDatabase */; };
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
@@ -29,10 +31,8 @@
 		FF8FF6E8284F7DDD00BC747B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E7284F7DDD00BC747B /* GoogleSignIn */; };
 		FF8FF6EA284F7DDD00BC747B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF8FF6E9284F7DDD00BC747B /* GoogleSignInSwift */; };
 		FF8FF6F1284F800000BC747B /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FF6F0284F800000BC747B /* UserAuth.swift */; };
-		FF9C9D39285A222200274AB2 /* death-gif-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF9C9D38285A222200274AB2 /* death-gif-4.gif */; };
 		FF9C9D3F285A684E00274AB2 /* death-audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */; };
 		FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801DE2852A57400EC3F08 /* BuildConfig.swift */; };
-		FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFB801E2285928B700EC3F08 /* death-gif.gif */; };
 		FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB801E8285934D600EC3F08 /* TaggedOutView.swift */; };
 		FFC139AD2886EA93004928F8 /* ClickedLastWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */; };
 		FFC139AF2886EC67004928F8 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AE2886EC67004928F8 /* BottomPopupView.swift */; };
@@ -40,7 +40,6 @@
 		FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */; };
 		FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCD793E287E2919000B4E67 /* Profanity.json */; };
 		FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD7941287E6F98000B4E67 /* LoadingView.swift */; };
-		FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFE71958283C04E3008299EC /* anonymous-glitch.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178C5F78289082950089D9CD /* death-gif-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif-4.gif"; sourceTree = "<group>"; };
+		178C5F7A289082D10089D9CD /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
 		49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
@@ -82,10 +83,8 @@
 		FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FF8FF6EB284F7DF400BC747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF8FF6F0284F800000BC747B /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
-		FF9C9D38285A222200274AB2 /* death-gif-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif-4.gif"; sourceTree = "<group>"; };
 		FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "death-audio.mp3"; sourceTree = "<group>"; };
 		FFB801DE2852A57400EC3F08 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
-		FFB801E2285928B700EC3F08 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif.gif"; sourceTree = "<group>"; };
 		FFB801E8285934D600EC3F08 /* TaggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedOutView.swift; sourceTree = "<group>"; };
 		FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedLastWordsView.swift; sourceTree = "<group>"; };
 		FFC139AE2886EC67004928F8 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 		FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		FFCD793E287E2919000B4E67 /* Profanity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
 		FFCD7941287E6F98000B4E67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		FFE71958283C04E3008299EC /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +164,9 @@
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
+				178C5F78289082950089D9CD /* death-gif-4.gif */,
+				178C5F7A289082D10089D9CD /* anonymous-glitch.gif */,
 				FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */,
-				FFB801E2285928B700EC3F08 /* death-gif.gif */,
-				FF9C9D38285A222200274AB2 /* death-gif-4.gif */,
-				FFE71958283C04E3008299EC /* anonymous-glitch.gif */,
 				FF09389B2839EA570026AB2D /* GlowBorder.swift */,
 				FF39917C2837236900963F86 /* ProfileView.swift */,
 				FF7A0B9B282D69FB003BE9BF /* LeaderBoardView.swift */,
@@ -321,12 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */,
+				178C5F7B289082D10089D9CD /* anonymous-glitch.gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
-				FFB801E3285928B900EC3F08 /* death-gif.gif in Resources */,
-				FF9C9D39285A222200274AB2 /* death-gif-4.gif in Resources */,
-				FFE71959283C04E3008299EC /* anonymous-glitch.gif in Resources */,
 				FF9C9D3F285A684E00274AB2 /* death-audio.mp3 in Resources */,
+				178C5F79289082950089D9CD /* death-gif-4.gif in Resources */,
 				49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */,
 				FFC139B32887A211004928F8 /* clock-ticking-audio.mp3 in Resources */,
 			);
@@ -528,7 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gotcha/Preview Content\"";
-				DEVELOPMENT_TEAM = 7KB24DX3LW;
+				DEVELOPMENT_TEAM = T3YAXG54LS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
@@ -543,7 +539,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.GotchaGang.Gotcha;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GotchaGang.Gotcha-yh";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -559,7 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gotcha/Preview Content\"";
-				DEVELOPMENT_TEAM = 7KB24DX3LW;
+				DEVELOPMENT_TEAM = T3YAXG54LS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
@@ -574,7 +570,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.GotchaGang.Gotcha;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GotchaGang.Gotcha-yh";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
