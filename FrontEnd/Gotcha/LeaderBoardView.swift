@@ -56,7 +56,7 @@ struct LeaderBoardView: View {
                 Text("Leaderboard")
                     .font(Font.title2.bold())
             }
-            .background(Color.white.opacity(0.0))
+            .listRowBackground(Color("darkGrey").opacity(0.0))
             VStack{
                 Section(){ //LEADER BOARD
                     HStack{ //HSTACK: Centering the trophy images
@@ -195,15 +195,16 @@ struct LeaderBoardView: View {
                 }
             }
             .padding()
-            .background(Color("darkGrey"))
+            .background(Color("offBlack"))
             .listRowSeparator(.hidden)
-            .listRowBackground(Color("darkestGrey").opacity(0.0))
+            .listRowBackground(Color("offBlack").opacity(0.0))
             .cornerRadius(UsefulValues.cornerRadius)
             
             HStack(){
                 Text("Last Words")
                     .font(Font.title2.bold())
             }
+            .listRowBackground(Color("darkGrey").opacity(0.0))
             .padding(.top)
             
             VStack{

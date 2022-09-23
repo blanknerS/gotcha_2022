@@ -16,6 +16,7 @@ struct GotchaApp: App {
     @State private var UID = ""
     init() {
         FirebaseApp.configure() //need PLIST
+        _ = RCValues.sharedInstance
     }
 
     var body: some Scene {
