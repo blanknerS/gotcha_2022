@@ -8,6 +8,13 @@
 import Foundation
 import FirebaseFirestore
 
+extension Date {
+    func dayNumberOfWeek() -> String? {
+        return String(Calendar.current.dateComponents([.weekday], from: self).weekday!)
+    }
+}
+
+
 
 //Needs to be async and have the proper returns
 
@@ -167,6 +174,52 @@ func updateData(uid: String, field: String, data: Any) {
     
 }
 
+func updateStat(id: String) {
+    
+    let db = Firestore.firestore()
+    
+    let stat = id
+    
+    let docRef = db.document("stats/" + stat)
+    
+    docRef.getDocument {snapshot, error in
+        
+        guard let data = snapshot?.data(), error == nil else{
+            return
+        }
+        //save their target and chaser as targ and chase
+        guard let total = data["total"] as? Int else{
+            return
+        }
+        
+        docRef.updateData(["total": total+1
+                          ])
+        
+    }
+}
+
+func readStats (id: String) async -> Int{
+    let db = Firestore.firestore()
+    
+    let stat = id
+    
+    let docRef = db.document("stats/" + stat)
+    
+    var retVal = 0 as Int
+    
+    do{
+        let data = try await docRef.getDocument()
+        
+        let total = data.get("total") as? Int
+        
+        retVal = total!
+    }catch{
+        print("err")
+    }
+    return(retVal)
+    
+}
+
 
 func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
     //Reference to a specific firebase document within the collection users
@@ -187,12 +240,16 @@ func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
             return
         }
         
+
+
+        
         
         //go in a read their chasers tags and increase it by one tag
         let docRef = db.document("data/" + chase)
         
         docRef.getDocument {snapshot, error in
     
+
             guard let data = snapshot?.data(), error == nil else{
                 return
             }
@@ -200,8 +257,39 @@ func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
             guard let tags = data["tags"] as? Int else{
                 return
             }
+            
+            guard let clss = data["class"] as? String else{
+                return
+            }
+            
     
             updateData(uid: chase, field: "tags", data: tags+1)
+            
+            
+            if clss == "senior"{
+                updateStat(id: "I_Tags")
+            }
+            if clss == "junior"{
+                updateStat(id: "II_Tags")
+            }
+            if clss == "sophomore"{
+                updateStat(id: "III_Tags")
+            }
+            if clss == "freshman"{
+                updateStat(id: "IV_Tags")
+            }
+            
+            
+            guard let d_b = data["d/b"] as? String else{
+                return
+            }
+        
+            let day = (Date().dayNumberOfWeek()!)
+            
+            updateStat(id: d_b+day)
+            
+            
+            
             
         }
        
