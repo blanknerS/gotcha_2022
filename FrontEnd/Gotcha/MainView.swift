@@ -36,8 +36,7 @@ struct MainView: View {
     
     let game_started = UserDefaults.standard.bool(forKey: "game_on")
     let minDragTranslationForSwipe: CGFloat = 50
-    
-    
+        
     var body: some View {
                 
         VStack{
@@ -180,7 +179,10 @@ struct MainView: View {
             
 //            UserDefaults.standard.set(false, forKey: "game_on")
             
-//            print(UserDefaults.standard.bool(forKey: "game_on"))
+//            TODO for timeOoutCountdown:
+//            - Make User Default turn to true during day
+            
+//            print("GAME ON: \(UserDefaults.standard.bool(forKey: "game_on"))")
             
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color("mediumGrey"))

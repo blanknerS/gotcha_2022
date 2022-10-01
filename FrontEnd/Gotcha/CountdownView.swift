@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MessageUI
+import Firebase
 import AVKit
 
 
@@ -120,9 +121,13 @@ struct CountdownView: View {
         
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        
+        let pulledTime = RemoteConfig.remoteConfig()
+          .configValue(forKey: "gotchaStartDate")
+          .stringValue ?? "undefined"
 
-//        let myDate = dateFormatter.date(from: "2022-09-10T10:00")!
-        let myDate = dateFormatter.date(from: "2022-07-27T10:35")! //TESTING DATE!!!!
+        let myDate = dateFormatter.date(from: "2022-09-01T10:00")!
+//        let myDate = dateFormatter.date(from: pulledTime)! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
