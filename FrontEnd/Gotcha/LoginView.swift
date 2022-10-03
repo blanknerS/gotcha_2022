@@ -53,7 +53,7 @@ struct LoginView: View {
            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("darkGrey"))
+        .background(Color("darkestGrey"))
         .onOpenURL { url in
                           GIDSignIn.sharedInstance.handle(url)
                         }
