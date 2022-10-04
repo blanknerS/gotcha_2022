@@ -173,7 +173,7 @@ struct TagButton: View {
                         .frame(width: .infinity, height: .infinity)  // Slightly larger than prev. circle
                         .rotationEffect(Angle(degrees: -90))
                     
-                    Image(systemName: isIn ? "xmark.seal.fill" : "checkmark.seal.fill")
+                    Image(systemName: isIn ? "checkmark.seal.fill" : "xmark.seal.fill")
                         .resizable()
                         .frame(width: 90, height: 90)
                         .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))

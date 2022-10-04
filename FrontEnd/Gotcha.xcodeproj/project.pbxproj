@@ -22,11 +22,6 @@
 		FF64E69628CF7D040032E65D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FF64E69528CF7D040032E65D /* FirebaseRemoteConfig */; };
 		FF64E69828CF7E380032E65D /* RCValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E69728CF7E380032E65D /* RCValues.swift */; };
 		FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65706B287E8E2C005EABDF /* SignOutView.swift */; };
-<<<<<<< HEAD
-=======
-		FF66582C28D36B8D00B87627 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF66582B28D36B8D00B87627 /* death-gif.gif */; };
-		FF6EAB4A28E7D4E7002F67CD /* Stats_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EAB4928E7D4E7002F67CD /* Stats_View.swift */; };
->>>>>>> 07c52cdff92b3d0074d4278d5bb78f1fdcb1b276
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
 		FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */; };
@@ -79,11 +74,6 @@
 		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		FF64E69728CF7E380032E65D /* RCValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCValues.swift; sourceTree = "<group>"; };
 		FF65706B287E8E2C005EABDF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		FF66582B28D36B8D00B87627 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "death-gif.gif"; path = "../../../../../Downloads/death-gif.gif"; sourceTree = "<group>"; };
-		FF6EAB4928E7D4E7002F67CD /* Stats_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats_View.swift; sourceTree = "<group>"; };
->>>>>>> 07c52cdff92b3d0074d4278d5bb78f1fdcb1b276
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
 		FF7A0B71282D67F4003BE9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,7 +170,6 @@
 				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
-				FF6EAB4928E7D4E7002F67CD /* Stats_View.swift */,
 				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
 				178C5F78289082950089D9CD /* death-gif-4.gif */,
 				178C5F7A289082D10089D9CD /* anonymous-glitch.gif */,
@@ -377,7 +366,6 @@
 				FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
-				FF6EAB4A28E7D4E7002F67CD /* Stats_View.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */,
 				FF64E69828CF7E380032E65D /* RCValues.swift in Sources */,
