@@ -65,12 +65,20 @@ struct MainView: View {
                             .tag(1)
                             .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                         
+                        Stats_View()
+                            .preferredColorScheme(.dark)
+                            .tabItem {
+                                Image(systemName: "chart.bar.fill")
+                            }
+                            .tag(2)
+                            .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
+                        
                         SignOutView(model_passed: model) //Leader Board View
                             .preferredColorScheme(.dark)
                             .tabItem { //added to tab bar @ bottom of screen
                                 Image(systemName: "person.crop.circle.fill.badge.xmark")
                             }
-                            .tag(2)
+                            .tag(3)
                             .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                     }
                     .accentColor(Color("white")) //tab bar button color when tab is being viewed
@@ -86,13 +94,20 @@ struct MainView: View {
                                 }
                                 .tag(0)
                                 .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
+                            Stats_View()
+                                .preferredColorScheme(.dark)
+                                .tabItem {
+                                    Image(systemName: "chart.bar.fill")
+                                }
+                                .tag(1)
+                                .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                             
                             SignOutView(model_passed: model) //Leader Board View
                                 .preferredColorScheme(.dark)
                                 .tabItem { //added to tab bar @ bottom of screen
                                     Label("Sign Out", systemImage: "person.crop.circle.fill.badge.xmark")
                                 }
-                                .tag(1)
+                                .tag(2)
                                 .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                         }
                         .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
@@ -161,7 +176,6 @@ struct MainView: View {
 //                                    print(gotchaTime)
                                     
                                     if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil && game_started != nil{
-                                        print("TOGGLING LOADING SCREEN: \(self.isLoading)")
                                         self.isLoading.toggle()
                                     }
                                 }

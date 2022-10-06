@@ -70,6 +70,9 @@ struct LoginView: View {
                     }
                 }
                 .environmentObject(model_passed)
+        .onAppear{
+            model_passed.inFireBase = false
+        }
     }
     
 }

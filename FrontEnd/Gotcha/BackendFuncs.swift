@@ -23,12 +23,11 @@ func inDB(uid: String) async -> Bool{
         let data = try await docRef.getDocument()
         let collectedName = data.get("firstName")
         
+        
         if collectedName == nil{
-            print("\(uid) is BAD")
             return false //theyre not
         }
         else{
-            print("\(uid) is CLEAR") //theyre in the FB
             return true
         }
     }
