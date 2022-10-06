@@ -138,7 +138,6 @@ struct MainView: View {
                         .onAppear{
                             Task{ //tasks to backend
                 //                UID = model.email
-                                
                                 if model.isLoggedIn{
                                     target_name = await fullName(uid: targ(uid: UID))
                                     tag_count = await tags(uid: UID)
@@ -148,10 +147,10 @@ struct MainView: View {
                                     isIn = await lifeStatus(uid: UID)
                                     
                                     if !isIn{
-                                        numTabs = 2
+                                        numTabs = 3
                                     }
                                     else{
-                                        numTabs = 3
+                                        numTabs = 4
                                     }
                                                     
                                     let lastWords = await lWStatus(uid: UID)
@@ -162,7 +161,7 @@ struct MainView: View {
 //                                    print(gotchaTime)
                                     
                                     if target_name != nil && tag_count != nil && isIn != nil && lastWords != nil && model.isLoggedIn != nil && game_started != nil{
-//                                        print("In here")
+                                        print("TOGGLING LOADING SCREEN: \(self.isLoading)")
                                         self.isLoading.toggle()
                                     }
                                 }

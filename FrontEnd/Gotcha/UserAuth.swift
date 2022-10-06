@@ -15,6 +15,7 @@
 import Foundation
 import SwiftUI
 import GoogleSignIn
+import Firebase
  
 class UserAuthModel: ObservableObject {
     
@@ -24,12 +25,13 @@ class UserAuthModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     @Published var partOfMilton: Bool = false
+    var inFireBase: Bool = false
     
     init(){
         check()
     }
     
-    func checkStatus(){
+    func checkStatus(){ //async
         if(GIDSignIn.sharedInstance.currentUser != nil){
             let user = GIDSignIn.sharedInstance.currentUser
             guard let user = user else { return }
@@ -40,7 +42,19 @@ class UserAuthModel: ObservableObject {
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
             self.isLoggedIn = true
-            if self.email.contains("milton.edu"){
+            let check_in_FB = Task{
+                let fb_connection = await inDB(uid: "\(self.email)") as! Bool
+                if fb_connection == true{
+                    inFireBase.toggle()
+                }
+                inFireBase = fb_connection
+                print(inFireBase)
+            }
+            check_in_FB
+            print("\(self.email) containts milton.edu: \(self.email.contains("milton.edu")) || \(self.email) in FB: \(inFireBase)")
+//            let fB_connection = await targ(uid: self.email)
+            if self.email.contains("milton.edu") && inFireBase{ //&& (fB_connection != "" || fB_connection != nil)
+                print("\(self.email) containts milton.edu || \(self.email) in FB: \(inFireBase)")
                 self.partOfMilton = true
             }
             else{

@@ -24,7 +24,8 @@ struct GotchaApp: App {
             ZStack{
                 if !model.isLoggedIn{ // //if user NOT logged in
                     LoginView(model_passed: model, UID: $UID) //Login View
-                        .onDisappear{UID = model.email}
+                        .onDisappear{
+                            UID = model.email}
                         .preferredColorScheme(.dark)
                 }
                 else{

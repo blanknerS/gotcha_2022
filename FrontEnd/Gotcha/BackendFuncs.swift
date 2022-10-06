@@ -14,7 +14,37 @@ extension Date {
     }
 }
 
-
+func inDB(uid: String) async -> Bool{
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    var name: String = ""
+    
+    do{
+        let data = try await docRef.getDocument()
+        let collectedName = data.get("firstName")
+        
+        if collectedName == nil{
+            print("\(uid) is BAD")
+            return false //theyre not
+        }
+        else{
+            print("\(uid) is CLEAR") //theyre in the FB
+            return true
+        }
+    }
+    catch{
+        print("WHELP")
+    }
+    print("Still here")
+    return false
+    //    if name != nil || name != ""{
+    //        print("\(uid) is CLEAR")
+    //        return true
+    //    }
+    //    else{
+    //        print("\(uid) is BAD")
+    //        return false
+}
 
 //Needs to be async and have the proper returns
 
