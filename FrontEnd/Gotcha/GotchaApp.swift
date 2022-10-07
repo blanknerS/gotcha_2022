@@ -25,11 +25,23 @@ struct GotchaApp: App {
                 if !model.isLoggedIn{ // //if user NOT logged in
                     LoginView(model_passed: model, UID: $UID) //Login View
                         .onDisappear{
-                            UID = model.email}
+                            UID = model.email
+                            print("LoginView CLOSED ----GotchaApp")
+
+                        }
                         .preferredColorScheme(.dark)
+                        .onAppear{
+                            print("LoginView should be showing ----GotchaApp")
+                        }
                 }
                 else{
                     MainView(model: model,UID: $UID)
+                        .onAppear{
+                            print("\n\nMainView should be showing ----GotchaApp")
+                        }
+                        .onDisappear{
+                            print("MainView CLOSED ----GotchaApp")
+                        }
                 }
             }
         }

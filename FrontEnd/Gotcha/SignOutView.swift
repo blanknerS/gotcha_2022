@@ -20,6 +20,7 @@ struct SignOutView: View {
                     .scaledToFill()
                     .onTapGesture {
                         model_passed.signOut()
+                        print("Signed out -- inside button (SignOutView)")
                     }
             }
             .frame(width: 200, height: 200, alignment: .center)

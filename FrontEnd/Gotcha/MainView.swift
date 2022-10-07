@@ -21,6 +21,8 @@ struct MainView: View {
     @State private var gotchaTime: Bool = false
     @State private var hasLastWords: Bool = false
     
+    @State private var clearedToLoad: Bool = false
+    
     @State var audioPlayer: AVAudioPlayer!
     
     @State private var target_name: String =  ""
@@ -41,7 +43,13 @@ struct MainView: View {
                 
         VStack{
             ZStack{ //Builds back to front as it reads
-                if model.isLoggedIn && model.partOfMilton{ //if the user is logged in through oauth
+//                if !model.is{
+//                    Text("SEE DEVELOPERS")
+//                        .foregroundColor(.red)
+//                        .font(Font.title.bold())
+//                }
+
+                if model.isLoggedIn && model.partOfMilton && clearedToLoad{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
                         if isIn{
                             ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name,leaderBoard_pos: 10) //Profile View
@@ -84,7 +92,7 @@ struct MainView: View {
                     .accentColor(Color("white")) //tab bar button color when tab is being viewed
                 }
 //                Conditional LoginView display
-                if !isIn && model.partOfMilton && model.isLoggedIn{
+                if !isIn && model.partOfMilton && model.isLoggedIn && clearedToLoad{
                     ZStack{
                         TabView(selection: $selectedTab){
                             LeaderBoardView() //Leader Board View
@@ -147,13 +155,14 @@ struct MainView: View {
                             Label("Countdown", systemImage: "timer")
                         }
                 }
-                if isLoading{
+                if isLoading && clearedToLoad{
                     LoadingView()
                         .preferredColorScheme(.dark)
                         .onAppear{
                             Task{ //tasks to backend
-                //                UID = model.email
+                                print("IN THIS MESS")
                                 if model.isLoggedIn{
+                                    
                                     target_name = await fullName(uid: targ(uid: UID))
                                     tag_count = await tags(uid: UID)
                                     
@@ -188,8 +197,27 @@ struct MainView: View {
 //                }
             }
         }
+        .onDisappear{
+            print("DISSAPEER")
+            clearedToLoad = false
+        }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
-            
+            Task{
+                let fb_connection = await inDB(uid: "\(UID)") as! Bool
+                
+                if !fb_connection{
+//                    print("SIGNING \(UID) OUT")
+                    clearedToLoad = false
+//                    model.signOut()
+                    model.checkStatus()
+//                    print("model.isLoggedIn = \(model.isLoggedIn) -- inside appear (Main View)")
+                }
+                else{
+//                    print("NO PROBLEMS WITH \(UID)")
+                    clearedToLoad = true
+                }
+            }
+//            print("APPEAR")
 //            UserDefaults.standard.set(false, forKey: "game_on")
             
 //            TODO for timeOoutCountdown:

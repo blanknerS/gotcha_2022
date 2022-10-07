@@ -3,7 +3,6 @@
 //  Gotcha
 //
 //  Created by Andrew Rodriguez 5/26/22.
-//
 
 import Foundation
 import FirebaseFirestore
@@ -23,7 +22,6 @@ func inDB(uid: String) async -> Bool{
         let data = try await docRef.getDocument()
         let collectedName = data.get("firstName")
         
-        
         if collectedName == nil{
             return false //theyre not
         }
@@ -34,7 +32,6 @@ func inDB(uid: String) async -> Bool{
     catch{
         print("WHELP")
     }
-    print("Still here")
     return false
     //    if name != nil || name != ""{
     //        print("\(uid) is CLEAR")
@@ -155,7 +152,7 @@ func targ(uid: String) async -> String {
     do{
         let data = try await docRef.getDocument()
         let targ = data.get("target") as? String
-        
+                
         retVal = targ!
     }
     

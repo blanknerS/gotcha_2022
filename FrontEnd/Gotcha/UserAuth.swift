@@ -32,7 +32,9 @@ class UserAuthModel: ObservableObject {
     }
     
     func checkStatus(){ //async
+//        print("CHECK STATUS CALLED")
         if(GIDSignIn.sharedInstance.currentUser != nil){
+//            print("CHECK STATUS -- inside IF #1")
             let user = GIDSignIn.sharedInstance.currentUser
             guard let user = user else { return }
             let givenName = user.profile?.givenName
@@ -41,33 +43,32 @@ class UserAuthModel: ObservableObject {
             self.givenName = givenName ?? ""
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
-            self.isLoggedIn = true
             if !self.email.contains("milton.edu"){
                 self.partOfMilton = false
                 self.signOut()
+//                print("Signed out -- inside email check (User Auth)")
                 return
             }
             Task{
+//                print("CHECK STATUS -- inside TASK")
                 let fb_connection = await inDB(uid: "\(self.email)") as! Bool
                 inFireBase = fb_connection
                 print(inFireBase)
                 
                 if inFireBase{
+                    self.isLoggedIn = true
                     self.partOfMilton = true
                 }
                 else{
                     self.partOfMilton = false
                     self.signOut()
+//                    print("Signed out -- inside TASK (User Auth)")
                 }
             }
-            
-//            print("\(self.email) containts milton.edu: \(self.email.contains("milton.edu")) || \(self.email) in FB: \(inFireBase)")
-//            let fB_connection = await targ(uid: self.email)
-            
-//            print(partOfMilton)
-            
-            
-        }else{
+        }
+        else{
+//            self.signOut()
+            print("CHECK STATUS -- inside ELSE #1")
             self.isLoggedIn = false
             self.givenName = "Not Logged In"
             self.email = ""

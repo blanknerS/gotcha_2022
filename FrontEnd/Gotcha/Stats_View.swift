@@ -68,6 +68,7 @@ struct Stats_View: View {
                     .padding()
                     VStack{ //Tuesday
                         Text("\(allTueTags)")
+                            .font(Font.footnote.bold())
                             .foregroundColor(Color("rose"))
                         Rectangle()
                             .frame(width: UIScreen.screenWidth/13, height: CGFloat(allTueTags)/4)
@@ -80,6 +81,7 @@ struct Stats_View: View {
                     .padding()
                     VStack{ //Wednesday
                         Text("\(allWedTags)")
+                            .font(Font.footnote.bold())
                             .foregroundColor(Color("lavender"))
                         Rectangle()
                             .frame(width: UIScreen.screenWidth/13, height: CGFloat(allWedTags)/4)
@@ -92,6 +94,7 @@ struct Stats_View: View {
                     .padding()
                     VStack{ //Thursday
                         Text("\(allThuTags)")
+                            .font(Font.footnote.bold())
                             .foregroundColor(Color("bubblegum"))
                         Rectangle()
                             .frame(width: UIScreen.screenWidth/13, height: CGFloat(allThuTags)/4)
@@ -104,6 +107,7 @@ struct Stats_View: View {
                     .padding()
                     VStack{ //Friday
                         Text("\(allFriTags)")
+                            .font(Font.footnote.bold())
                             .foregroundColor(Color("bahama_beach"))
                         Rectangle()
                             .frame(width: UIScreen.screenWidth/13, height: CGFloat(allFriTags)/4)
