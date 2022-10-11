@@ -25,14 +25,21 @@ class UserAuthModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     @Published var partOfMilton: Bool = false
+<<<<<<< Updated upstream
     @Published var inFireBase: Bool = false
+=======
+    var inFireBase: Bool = false
+>>>>>>> Stashed changes
     
     init(){
 //        check()
     }
     
     func checkStatus(){ //async
+<<<<<<< Updated upstream
 //        print("CHECK STATUS CALLED")
+=======
+>>>>>>> Stashed changes
         if(GIDSignIn.sharedInstance.currentUser != nil){
 //            print("CHECK STATUS -- inside IF #1")
             let user = GIDSignIn.sharedInstance.currentUser
@@ -43,7 +50,27 @@ class UserAuthModel: ObservableObject {
             self.givenName = givenName ?? ""
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
+<<<<<<< Updated upstream
             if !self.email.contains("milton.edu"){
+=======
+            self.isLoggedIn = true
+            let check_in_FB = Task{
+                let fb_connection = await inDB(uid: "\(self.email)") as! Bool
+                if fb_connection == true{
+                    inFireBase.toggle()
+                }
+                inFireBase = fb_connection
+                print(inFireBase)
+            }
+            check_in_FB
+            print("\(self.email) containts milton.edu: \(self.email.contains("milton.edu")) || \(self.email) in FB: \(inFireBase)")
+//            let fB_connection = await targ(uid: self.email)
+            if self.email.contains("milton.edu") && inFireBase{ //&& (fB_connection != "" || fB_connection != nil)
+                print("\(self.email) containts milton.edu || \(self.email) in FB: \(inFireBase)")
+                self.partOfMilton = true
+            }
+            else{
+>>>>>>> Stashed changes
                 self.partOfMilton = false
                 self.signOut()
 //                print("Signed out -- inside email check (User Auth)")
