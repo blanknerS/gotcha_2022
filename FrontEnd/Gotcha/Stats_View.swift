@@ -5,37 +5,32 @@
 //  Created by Blake Ankner on 9/30/22.
 //
 import SwiftUI
-import AVFAudio
 
 struct Stats_View: View {
     
     var widthModifier: Float = 7.5
-    @State private var allMonTags: Int = 0
-    @State private var allTueTags: Int = 0
-    @State private var allWedTags: Int = 0
-    @State private var allThuTags: Int = 0
-    @State private var allFriTags: Int = 0
+    var allMonTags: Int = 510
+    var allTueTags: Int = 320
+    var allWedTags: Int = 275
+    var allThuTags: Int = 36
+    var allFriTags: Int = 50
     
-    @State private var classI_Tags: Int = 0
-    @State private var classII_Tags: Int = 0
-    @State private var classIII_Tags: Int = 0
-    @State private var classVI_Tags: Int = 0
+    var classI_Tags: Int = 400
+    var classII_Tags: Int = 35
+    var classIII_Tags: Int = 20
+    var classVI_Tags: Int = 2
     
-    @State private var dayMon_Tags: Int = 0
-    @State private var dayTue_Tags: Int = 0
-    @State private var dayWed_Tags: Int = 0
-    @State private var dayThu_Tags: Int = 0
-    @State private var dayFri_Tags: Int = 0
+    var dayMon_Tags: Int = 212
+    var dayTue_Tags: Int = 49
+    var dayWed_Tags: Int = 74
+    var dayThu_Tags: Int = 20
+    var dayFri_Tags: Int = 34
     
-    @State private var boarderMon_Tags: Int = 0
-    @State private var boarderTue_Tags: Int = 0
-    @State private var boarderWed_Tags: Int = 0
-    @State private var boarderThu_Tags: Int = 0
-    @State private var boarderFri_Tags: Int = 0
-    
-//    @State var audioPlayer: AVAudioPlayer! //adding audio
-    
-    let sound = Bundle.main.path(forResource: "info_loading", ofType: "mp3")
+    var boarderMon_Tags: Int = 96
+    var boarderTue_Tags: Int = 37
+    var boarderWed_Tags: Int = 89
+    var boarderThu_Tags: Int = 43
+    var boarderFri_Tags: Int = 7
     
     var body: some View {
         List{
@@ -408,61 +403,18 @@ struct Stats_View: View {
         .background(Color("darkestGrey"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear(){
-            
-//            Addind audio::
-//            self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-//            do {
-//                try AVAudioSession.sharedInstance().setCategory(.playback)
-//            } catch(let error) {
-//                print(error.localizedDescription)
-//            }
-//
-//            self.audioPlayer.play()
-            
-            
-            Task{
-                allMonTags = await readStats(id: "day1")
-                allTueTags = await readStats(id: "day2")
-                allWedTags = await readStats(id: "day3")
-                allThuTags = await readStats(id: "day4")
-                allFriTags = await readStats(id: "day5")
-                
-                classI_Tags = await readStats(id: "I_Tags")
-                classII_Tags = await readStats(id: "II_Tags")
-                classIII_Tags = await readStats(id: "III_Tags")
-                classVI_Tags = await readStats(id: "IV_Tags") //DB set up with IV instead of VI (dont worry)
-                
-                dayMon_Tags = await readStats(id: "day1")
-                dayTue_Tags = await readStats(id: "day2")
-                dayWed_Tags = await readStats(id: "day3")
-                dayThu_Tags = await readStats(id: "day4")
-                dayFri_Tags = await readStats(id: "day5")
-                
-                boarderMon_Tags = await readStats(id: "boarder1")
-                boarderTue_Tags = await readStats(id: "boarder2")
-                boarderWed_Tags = await readStats(id: "boarder3")
-                boarderThu_Tags = await readStats(id: "boarder4")
-                boarderFri_Tags = await readStats(id: "boarder5")
-            }
-            
             UITableView.appearance().backgroundColor = UIColor(Color("darkestGrey")) //change View Backgrounnd
+            
         }
-//        .onDisappear(){ //adding audio to this screen
-//            if self.audioPlayer.isPlaying{
-//                self.audioPlayer.pause()
-//            }
-//        }
     }
 }
 
-//PREVIEW PROVIDER:::
-
-//struct Stats_View_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Stats_View()
-//            .preferredColorScheme(.dark)
-//    }
-//}
+struct Stats_View_Previews: PreviewProvider {
+    static var previews: some View {
+        Stats_View()
+            .preferredColorScheme(.dark)
+    }
+}
 
 extension UIScreen{
     static let screenWidth = UIScreen.main.bounds.size.width
