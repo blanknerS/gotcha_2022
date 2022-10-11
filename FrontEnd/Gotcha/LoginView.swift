@@ -12,6 +12,7 @@ import GoogleSignInSwift
 struct LoginView: View {
     
     let signInConfig = GIDConfiguration(clientID: BuildConfig.googleKey) //configure OAuth to gotcha group
+    let needsSupport: String = ""
 //    @State private var username = ""
 //    @Binding var username: String
         
@@ -70,6 +71,9 @@ struct LoginView: View {
                     }
                 }
                 .environmentObject(model_passed)
+        .onAppear{
+            model_passed.inFireBase = false
+        }
     }
     
 }

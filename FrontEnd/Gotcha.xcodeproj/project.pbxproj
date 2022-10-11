@@ -19,6 +19,7 @@
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
 		FF3991942839476200963F86 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991932839476200963F86 /* CountdownView.swift */; };
+		FF62C82128EE5A24005F0698 /* Stats_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62C82028EE5A24005F0698 /* Stats_View.swift */; };
 		FF64E69628CF7D040032E65D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FF64E69528CF7D040032E65D /* FirebaseRemoteConfig */; };
 		FF64E69828CF7E380032E65D /* RCValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E69728CF7E380032E65D /* RCValues.swift */; };
 		FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65706B287E8E2C005EABDF /* SignOutView.swift */; };
@@ -72,6 +73,7 @@
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		FF3991932839476200963F86 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		FF62C82028EE5A24005F0698 /* Stats_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stats_View.swift; sourceTree = "<group>"; };
 		FF64E69728CF7E380032E65D /* RCValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCValues.swift; sourceTree = "<group>"; };
 		FF65706B287E8E2C005EABDF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 				FFC139AE2886EC67004928F8 /* BottomPopupView.swift */,
 				FFB801E8285934D600EC3F08 /* TaggedOutView.swift */,
 				FFB801DE2852A57400EC3F08 /* BuildConfig.swift */,
+				FF62C82028EE5A24005F0698 /* Stats_View.swift */,
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
@@ -366,6 +369,7 @@
 				FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
+				FF62C82128EE5A24005F0698 /* Stats_View.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */,
 				FF64E69828CF7E380032E65D /* RCValues.swift in Sources */,

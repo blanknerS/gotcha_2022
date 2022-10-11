@@ -3,7 +3,6 @@
 //  Gotcha
 //
 //  Created by Andrew Rodriguez 5/26/22.
-//
 
 import Foundation
 import FirebaseFirestore
@@ -14,7 +13,34 @@ extension Date {
     }
 }
 
-
+func inDB(uid: String) async -> Bool{
+    let db = Firestore.firestore()
+    let docRef = db.document("data/" + uid)
+    var name: String = ""
+    
+    do{
+        let data = try await docRef.getDocument()
+        let collectedName = data.get("firstName")
+        
+        if collectedName == nil{
+            return false //theyre not
+        }
+        else{
+            return true
+        }
+    }
+    catch{
+        print("WHELP")
+    }
+    return false
+    //    if name != nil || name != ""{
+    //        print("\(uid) is CLEAR")
+    //        return true
+    //    }
+    //    else{
+    //        print("\(uid) is BAD")
+    //        return false
+}
 
 //Needs to be async and have the proper returns
 
@@ -126,7 +152,7 @@ func targ(uid: String) async -> String {
     do{
         let data = try await docRef.getDocument()
         let targ = data.get("target") as? String
-        
+                
         retVal = targ!
     }
     
