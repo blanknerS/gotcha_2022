@@ -247,6 +247,7 @@ func readStats (id: String) async -> Int{
 }
 
 
+
 func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
     //Reference to a specific firebase document within the collection users
     let db = Firestore.firestore()
@@ -305,6 +306,7 @@ func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
                 updateStat(id: "IV_Tags")
             }
             
+            updateStat(id: "TOTAL")
             
             guard let d_b = data["d/b"] as? String else{
                 return
