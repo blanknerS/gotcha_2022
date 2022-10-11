@@ -25,14 +25,10 @@ struct GotchaApp: App {
                 if !model.isLoggedIn{ // //if user NOT logged in
                     LoginView(model_passed: model, UID: $UID) //Login View
                         .onDisappear{
-<<<<<<< Updated upstream
                             UID = model.email
                             print("LoginView CLOSED ----GotchaApp")
 
                         }
-=======
-                            UID = model.email}
->>>>>>> Stashed changes
                         .preferredColorScheme(.dark)
                         .onAppear{
                             print("LoginView should be showing ----GotchaApp")
