@@ -313,6 +313,7 @@ func tagOut(uid: String, lW: String, name: String,TimeStanp: Date){
             let day = (Date().dayNumberOfWeek()!)
             
             updateStat(id: d_b+day)
+            updateStat(id: "total"+day)
             
             
             
