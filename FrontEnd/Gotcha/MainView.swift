@@ -89,6 +89,7 @@ struct MainView: View {
                             .tag(3)
                             .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                     }
+                    .background(Color("white"))
                     .accentColor(Color("white")) //tab bar button color when tab is being viewed
                 }
 //                Conditional LoginView display
@@ -118,6 +119,7 @@ struct MainView: View {
                                 .tag(2)
                                 .highPriorityGesture(DragGesture().onEnded({self.handleSwipe(translation: $0.translation.width)}))
                         }
+                        .background(Color("white"))
                         .accentColor(Color("secondBlue")) //tab bar button color when tab is being viewed
                         
                         if !hasLastWords{

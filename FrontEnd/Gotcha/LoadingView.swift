@@ -19,7 +19,7 @@ struct LoadingView: View {
             }
             .padding()
             .frame(maxWidth: .infinity,maxHeight: .infinity)
-            .background(Color("darkGrey"))
+            .background(Color("darkestGrey"))
         }
 }
 
