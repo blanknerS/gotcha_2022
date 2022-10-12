@@ -28,7 +28,7 @@ class UserAuthModel: ObservableObject {
     @Published var inFireBase: Bool = false
     
     init(){
-//        check()
+        check()
     }
     
     func checkStatus(){ //async

@@ -404,6 +404,8 @@ struct Stats_View: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear(){
             UITableView.appearance().backgroundColor = UIColor(Color("darkestGrey")) //change View Backgrounnd
+        }
+        .refreshable {
             
         }
     }

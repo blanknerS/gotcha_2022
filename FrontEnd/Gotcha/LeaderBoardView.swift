@@ -195,7 +195,7 @@ struct LeaderBoardView: View {
                 }
             }
             .padding()
-            .background(Color("offBlack"))
+            .background(Color("darkGrey"))
             .listRowSeparator(.hidden)
             .listRowBackground(Color("offBlack").opacity(0.0))
             .cornerRadius(UsefulValues.cornerRadius)
@@ -265,8 +265,9 @@ struct LeaderBoardView: View {
             .listRowBackground(Color("white").opacity(0.0))
             .cornerRadius(UsefulValues.cornerRadius)
         }
+        .background(Color("darkestGrey"))
         .onAppear{
-//            UITableView.appearance().backgroundColor = UIColor(Color("darkestGrey").opacity(0.0))
+//            UITableView.appearance().backgroundColor = UIColor(Color("white"))
             Task{
                 readLastWords()
                 pullLeaderboard()
