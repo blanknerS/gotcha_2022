@@ -15,7 +15,6 @@
 import Foundation
 import SwiftUI
 import GoogleSignIn
-import Firebase
  
 class UserAuthModel: ObservableObject {
     
@@ -25,16 +24,13 @@ class UserAuthModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     @Published var partOfMilton: Bool = false
-    @Published var inFireBase: Bool = false
     
     init(){
-//        check()
+        check()
     }
     
-    func checkStatus(){ //async
-//        print("CHECK STATUS CALLED")
+    func checkStatus(){
         if(GIDSignIn.sharedInstance.currentUser != nil){
-//            print("CHECK STATUS -- inside IF #1")
             let user = GIDSignIn.sharedInstance.currentUser
             guard let user = user else { return }
             let givenName = user.profile?.givenName
@@ -43,32 +39,17 @@ class UserAuthModel: ObservableObject {
             self.givenName = givenName ?? ""
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
-            if !self.email.contains("milton.edu"){
+            self.isLoggedIn = true
+            if self.email.contains("milton.edu"){
+                self.partOfMilton = true
+            }
+            else{
                 self.partOfMilton = false
                 self.signOut()
-//                print("Signed out -- inside email check (User Auth)")
-                return
             }
-            Task{
-//                print("CHECK STATUS -- inside TASK")
-                let fb_connection = await inDB(uid: "\(self.email)") as! Bool
-                inFireBase = fb_connection
-                print(inFireBase)
-                
-                if inFireBase{
-                    self.isLoggedIn = true
-                    self.partOfMilton = true
-                }
-                else{
-                    self.partOfMilton = false
-                    self.signOut()
-//                    print("Signed out -- inside TASK (User Auth)")
-                }
-            }
-        }
-        else{
-//            self.signOut()
-            print("CHECK STATUS -- inside ELSE #1")
+//            print(partOfMilton)
+            
+        }else{
             self.isLoggedIn = false
             self.givenName = "Not Logged In"
             self.email = ""
