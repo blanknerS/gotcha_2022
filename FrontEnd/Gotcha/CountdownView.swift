@@ -126,8 +126,8 @@ struct CountdownView: View {
           .configValue(forKey: "gotchaStartDate")
           .stringValue ?? "undefined"
 
-        let myDate = dateFormatter.date(from: "2022-09-01T10:00")!
-//        let myDate = dateFormatter.date(from: pulledTime)! //TESTING DATE!!!!
+//        let myDate = dateFormatter.date(from: "2022-10-11T22:10")!
+        let myDate = dateFormatter.date(from: pulledTime)! //TESTING DATE!!!!
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar
@@ -153,6 +153,7 @@ struct CountdownView: View {
             print("T-10 Minutes") //add notification trigger here
         }
         if int_day <= 0 && int_hour <= 0 && int_minute <= 0 && int_second <= 0{
+//            print("Turning gotcha time ON")
             gotchaDay = true
             UserDefaults.standard.set(true, forKey: "game_on")
 //            print("gotcha_time: \(gotchaDay)")
