@@ -19,8 +19,8 @@ class RCValues {
     func loadDefaultValues() {
         let appDefaults: [String: Any?] = [
             "appPrimaryColor": "#FBB03B",
-            "countdownDate": "2020-09-15T22:20",
             "gotchaStartDate": "2020-11-10T08:00",
+            "profile_sayings": ["Sorry, not available"],
         ]
         RemoteConfig.remoteConfig().setDefaults(appDefaults as? [String: NSObject])
         print("defaults loaded")

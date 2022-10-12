@@ -20,7 +20,7 @@ struct ProfileView: View {
     @Binding var tag_count: Int
     @Binding var name: String
     
-    var leaderBoard_pos: Int
+    @Binding var saying: String
     
     var body: some View {
         List{ //List SubView
@@ -48,10 +48,11 @@ struct ProfileView: View {
                                 .foregroundColor(Color("white"))
                                 .cornerRadius(20)
                             
-                            Text("#\(leaderBoard_pos) on leaderboard")
-                                .font(.subheadline)
+                            
+                            Text("'\(saying)'")
+                                .font(Font.caption.italic())
                                 .foregroundColor(Color("titleGrey"))
-//                                .padding(.top, 1)
+                                .padding(.top, 0.2)
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -173,7 +174,7 @@ struct TagButton: View {
                         .frame(width: .infinity, height: .infinity)  // Slightly larger than prev. circle
                         .rotationEffect(Angle(degrees: -90))
                     
-                    Image(systemName: isIn ? "checkmark.seal.fill" : "xmark.seal.fill")
+                    Image(systemName: isIn ? "xmark.seal.fill": "checkmark.seal.fill")
                         .resizable()
                         .frame(width: 90, height: 90)
                         .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))

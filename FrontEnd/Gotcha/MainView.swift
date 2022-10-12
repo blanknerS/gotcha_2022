@@ -32,7 +32,7 @@ struct MainView: View {
     @Binding  var UID: String
     @State private var full_name: String = ""
     
-    @State private var leaderboard_pos: Int = 0
+    @State private var saying: String = ""
     
     @State private var selectedTab = 0
     
@@ -52,7 +52,7 @@ struct MainView: View {
                 if model.isLoggedIn && model.partOfMilton && clearedToLoad{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
                         if isIn{
-                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name,leaderBoard_pos: 10) //Profile View
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name, saying: $saying) //Profile View
     //                        ProfileView()
                                 .onAppear{
 //                                    print(UID + "<-- UID")
@@ -162,7 +162,6 @@ struct MainView: View {
                         .preferredColorScheme(.dark)
                         .onAppear{
                             Task{ //tasks to backend
-                                print("IN THIS MESS")
                                 if model.isLoggedIn{
                                     
                                     target_name = await fullName(uid: targ(uid: UID))
@@ -170,7 +169,10 @@ struct MainView: View {
                                     
                                     full_name = await fullName(uid: UID)
                                     
+                                    saying = ProfileSayings.saying
+                                    
                                     isIn = await lifeStatus(uid: UID)
+                                    
                                     
                                     if !isIn{
                                         numTabs = 3
@@ -204,6 +206,15 @@ struct MainView: View {
             clearedToLoad = false
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
+//            UserDefaults.standard.set(false, forKey: "game_on")
+//            print(SayingsDictionaroy())
+//            print("GAME STARTED:  \(game_started)")
+//            print("GOTCHS_TIME: \(gotchaTime)")
+            let sayings = ProfileSayings.saying
+            print("\nSAYINGS:")
+            print(sayings)
+            print(type(of: sayings))
+            print("END SAYINGS\n")
             Task{
                 let fb_connection = await inDB(uid: "\(UID)") as! Bool
                 

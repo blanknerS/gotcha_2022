@@ -41,6 +41,7 @@
 		FFC139AD2886EA93004928F8 /* ClickedLastWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */; };
 		FFC139AF2886EC67004928F8 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC139AE2886EC67004928F8 /* BottomPopupView.swift */; };
 		FFC139B32887A211004928F8 /* clock-ticking-audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */; };
+		FFC2C9F528F668B50080534F /* ProfileSayings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2C9F428F668B40080534F /* ProfileSayings.swift */; };
 		FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */; };
 		FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCD793E287E2919000B4E67 /* Profanity.json */; };
 		FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD7941287E6F98000B4E67 /* LoadingView.swift */; };
@@ -96,6 +97,7 @@
 		FFC139AC2886EA93004928F8 /* ClickedLastWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedLastWordsView.swift; sourceTree = "<group>"; };
 		FFC139AE2886EC67004928F8 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
 		FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock-ticking-audio.mp3"; sourceTree = "<group>"; };
+		FFC2C9F428F668B40080534F /* ProfileSayings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSayings.swift; sourceTree = "<group>"; };
 		FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		FFCD793E287E2919000B4E67 /* Profanity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
 		FFCD7941287E6F98000B4E67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */,
 				FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */,
+				FFC2C9F428F668B40080534F /* ProfileSayings.swift */,
 				FFCD793E287E2919000B4E67 /* Profanity.json */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
@@ -369,6 +372,7 @@
 				FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */,
 				FF3991922839447200963F86 /* GifImageView.swift in Sources */,
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
+				FFC2C9F528F668B50080534F /* ProfileSayings.swift in Sources */,
 				FF62C82128EE5A24005F0698 /* Stats_View.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */,
