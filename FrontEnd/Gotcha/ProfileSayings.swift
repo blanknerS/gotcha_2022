@@ -13,8 +13,13 @@ public struct ProfileSayings {
     
     
     static let saying: String = {
-        let pulled_sayings = RemoteConfig.remoteConfig().configValue(forKey: "profile_sayings").jsonValue as! Array<String>
-        return pulled_sayings.randomElement()!
+        do {
+            let pulled_sayings = try RemoteConfig.remoteConfig().configValue(forKey: "profile_sayings").jsonValue as! Array<String>
+            return pulled_sayings.randomElement()!
+        }
+        catch{
+            return "Not working right now"
+        }
     }()
 }
 

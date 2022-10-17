@@ -52,7 +52,7 @@ struct MainView: View {
                 if model.isLoggedIn && model.partOfMilton && clearedToLoad{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
                         if isIn{
-                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name, saying: $saying) //Profile View
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name, saying: $saying) //Profil`e View
     //                        ProfileView()
                                 .onAppear{
 //                                    print(UID + "<-- UID")
@@ -91,6 +91,10 @@ struct MainView: View {
                     }
                     .background(Color("white"))
                     .accentColor(Color("white")) //tab bar button color when tab is being viewed
+                    .onAppear(){
+                        UITabBar.appearance().backgroundColor = UIColor(Color("darkestGrey").opacity(0.0))
+                    }
+//                    .scrollEdgeAppearance = Color("white").opacity(0.0)
                 }
 //                Conditional LoginView display
                 if !isIn && model.partOfMilton && model.isLoggedIn && clearedToLoad{

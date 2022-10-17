@@ -35,7 +35,7 @@ struct Stats_View: View {
     var body: some View {
         List{
             HStack{ //Page Title
-                Text("STATS")
+                Text("Stats")
                     .font(Font.title2.bold())
             }
             .listRowSeparator(.hidden)
@@ -156,7 +156,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class I VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8)
+                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -177,7 +177,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class II VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8)
+                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -198,7 +198,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class III VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8)
+                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -219,7 +219,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class VI VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8)
+                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -309,7 +309,7 @@ struct Stats_View: View {
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(Color("titleGrey"))
                     }
-                    .frame(width: UIScreen.screenWidth/2.8, height: UIScreen.screenHeight/6)
+                    .frame(width: UIScreen.screenWidth/2.8, height: UIScreen.screenHeight/6.5)
                     .padding()
                     .background(Color("darkGrey"))
                 } //END Day VStack
@@ -385,7 +385,7 @@ struct Stats_View: View {
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(Color("titleGrey"))
                     }
-                    .frame(width: UIScreen.screenWidth/2.8, height: UIScreen.screenHeight/6)
+                    .frame(width: UIScreen.screenWidth/2.8, height: UIScreen.screenHeight/6.5)
                     .padding()
                     .background(Color("darkGrey"))
                 } // END Boarder VStack
@@ -418,10 +418,10 @@ struct Stats_View: View {
             allThuTags = await readStats(id: "total4")
             allFriTags = await readStats(id: "total5")
             
-            classVI_Tags = await readStats(id: "IV_Tags") //dw we just wrote it wrong in the FB
-            classIII_Tags = await readStats(id: "III_Tags")
-            classII_Tags = await readStats(id: "II_Tags")
             classI_Tags = await readStats(id: "I_Tags")
+            classII_Tags = await readStats(id: "II_Tags")
+            classIII_Tags = await readStats(id: "III_Tags")
+            classVI_Tags = await readStats(id: "IV_Tags") //dw we just wrote it wrong in the FB
             
             dayMon_Tags = await readStats(id: "day1")
             dayTue_Tags = await readStats(id: "day2")
