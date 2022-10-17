@@ -21,6 +21,7 @@ class RCValues {
             "appPrimaryColor": "#FBB03B",
             "gotchaStartDate": "2020-11-10T08:00",
             "profile_sayings": ["Sorry, not available"],
+            "clear_UserDefault": false,
         ]
         RemoteConfig.remoteConfig().setDefaults(appDefaults as? [String: NSObject])
         print("defaults loaded")

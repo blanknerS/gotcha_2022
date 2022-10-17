@@ -43,11 +43,6 @@ struct MainView: View {
                 
         VStack{
             ZStack{ //Builds back to front as it reads
-//                if !model.is{
-//                    Text("SEE DEVELOPERS")
-//                        .foregroundColor(.red)
-//                        .font(Font.title.bold())
-//                }
 
                 if model.isLoggedIn && model.partOfMilton && clearedToLoad{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
@@ -199,10 +194,6 @@ struct MainView: View {
                             }
                         }
                 }
-//                if !model.isLoggedIn{ // //if user NOT logged in
-//                    LoginView(model_passed: model, UID: $UID) //Login View
-//                        .preferredColorScheme(.dark)
-//                }
             }
         }
         .onDisappear{
@@ -210,10 +201,6 @@ struct MainView: View {
             clearedToLoad = false
         }
         .onAppear{ //when screen is first shown LOAD THE USER INFO ONCE!
-//            UserDefaults.standard.set(false, forKey: "game_on")
-//            print(SayingsDictionaroy())
-//            print("GAME STARTED:  \(game_started)")
-//            print("GOTCHS_TIME: \(gotchaTime)")
             let sayings = ProfileSayings.saying
             print("\nSAYINGS:")
             print(sayings)

@@ -44,6 +44,15 @@ struct GotchaApp: App {
                         }
                 }
             }
+            .onAppear(){
+                let clear_defaults = RemoteConfig.remoteConfig()
+                  .configValue(forKey: "clear_UserDefault")
+                  .boolValue
+                
+                if clear_defaults == true{
+                    UserDefaults.standard.set(false, forKey: "game_on")
+                }
+            }
         }
     }
 }
