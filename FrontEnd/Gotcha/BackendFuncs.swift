@@ -9,7 +9,7 @@ import FirebaseFirestore
 
 extension Date {
     func dayNumberOfWeek() -> String? {
-        return String(Calendar.current.dateComponents([.weekday], from: self).weekday!)
+        return String(Calendar.current.dateComponents([.weekday], from: self).weekday! - 1)
     }
 }
 

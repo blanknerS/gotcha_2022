@@ -22,6 +22,8 @@
 		FF64E69828CF7E380032E65D /* RCValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64E69728CF7E380032E65D /* RCValues.swift */; };
 		FF65706C287E8E2C005EABDF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65706B287E8E2C005EABDF /* SignOutView.swift */; };
 		FF66582C28D36B8D00B87627 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF66582B28D36B8D00B87627 /* death-gif.gif */; };
+		FF6E69E4290747DB00C1BF40 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E69E3290747DB00C1BF40 /* SignInWithAppleDelegates.swift */; };
+		FF6E69E629074C4000C1BF40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF6E69E529074C4000C1BF40 /* GoogleService-Info.plist */; };
 		FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */; };
 		FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B71282D67F4003BE9BF /* Assets.xcassets */; };
 		FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A0B74282D67F5003BE9BF /* Preview Assets.xcassets */; };
@@ -44,7 +46,7 @@
 		FFCD793D287E2731000B4E67 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */; };
 		FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCD793E287E2919000B4E67 /* Profanity.json */; };
 		FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD7941287E6F98000B4E67 /* LoadingView.swift */; };
-		FFE2609C28FC8E8500DE6F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFE2609B28FC8E8400DE6F2B /* GoogleService-Info.plist */; };
+		FFFAD3802900B42300402033 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFAD37F2900B42300402033 /* SignInWithApple.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		FF64E69728CF7E380032E65D /* RCValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCValues.swift; sourceTree = "<group>"; };
 		FF65706B287E8E2C005EABDF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		FF66582B28D36B8D00B87627 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "death-gif.gif"; path = "../../../../../Downloads/death-gif.gif"; sourceTree = "<group>"; };
+		FF6E69E3290747DB00C1BF40 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		FF6E69E529074C4000C1BF40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF7A0B6A282D67F1003BE9BF /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaApp.swift; sourceTree = "<group>"; };
 		FF7A0B71282D67F4003BE9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +104,8 @@
 		FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		FFCD793E287E2919000B4E67 /* Profanity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
 		FFCD7941287E6F98000B4E67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		FFE2609B28FC8E8400DE6F2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FFFAD37E29009C5500402033 /* Gotcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gotcha.entitlements; sourceTree = "<group>"; };
+		FFFAD37F2900B42300402033 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,14 +162,17 @@
 		FF7A0B6C282D67F1003BE9BF /* Gotcha */ = {
 			isa = PBXGroup;
 			children = (
+				FFFAD37E29009C5500402033 /* Gotcha.entitlements */,
 				FF8FF6EB284F7DF400BC747B /* Info.plist */,
-				FFE2609B28FC8E8400DE6F2B /* GoogleService-Info.plist */,
+				FF6E69E529074C4000C1BF40 /* GoogleService-Info.plist */,
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */,
 				FFC2C9F428F668B40080534F /* ProfileSayings.swift */,
 				FFCD793E287E2919000B4E67 /* Profanity.json */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
+				FF6E69E3290747DB00C1BF40 /* SignInWithAppleDelegates.swift */,
+				FFFAD37F2900B42300402033 /* SignInWithApple.swift */,
 				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
 				FF65706B287E8E2C005EABDF /* SignOutView.swift */,
@@ -335,7 +343,7 @@
 			files = (
 				FF66582C28D36B8D00B87627 /* death-gif.gif in Resources */,
 				FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */,
-				FFE2609C28FC8E8500DE6F2B /* GoogleService-Info.plist in Resources */,
+				FF6E69E629074C4000C1BF40 /* GoogleService-Info.plist in Resources */,
 				178C5F7B289082D10089D9CD /* anonymous-glitch.gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
@@ -374,6 +382,7 @@
 				FFB801DF2852A57500EC3F08 /* BuildConfig.swift in Sources */,
 				FFC2C9F528F668B50080534F /* ProfileSayings.swift in Sources */,
 				FF62C82128EE5A24005F0698 /* Stats_View.swift in Sources */,
+				FFFAD3802900B42300402033 /* SignInWithApple.swift in Sources */,
 				FF3991942839476200963F86 /* CountdownView.swift in Sources */,
 				FFCD7942287E6F98000B4E67 /* LoadingView.swift in Sources */,
 				FF64E69828CF7E380032E65D /* RCValues.swift in Sources */,
@@ -384,6 +393,7 @@
 				FF7A0B9A282D69F1003BE9BF /* MainView.swift in Sources */,
 				FFC139AF2886EC67004928F8 /* BottomPopupView.swift in Sources */,
 				FF7A0B6E282D67F1003BE9BF /* GotchaApp.swift in Sources */,
+				FF6E69E4290747DB00C1BF40 /* SignInWithAppleDelegates.swift in Sources */,
 				FF7A0B9C282D69FB003BE9BF /* LeaderBoardView.swift in Sources */,
 				FFB801E9285934D700EC3F08 /* TaggedOutView.swift in Sources */,
 			);
@@ -541,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gotcha/Gotcha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -559,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotcha2022.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -574,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gotcha/Gotcha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -592,7 +604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotcha2022.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

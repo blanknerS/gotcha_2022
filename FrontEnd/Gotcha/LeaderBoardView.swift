@@ -327,6 +327,9 @@ struct LeaderBoardView: View {
                         break
                     }
                 }
+                if allBoard.count < 10{
+                    allBoard.append(Leader(name: "", tags: 0 as! Int, pos: 0 as! Int))
+                }
             }
             self.didFetchData2(data: allBoard)
         }
