@@ -324,10 +324,12 @@ struct LeaderBoardView: View {
                         allBoard.append(Leader(name: name, tags: tags as! Int, pos: tags as! Int))
                     }
                     if allBoard.count >= 10 {
+                        print("left the allBoard Count...")
                         break
                     }
                 }
-                if allBoard.count < 10{
+                while allBoard.count < 10{
+                    print("Adding to leaderboard")
                     allBoard.append(Leader(name: "", tags: 0 as! Int, pos: 0 as! Int))
                 }
             }

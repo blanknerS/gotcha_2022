@@ -119,6 +119,7 @@ struct Stats_View: View {
                     }
                     .padding()
                 }
+                .frame(maxWidth: .infinity)
             } //END Tag all VStack
             .frame(width: UIScreen.screenWidth/1.2, height: UIScreen.screenHeight/5)
             .padding()
@@ -156,7 +157,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class I VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
+                .frame(width: .infinity, height: .infinity)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -177,7 +178,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class II VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
+                .frame(width: .infinity, height: .infinity)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -198,7 +199,7 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class III VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
+                .frame(width: .infinity, height: .infinity)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
@@ -219,11 +220,12 @@ struct Stats_View: View {
                         .font(Font.caption.italic())
                         .foregroundColor(Color("titleGrey"))
                 } //END Class VI VStack
-                .frame(width: UIScreen.screenWidth/CGFloat(widthModifier), height: UIScreen.screenHeight/8.8)
+                .frame(width: .infinity, height: .infinity)
                 .padding()
                 .background(Color("darkGrey"))
                 .cornerRadius(UsefulValues.cornerRadius)
             } //END Each Class Section
+            .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight/3)
             .listRowSeparator(.hidden)
             .listRowBackground(Color("white").opacity(0.0))
             .listRowInsets(EdgeInsets()) // << avoid extra space
@@ -443,10 +445,4 @@ struct Stats_View_Previews: PreviewProvider {
         Stats_View()
             .preferredColorScheme(.dark)
     }
-}
-
-extension UIScreen{
-    static let screenWidth = UIScreen.main.bounds.size.width
-    static let screenHeight = UIScreen.main.bounds.size.height
-    static let screenSize = UIScreen.main.bounds.size
 }

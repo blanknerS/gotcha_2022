@@ -47,7 +47,7 @@ struct MainView: View {
                 if model.isLoggedIn && model.partOfMilton && clearedToLoad{ //if the user is logged in through oauth
                     TabView(selection: $selectedTab){ //make tab view with:
                         if isIn{
-                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen,audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name, saying: $saying) //Profil`e View
+                            ProfileView(model_passed: model, isOut_passed: $isIn, glitch_bool: $show_glitch_screen, audioPlayer: $audioPlayer, target_name: $target_name, tag_count: $tag_count, name: $full_name, saying: $saying) //Profil`e View
     //                        ProfileView()
                                 .onAppear{
 //                                    print(UID + "<-- UID")
@@ -255,6 +255,12 @@ struct MainView: View {
 
 struct UsefulValues {
     static var cornerRadius = 30.0
+}
+
+extension UIScreen{
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
 }
 
 ////Preview provider

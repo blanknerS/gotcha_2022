@@ -39,15 +39,14 @@ struct ProfileView: View {
 //                                    .resizable()
 //                                    .aspectRatio(contentMode: .fit)
                                     .clipShape(Circle())
-                                    .frame(width: 100, height: 100)
+                                    .frame(width: UIScreen.screenWidth/5, height: UIScreen.screenWidth/5)
                             }
                             .padding(.bottom, 8)
-    //                                Text("\(model_passed.givenName)") //name from Oauth Model
+                            //                                Text("\(model_passed.givenName)") //name from Oauth Model
                             Text(name)
                                 .font(.title)
                                 .foregroundColor(Color("white"))
                                 .cornerRadius(20)
-                            
                             
                             Text("'\(saying)'")
                                 .font(Font.caption.italic())
@@ -55,7 +54,7 @@ struct ProfileView: View {
                                 .padding(.top, 0.2)
                         }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: UIScreen.screenHeight/5)
                 }
                 .padding()
             }
@@ -65,7 +64,7 @@ struct ProfileView: View {
             .listRowBackground(Color("darkestGrey").opacity(0.0))
             .cornerRadius(UsefulValues.cornerRadius)
             
-//            Spacer()
+            //            Spacer()
             
             HStack{
                 VStack(alignment: .leading){ // Number of Tags
@@ -74,11 +73,11 @@ struct ProfileView: View {
                             Text("Tag Count")
                                 .font(Font.title2.bold())
                         }
-//                        .padding(.bottom)
+                        //                        .padding(.bottom)
                         Text("\(tag_count)")
                             .foregroundColor(Color("titleGrey"))
-                            .font(.system(size: 75, weight: .bold))
-                            .frame(width: 100, height: 100)
+                            .font(.system(size: UIScreen.screenWidth/7, weight: .bold))
+                            .frame(width: .infinity, height: .infinity)
                             .padding()
                     }
                     .padding()
@@ -87,7 +86,7 @@ struct ProfileView: View {
                     .background(Color("darkGrey"))
                     .cornerRadius(UsefulValues.cornerRadius)
                 }
-                .frame(width: 150, height: 200)
+                .frame(width: UIScreen.screenWidth/2.7, height: UIScreen.screenHeight/4)
                 
                 Spacer()
                 
@@ -102,13 +101,13 @@ struct ProfileView: View {
                             .listRowBackground(Color("darkGrey"))
                             .padding()
                     }
-    //                .frame(maxWidth: 100)
-                    .listRowSeparator(.hidden)
                     .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .listRowSeparator(.hidden)
                     .background(Color("darkGrey"))
                     .cornerRadius(UsefulValues.cornerRadius)
                 }
-                .frame(maxWidth: 150)
+                .frame(width: UIScreen.screenWidth/2.7, height: UIScreen.screenHeight/4)
             }
             .padding(.top, 10)
             .padding(.bottom, 5)
@@ -122,13 +121,13 @@ struct ProfileView: View {
                             .font(Font.title2.bold())
                     }
                     .padding(.bottom, 5)
-                Text(target_name)
+                    Text(target_name)
                         .font(.title2.italic())
                 }
                 .padding(.bottom, 5)
             }
             .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: UIScreen.screenHeight/6)
             .listRowSeparator(.hidden)
             .background(Color("darkGrey"))
             .cornerRadius(UsefulValues.cornerRadius)
@@ -139,9 +138,7 @@ struct ProfileView: View {
         .listRowSeparator(.hidden)
         .onAppear(){
             UITableView.appearance().backgroundColor = UIColor(Color("darkestGrey")) //change View Backgrounnd
-           
         }
-//        .background(Color("green"))
     }
 }
 
@@ -163,83 +160,88 @@ struct TagButton: View {
     @Binding var audioPlayer: AVAudioPlayer!
     
     var body: some View {
-            VStack {  // VSTACK: Button and Tagginng Out Texts
-                ZStack {  // Button Back and the Spining Button
-                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                    Circle()  // Background circle
-                        .foregroundColor(Color("offGrey"))
-                    Circle()  // Surrounding circle trimline: moves from 0 position to 100
-                        .trim(from: 0.0, to: circleProgress)
-                        .stroke(Color("salmon"), lineWidth: 5)
-                        .frame(width: .infinity, height: .infinity)  // Slightly larger than prev. circle
-                        .rotationEffect(Angle(degrees: -90))
-                    
-                    Image(systemName: isIn ? "xmark.seal.fill": "checkmark.seal.fill")
-                        .resizable()
-                        .frame(width: 90, height: 90)
-                        .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))
-                        .rotationEffect(.degrees(isDetectingLongPress ? 360 : 0))
-                        .animation(isDetectingLongPress ?
-                                   Animation.easeInOut(duration: 1.5)
-                                        .repeatCount(2, autoreverses: true) : nil)
-                                .onLongPressGesture(minimumDuration: 3.0, maximumDistance: 100 ,pressing: { (isPressing) in
-                                    self.isDetectingLongPress = isPressing
-                                }, perform: {
-                                    self.audioPlayer.play()
-                                    impactMed.impactOccurred()
-                                    isIn.toggle() //TAG OUT = TRUE
-                                    glitch_on.toggle()
-                                    self.startLoading()
-                                  
-                                })
-                    }
-            }
-            .scaledToFit()
-            .frame(width:100, height:100)
-            .onAppear(){
-                let sound = Bundle.main.path(forResource: "death-audio", ofType: "mp3")
-                self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(.playback)
-                } catch(let error) {
-                    print(error.localizedDescription)
-                }
+        VStack {  // VSTACK: Button and Tagginng Out Texts
+            ZStack {  // Button Back and the Spining Button
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                Circle()  // Background circle
+                    .foregroundColor(Color("offGrey"))
+                Circle()  // Surrounding circle trimline: moves from 0 position to 100
+                    .trim(from: 0.0, to: circleProgress)
+                    .stroke(Color("salmon"), lineWidth: 5)
+                    .frame(width: .infinity, height: .infinity)  // Slightly larger than prev. circle
+                    .rotationEffect(Angle(degrees: -90))
+                
+                Image(systemName: isIn ? "xmark.seal.fill": "checkmark.seal.fill")
+                    .resizable()
+                    .frame(width: .infinity, height: .infinity)
+                    .foregroundColor(isDetectingLongPress ? Color("salmon") : Color("lightGrey"))
+                    .rotationEffect(.degrees(isDetectingLongPress ? 360 : 0))
+                    .animation(isDetectingLongPress ?
+                               Animation.easeInOut(duration: 1.5)
+                        .repeatCount(2, autoreverses: true) : nil)
+                    .onLongPressGesture(minimumDuration: 3.0, maximumDistance: 100 ,pressing: { (isPressing) in
+                        self.isDetectingLongPress = isPressing
+                    }, perform: {
+                        self.audioPlayer.play()
+                        impactMed.impactOccurred()
+                        isIn.toggle() //TAG OUT = TRUE
+                        glitch_on.toggle()
+                        self.startLoading()
+                        
+                    })
             }
         }
+        .scaledToFit()
+        .frame(width: UIScreen.screenWidth/4.8, height: UIScreen.screenWidth/5)
+        .onAppear(){
+            let sound = Bundle.main.path(forResource: "death-audio", ofType: "mp3")
+            self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
-//    Count if pressed button for enough time
+    //    Count if pressed button for enough time
     func startLoading() {
         _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in  // Timer based - adds every 0.1sec held down
-                withAnimation() {
-                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                    if self.circleProgress == 1.0{
+            withAnimation() {
+                let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                if self.circleProgress == 1.0{
+                }
+                if pressing{
+                    if self.circleProgress <= 1.0{
+                        self.circleProgress += 0.02
                     }
-                    if pressing{
-                        if self.circleProgress <= 1.0{
-                            self.circleProgress += 0.02
-                        }
-                        if self.circleProgress >= 1.0{
-                            timer.invalidate()
-                        }
-                        if self.circleProgress >= 0.5{
-                            impactMed.impactOccurred()
-                        }
+                    if self.circleProgress >= 1.0{
+                        timer.invalidate()
                     }
-                    if pressing == false{
-                        if self.circleProgress > 0{
-                            self.circleProgress -= 0.025
-                        }
+                    if self.circleProgress >= 0.5{
+                        impactMed.impactOccurred()
+                    }
+                }
+                if pressing == false{
+                    if self.circleProgress > 0{
+                        self.circleProgress -= 0.025
                     }
                 }
             }
         }
+    }
 }
+
+
+
 
 ////Preview Provider
 //struct ProfileView_Previews: PreviewProvider {
-////    @StateObject var model = UserAuthModel()
+//    @State var audioPlayer: AVAudioPlayer!
+//    @State var model_passed: UserAuthModel
+//
 //    static var previews: some View {
-//        ProfileView(isOut_passed: .constant(false), glitch_bool: .constant(false), target_name: .constant("Blake"), tag_count: .constant(10), leaderBoard_pos: 5)
+//        ProfileView(isOut_passed: .constant(false), glitch_bool: .constant(false), target_name: .constant("Terry"), tag_count: .constant(10), name: .constant("Blake"), saying: .constant("blah blah"))
 //            .preferredColorScheme(.dark)
 //            .previewInterfaceOrientation(.portrait)
 //    }

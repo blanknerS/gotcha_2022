@@ -43,12 +43,12 @@ class UserAuthModel: ObservableObject {
             self.givenName = givenName ?? ""
             self.email = email ?? ""
             self.profilePicUrl = profilePicUrl
-            if !self.email.contains("milton.edu"){ //change back to gmail.com
-                self.partOfMilton = false
-                self.signOut()
-//                print("Signed out -- inside email check (User Auth)")
-                return
-            }
+//            if !self.email.contains("milton.edu"){ //change back to gmail.com
+//                self.partOfMilton = false
+//                self.signOut()
+////                print("Signed out -- inside email check (User Auth)")
+//                return
+//            }
             Task{
 //                print("CHECK STATUS -- inside TASK")
                 let fb_connection = await inDB(uid: "\(self.email)") as! Bool
