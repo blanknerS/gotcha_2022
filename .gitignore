@@ -9,6 +9,7 @@
 service-account-key.json
 GoogleService-Info.plist
 
+
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
