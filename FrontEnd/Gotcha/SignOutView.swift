@@ -15,12 +15,12 @@ struct SignOutView: View {
         VStack{
             Spacer()
             ZStack{
-                GifImageView(name: "death-gif")
-                    .frame(width: 480, height: 360)
-                    .scaledToFill()
-                    .onTapGesture {
-                        model_passed.signOut()
-                    }
+//                GifImageView(name: "death-gif")
+//                    .frame(width: 480, height: 360)
+//                    .scaledToFill()
+//                    .onTapGesture {
+//                        model_passed.signOut()
+//                    }
             }
             .frame(width: 200, height: 200, alignment: .center)
             .clipShape(Circle())
