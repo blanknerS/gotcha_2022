@@ -20,6 +20,7 @@ extension Date {
 
 func lifeStatus(uid: String) async -> Bool{
     let db = Firestore.firestore()
+    print("fetching uid:" + uid)
     let docRef = db.document("data/" + uid)
     var retVal = true as Bool
     
@@ -119,6 +120,7 @@ func tags(uid: String) async -> Int{
 
 func targ(uid: String) async -> String {
     let db = Firestore.firestore()
+    print("getting data from data/" + uid)
     let docRef = db.document("data/" + uid)
     
     var retVal = "" as String
