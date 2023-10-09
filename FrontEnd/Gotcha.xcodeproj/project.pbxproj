@@ -12,9 +12,9 @@
 		17E57EBA283EABDB00424A1E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EB9283EABDB00424A1E /* FirebaseDatabase */; };
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
-		4921195D28EC715E00C2C6DA /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4921195C28EC715E00C2C6DA /* death-gif.gif */; };
 		49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4B715284006AA00C93A66 /* BackendFuncs.swift */; };
 		49C4B7182842E17F00C93A66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */; };
+		5FA681E22AD39305004402C0 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5FA681E12AD39305004402C0 /* death-gif.gif */; };
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
@@ -65,9 +65,9 @@
 /* Begin PBXFileReference section */
 		178C5F78289082950089D9CD /* death-gif-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif-4.gif"; sourceTree = "<group>"; };
 		178C5F7A289082D10089D9CD /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
-		4921195C28EC715E00C2C6DA /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "death-gif.gif"; path = "../../../../death-gif.gif"; sourceTree = "<group>"; };
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
 		49C4B7172842E17F00C93A66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FA681E12AD39305004402C0 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "death-gif.gif"; path = "../../../../../Desktop/death-gif.gif"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */,
 				FFCD793E287E2919000B4E67 /* Profanity.json */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
-				4921195C28EC715E00C2C6DA /* death-gif.gif */,
+				5FA681E12AD39305004402C0 /* death-gif.gif */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
 				FF8FF6F0284F800000BC747B /* UserAuth.swift */,
 				FF7A0B99282D69F1003BE9BF /* MainView.swift */,
@@ -328,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */,
-				4921195D28EC715E00C2C6DA /* death-gif.gif in Resources */,
+				5FA681E22AD39305004402C0 /* death-gif.gif in Resources */,
 				178C5F7B289082D10089D9CD /* anonymous-glitch.gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,

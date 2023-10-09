@@ -108,11 +108,11 @@ struct MainView: View {
                             }
                             if show_glitch_screen{
                                 VStack{
-                                    GifImageView(name: "death-gif-4")
-                                        .frame(width: .infinity, height: .infinity, alignment: .center)
-                                    GifImageView(name: "death-gif-4")
-                                        .frame(width: .infinity, height: .infinity, alignment: .bottom)
-                                        .offset(y: -15)
+//                                    GifImageView(name: "death-gif-4")
+//                                        .frame(width: .infinity, height: .infinity, alignment: .center)
+//                                    GifImageView(name: "death-gif-4")
+//                                        .frame(width: .infinity, height: .infinity, alignment: .bottom)
+//                                        .offset(y: -15)
                                 }
                                 .background(Color("black"))
                                 .frame(width: .infinity, height: .infinity, alignment: .center)
