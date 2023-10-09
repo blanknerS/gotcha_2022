@@ -9,6 +9,5 @@ import Foundation
 import SwiftUI
 
 struct BuildConfig {
-    static let googleKey = "INSERT KEY HERE; DO NOT PUSH"
-    
+    static let googleKey = "PUT KEY HERE!"
 }
