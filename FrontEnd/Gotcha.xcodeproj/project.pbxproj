@@ -13,8 +13,8 @@
 		17E57EBC283EABDB00424A1E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBB283EABDB00424A1E /* FirebaseDatabaseSwift-Beta */; };
 		17E57EBE283EABDC00424A1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17E57EBD283EABDC00424A1E /* FirebaseFirestore */; };
 		49C4B716284006AA00C93A66 /* BackendFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4B715284006AA00C93A66 /* BackendFuncs.swift */; };
-		5FA681E62AD399E1004402C0 /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5FA681E52AD399E1004402C0 /* death-gif.gif */; };
-		5FA681E82AD39D3F004402C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FA681E72AD39D3F004402C0 /* GoogleService-Info.plist */; };
+		5F5B25C12AF345DC0039E07B /* death-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B25C02AF345DC0039E07B /* death-gif.gif */; };
+		5F5B25C32AF346650039E07B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B25C22AF346650039E07B /* GoogleService-Info.plist */; };
 		FF09389C2839EA580026AB2D /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09389B2839EA570026AB2D /* GlowBorder.swift */; };
 		FF39917D2837236900963F86 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39917C2837236900963F86 /* ProfileView.swift */; };
 		FF3991922839447200963F86 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3991912839447200963F86 /* GifImageView.swift */; };
@@ -66,8 +66,8 @@
 		178C5F78289082950089D9CD /* death-gif-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif-4.gif"; sourceTree = "<group>"; };
 		178C5F7A289082D10089D9CD /* anonymous-glitch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anonymous-glitch.gif"; sourceTree = "<group>"; };
 		49C4B715284006AA00C93A66 /* BackendFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendFuncs.swift; sourceTree = "<group>"; };
-		5FA681E52AD399E1004402C0 /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "death-gif.gif"; path = "../../../../../Desktop/death-gif.gif"; sourceTree = "<group>"; };
-		5FA681E72AD39D3F004402C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F5B25C02AF345DC0039E07B /* death-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "death-gif.gif"; sourceTree = "<group>"; };
+		5F5B25C22AF346650039E07B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09389B2839EA570026AB2D /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		FF39917C2837236900963F86 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF3991912839447200963F86 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
@@ -154,10 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				FF8FF6EB284F7DF400BC747B /* Info.plist */,
-				5FA681E72AD39D3F004402C0 /* GoogleService-Info.plist */,
+				5F5B25C22AF346650039E07B /* GoogleService-Info.plist */,
 				FF7A0B6D282D67F1003BE9BF /* GotchaApp.swift */,
 				FFCD793C287E2731000B4E67 /* ProfanityFilter.swift */,
-				5FA681E52AD399E1004402C0 /* death-gif.gif */,
 				FFCD793E287E2919000B4E67 /* Profanity.json */,
 				49C4B715284006AA00C93A66 /* BackendFuncs.swift */,
 				FF7A0B97282D69E4003BE9BF /* LoginView.swift */,
@@ -171,6 +170,7 @@
 				FF3991912839447200963F86 /* GifImageView.swift */,
 				FF3991932839476200963F86 /* CountdownView.swift */,
 				FF9C9D3E285A684D00274AB2 /* death-audio.mp3 */,
+				5F5B25C02AF345DC0039E07B /* death-gif.gif */,
 				178C5F78289082950089D9CD /* death-gif-4.gif */,
 				178C5F7A289082D10089D9CD /* anonymous-glitch.gif */,
 				FFC139B22887A211004928F8 /* clock-ticking-audio.mp3 */,
@@ -327,9 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FA681E62AD399E1004402C0 /* death-gif.gif in Resources */,
+				5F5B25C12AF345DC0039E07B /* death-gif.gif in Resources */,
 				FFCD7940287E41FE000B4E67 /* Profanity.json in Resources */,
-				5FA681E82AD39D3F004402C0 /* GoogleService-Info.plist in Resources */,
+				5F5B25C32AF346650039E07B /* GoogleService-Info.plist in Resources */,
 				178C5F7B289082D10089D9CD /* anonymous-glitch.gif in Resources */,
 				FF7A0B75282D67F5003BE9BF /* Preview Assets.xcassets in Resources */,
 				FF7A0B72282D67F4003BE9BF /* Assets.xcassets in Resources */,
@@ -541,12 +541,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gotcha;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,9 +555,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miltonacademy.gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -574,12 +577,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gotcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gotcha;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,9 +591,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miltonacademy.gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
