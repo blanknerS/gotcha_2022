@@ -9,6 +9,7 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyDklOnWgflexDHWGynGX8aI5s5y5LM8qkw",
   authDomain: "milton-academy-gotcha.firebaseapp.com",
@@ -23,6 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+console.log(analytics)
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
