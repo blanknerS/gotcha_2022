@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import GotchaLogo from "../Assets/gotcha-logo.png";
-import MenuIcon from "../Assets/menu-icon-3.png"
+import MenuIcon from "../Assets/menu-icon-3.png";
 
 function Navbar() {
   return (
@@ -11,12 +11,11 @@ function Navbar() {
         <h1>Gotcha</h1>
       </div>
 
-      <img className="menu-icon" src={MenuIcon} alt="" />
-
-      
+      <div className="nav-links">
+        <img className="menu-icon" src={MenuIcon} alt="" />
+      </div>
     </div>
   );
 }
 
 export default Navbar;
-

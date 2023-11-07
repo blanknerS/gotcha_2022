@@ -1,18 +1,14 @@
 .Navbar {
   display: flex;
   background-color: var(--background-color);
-  height: 75px;
-  position: fixed;
-  z-index: 99;
-  top: 0;
-
   justify-content: space-between;
   padding: 0 10px;
+  position: fixed;
+  height: 85px;
   width: 100vw;
-  
 }
 
-.gotcha-header {
+.gotcha-header, .nav-links {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -23,8 +19,10 @@
   /* generate a box shadow */
   /* box-shadow: 0 10px 50px 0 rgba(255, 255, 255, 0.1); */
   border: none;
-  outline: none
+  outline: none;
 }
+
+
 
 .header-icon {
   width: 5rem;
@@ -32,7 +30,6 @@
 }
 
 .menu-icon {
-  width: 5rem;
-  padding: 15px 10px;
+  width: 4rem;
   aspect-ratio: 1/1;
 }
