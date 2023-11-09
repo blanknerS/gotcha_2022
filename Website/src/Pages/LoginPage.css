@@ -1,3 +1,10 @@
+.LoginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .Login {
   display: flex;
   flex-direction: column;

@@ -21,16 +21,15 @@ html {
   font-size: 62.5%; /* Set the base font size to 10px */  
   background-color: var(--background-color);
   height: 100%;
-  
-  
-  
 }
-
-
 
 body {
   font-size: 1.6rem; /* Equivalent to 16px */
   
+}
+
+.number {
+  font-size: 5rem;
 }
 
 h1 {

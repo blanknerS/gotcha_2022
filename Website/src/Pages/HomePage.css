@@ -1,11 +1,45 @@
 .HomePage {
-  width: 100vw;
-  height: calc(100dvh - 85px);
-  position: relative;
-  top: 85px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.UserCard {
+  width: 100%;
+  background-color: var(--tertiary-color);
+  padding: 20px;
+  border-radius: var(--curve);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+
+
+.UserCard .photo {
+  border-radius: 50%;
+}
+
+.Cards {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 15vh;
+}
+
+.Card {
+  width: 100%;
+  min-height: 100px;
+  background-color: var(--tertiary-color);
+  padding: 20px 5px;
+  border-radius: var(--curve);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
 }

@@ -9,27 +9,23 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
 const firebaseConfig = {
-  apiKey: "AIzaSyDklOnWgflexDHWGynGX8aI5s5y5LM8qkw",
-  authDomain: "milton-academy-gotcha.firebaseapp.com",
-  databaseURL: "https://milton-academy-gotcha-default-rtdb.firebaseio.com",
-  projectId: "milton-academy-gotcha",
-  storageBucket: "milton-academy-gotcha.appspot.com",
-  messagingSenderId: "926744591444",
-  appId: "1:926744591444:web:ec7112fe65f5f9e5cc81c1",
-  measurementId: "G-2V1YQSKPB1",
+  apiKey: "AIzaSyDJcTBXZZcw1hpWAyith3HtPBZRAx7vkvE",
+  authDomain: "gotcha-b4b13.firebaseapp.com",
+  databaseURL: "https://gotcha-b4b13-default-rtdb.firebaseio.com",
+  projectId: "gotcha-b4b13",
+  storageBucket: "gotcha-b4b13.appspot.com",
+  messagingSenderId: "628191290317",
+  appId: "1:628191290317:web:630903a8d98f8cc19e9a84",
+  measurementId: "G-LG5MKGL41Y",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-console.log(analytics)
+console.log(analytics);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-
-

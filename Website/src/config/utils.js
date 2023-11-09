@@ -3,37 +3,16 @@
 import { auth, db } from "./firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
-// Fetch the authenticated user's document from the database
-export const fetchUserDoc = async () => {
-  try {
-
-    // If firebase auth is not initialized, return
-    if (!auth.currentUser) {
-      return;
-    }
-
-    // Get the user's document from the database
-    const userRef = doc(db, "data", auth.currentUser.email);
-    const userDoc = await getDoc(userRef);
-    const userData = userDoc.data();
-
-    // Return ref, doc, and data 
-    return { userRef, userDoc, userData };
-  } catch (error) {
-    console.log(error);
-    return;
-  }
-};
-
 // Fetch a user's document from the database by email (for chasers and targets)
 export const fetchUserDocByEmail = async (email) => {
+
   try {
     const userRef = doc(db, "data", email);
     const userDoc = await getDoc(userRef);
     const userData = userDoc.data();
     return { userRef, userDoc, userData };
   } catch (error) {
-    alert(error.message);
+    console.log(error);
   }
 };
 
@@ -67,27 +46,34 @@ export const addTestUser = async (
 };
 
 // Tag the current authenticated user out
-export const tagSelfOut = async () => {
+export const tagOut = async (email) => {
   try {
     // Get the current user
-    const { userRef, userData } = await fetchUserDoc();
-  
+    const user = await fetchUserDocByEmail(email);
+    const userData = user.userData;
+    
+
     // If the user is already out, return
     if (userData.alive === false) {
       alert("You are already out!");
       return;
     }
 
-    // Get the chaser 
-    const { chaserRef, chaserData } = await fetchUserDocByEmail(
+    // Get the user's chaser
+    const chaser = await fetchUserDocByEmail(
       userData.chaser
     );
+    const chaserData = chaser.userData;
+
+    // Get the user's last words
+    const lastWords = prompt("Please type in your last words:")
+
 
     // Update necessary fields
     userData.alive = false;
     chaserData.tags += 1;
     chaserData.target = userData.target;
-
+    userData.lastWords = lastWords;
     // Post changes to database
     await setDoc(userRef, userData);
     await setDoc(chaserRef, chaserData);
@@ -98,14 +84,3 @@ export const tagSelfOut = async () => {
   }
 };
 
-// Submit last words
-export const submitLastWords = async (lastWords) => {
-  try {
-    const { userRef, userDoc, userData } = await fetchUserDoc();
-    userData.lastWords = lastWords;
-    await setDoc(userRef, userData);
-  } catch (error) {
-    alert(error.message);
-    console.log(error);
-  }
-};

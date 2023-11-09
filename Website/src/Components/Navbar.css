@@ -6,6 +6,7 @@
   position: fixed;
   height: 85px;
   width: 100vw;
+  z-index: 10;
 }
 
 .gotcha-header, .nav-links {
