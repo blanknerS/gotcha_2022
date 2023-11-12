@@ -1,0 +1,36 @@
+.Navbar {
+  display: flex;
+  background-color: var(--background-color);
+  justify-content: space-between;
+  padding: 0 10px;
+  position: fixed;
+  height: 85px;
+  width: 100vw;
+  z-index: 10;
+}
+
+.gotcha-header, .nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0 5px;
+  align-items: center;
+  gap: 10px;
+
+  /* generate a box shadow */
+  /* box-shadow: 0 10px 50px 0 rgba(255, 255, 255, 0.1); */
+  border: none;
+  outline: none;
+}
+
+
+
+.header-icon {
+  width: 5rem;
+  aspect-ratio: 1/1;
+}
+
+.menu-icon {
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
