@@ -2,16 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
-import {
-  fetchUserDocByEmail,
-  getLastWords,
-  getLeaderBoard,
-  tagOut,
-} from "../config/utils";
-import { Navigate, useNavigate } from "react-router-dom";
+import { fetchUserDocByEmail, getLastWords, tagOut } from "../config/utils";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import { signOut } from "firebase/auth";
-import LoginPage from "./LoginPage";
 
 function HomePage() {
   const navigate = useNavigate();

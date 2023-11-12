@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Sidebar/> */}
+
       <Routes>
         {user ? (
           <Route path="/*" element={<HomePage />} />
