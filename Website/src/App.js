@@ -15,6 +15,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      {/* <Sidebar/> */}
       <Routes>
         <Route path="/*" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
