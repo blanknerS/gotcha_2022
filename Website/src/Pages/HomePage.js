@@ -32,7 +32,7 @@ function HomePage() {
         setTarget(targetData.userData);
         setAllLastWords(lastWords);
 
-        console.log(lastWords)
+        console.log(lastWords);
       } else {
         navigate("/login");
       }
@@ -78,35 +78,28 @@ function HomePage() {
           </p>
         </div>
 
-        <button onClick={handleSignOut}>Log Out</button>
+        <button className="log-out-button" onClick={handleSignOut}>
+          Log Out
+        </button>
       </>
-    );
-  };
-
-  const LastWordCard = (author, message) => {
-    return (
-      <li className="last-word-card">
-        <p>{author}</p>
-        <p>Hi</p>
-      </li>
     );
   };
 
   const LastWords = () => {
     return (
-      <>
+      <div className="last-words-section">
         <h1>Last Words</h1>
         <ul className="last-words">
           {allLastWords.map((entry) => {
-            // <LastWordCard
-            //   author={entry?.Author}
-            //   message={entry?.lw}
-            //   key={entry.id}
-            // />;
-            
+            return (
+              <li className="last-word-card" key={entry.Author}>
+                <p className="message">{entry.Lw}</p>
+                <p className="author">{entry.Author}</p>
+              </li>
+            );
           })}
         </ul>
-      </>
+      </div>
     );
   };
 
@@ -114,6 +107,7 @@ function HomePage() {
     <div className="HomePage Page">
       <Profile />
       <LastWords />
+      <div className="footer"></div>
     </div>
   );
 }
