@@ -40,6 +40,7 @@ function LoginPage() {
           onClick={signInWithGoogle}
           alt=""
           rel="noopener noreferrer"
+          draggable="false"
         />
       </div>
     );

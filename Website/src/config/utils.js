@@ -87,27 +87,32 @@ export const tagOut = async (email) => {
     // Get the user's last words
     let lastWords = prompt("Please type in your last words to tag out:");
 
+    if (lastWords === null || lastWords === undefined || lastWords === "") {
+      alert("Please type your last words and try again.");
+      return;
+    }
     // Update necessary fields
     userData.alive = false;
     chaserData.tags += 1;
     chaserData.target = userData.target;
-
-    if (lastWords === null || lastWords === undefined) {
-      lastWords = "";
-    }
-    
     userData.lastWords = lastWords;
     // Post changes to database
 
-    await setDoc(user.userRef, userData);
-    await setDoc(chaser.userRef, chaserData);
+    const answer = window.confirm("Are you sure you want to tag out?")
 
-    const fullName = userData.firstName + " " + userData.lastName;
+    if (answer) {
+      await setDoc(user.userRef, userData);
+      await setDoc(chaser.userRef, chaserData);
+  
+      const fullName = userData.firstName + " " + userData.lastName;
+  
+      await submitLastWords(email, fullName, lastWords);
+      alert("You have been tagged out.");
 
-    alert("Your last words:" + lastWords);
-    await submitLastWords(email, fullName, lastWords);
+    } else {
+      alert("Cancelled.")
+    }
 
-    alert("You have been tagged out.");
   } catch (error) {
     alert(error.message);
     console.log(error);
@@ -132,11 +137,6 @@ export const getLastWords = async () => {
 };
 
 export const getLeaderBoard = async () => {
-  try {
-  } catch (error) {
-    console.log(error);
-  }
-
   try {
     const querySnapshot = await getDocs(collection(db, "data"));
     querySnapshot.forEach((doc) => {

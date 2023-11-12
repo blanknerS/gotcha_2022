@@ -41,7 +41,12 @@ function App() {
       <Navbar />
       {/* <Sidebar/> */}
       <Routes>
-        <Route path="/*" element={<HomePage />} />
+        {user ? (
+          <Route path="/*" element={<HomePage />} />
+        ) : (
+          <Route path="/*" element={<Navigate to="/login" />} />
+        )}
+
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </div>
