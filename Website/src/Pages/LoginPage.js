@@ -31,8 +31,8 @@ function LoginPage() {
     }
   };
 
-  const Login = () => {
-    return (
+  return (
+    <div className="LoginPage Page">
       <div className="Login">
         <img
           className="google"
@@ -42,13 +42,10 @@ function LoginPage() {
           rel="noopener noreferrer"
           draggable="false"
         />
+        <button className="sign-in" onClick={signInWithGoogle}>
+          Sign In
+        </button>
       </div>
-    );
-  };
-
-  return (
-    <div className="LoginPage Page">
-      <Login></Login>
     </div>
   );
 }

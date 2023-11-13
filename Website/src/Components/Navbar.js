@@ -5,20 +5,18 @@ import MenuIcon from "../Assets/menu-icon-3.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Navbar() {
-
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleClick = () => {
-
-    if (location.pathname == '/login') {
-      alert('Please login.')
-    } else if (location.pathname !== '/stats') {
-      navigate('/stats')
+    if (location.pathname == "/login") {
+      alert("Please login.");
+    } else if (location.pathname !== "/stats") {
+      navigate("/stats");
     } else {
-      navigate('/')
+      navigate("/");
     }
-  }
+  };
 
   return (
     <div className="Navbar">
@@ -28,7 +26,13 @@ function Navbar() {
       </div>
 
       <div className="nav-links">
-        <img className="menu-icon" src={MenuIcon} onClick={handleClick} alt="" />
+        <img
+          className="menu-icon"
+          src={MenuIcon}
+          onClick={handleClick}
+          alt=""
+        />
+        
       </div>
     </div>
   );

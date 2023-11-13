@@ -22,3 +22,11 @@
   background-color: var(--tertiary-color);
   border-radius: 50%;
 }
+
+.sign-in {
+  width: 200px;
+  margin-top: 10px;
+  height: 50px;
+  padding: 0;
+
+}
