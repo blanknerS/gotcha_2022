@@ -98,21 +98,19 @@ export const tagOut = async (email) => {
     userData.lastWords = lastWords;
     // Post changes to database
 
-    const answer = window.confirm("Are you sure you want to tag out?")
+    const answer = window.confirm("Are you sure you want to tag out?");
 
     if (answer) {
       await setDoc(user.userRef, userData);
       await setDoc(chaser.userRef, chaserData);
-  
+
       const fullName = userData.firstName + " " + userData.lastName;
-  
+
       await submitLastWords(email, fullName, lastWords);
       alert("You have been tagged out.");
-
     } else {
-      alert("Cancelled.")
+      alert("Cancelled.");
     }
-
   } catch (error) {
     alert(error.message);
     console.log(error);
@@ -136,12 +134,56 @@ export const getLastWords = async () => {
   }
 };
 
-export const getLeaderBoard = async () => {
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+export const getUsers = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "data"));
+    let allUsers = [];
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      // console.log(`${doc.id} => ${doc.data()}`);
+      allUsers.push(doc.data());
     });
+
+    allUsers = shuffle(allUsers);
+
+    const sortedUsers = allUsers.slice().sort((a, b) => b.tags - a.tags);
+
+    const stableTags = allUsers.reduce((acc, user) => {
+      const stable = user.stable;
+      const tags = user.tags;
+      acc[stable] = (acc[stable] || 0) + tags;
+      return acc;
+    }, {});
+
+    // const dormTags = allUsers.reduce((acc, user) => {
+    //   const dorm = user.dorm;
+    //   const tags = user.tags;
+    //   acc[dorm] = (acc[dorm] || 0) + tags;
+    //   return acc;
+    // }, {});
+
+    const dormTags = allUsers.reduce((acc, user) => {
+      const dorm = user.dorm;
+      const tags = user.tags;
+      const name = user.firstName + " " + user.lastName;
+      if (!acc[dorm]) {
+        acc[dorm] = { totalTags: 0, topTagger: null };
+      }
+      acc[dorm].totalTags += tags;
+      if (!acc[dorm].topTagger || acc[dorm].topTagger.tags < tags) {
+        acc[dorm].topTagger = { name, tags };
+      }
+      return acc;
+    }, {});
+
+    return { allUsers, sortedUsers, stableTags, dormTags };
   } catch (error) {
     console.log(error);
   }

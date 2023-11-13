@@ -15,7 +15,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
-import Sidebar from "./Components/Sidebar"
+import Sidebar from "./Components/Sidebar";
+import StatsPage from "./Pages/StatsPage";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
@@ -35,7 +36,6 @@ function App() {
     return unsubscribe;
   }, []);
 
-
   return (
     <div className="App">
       <Navbar />
@@ -48,6 +48,7 @@ function App() {
         )}
 
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/stats" element={<StatsPage />} />
       </Routes>
     </div>
   );

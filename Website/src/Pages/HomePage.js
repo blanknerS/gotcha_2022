@@ -51,7 +51,7 @@ function HomePage() {
           <h2>
             {user?.firstName} {user?.lastName}
           </h2>
-          {/* <p>#10 on Leaderboard</p> */}
+          
         </div>
 
         <div className="Cards">
