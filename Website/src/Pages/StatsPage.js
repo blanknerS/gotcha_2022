@@ -15,10 +15,6 @@ function StatsPage() {
       setLeaderBoard(sortedUsers);
       setDormStats(dormTags);
       setStableStats(stableTags);
-
-      console.log("Leaderboard", sortedUsers);
-      console.log("Stable Tags", stableTags);
-      console.log("Dorm Tags", dormTags);
     }
 
     fetchData();
@@ -43,17 +39,18 @@ function StatsPage() {
                     <div className="">
                       <h3
                         style={{
-                          color: {
+                          color: entry.alive ? {
                             blue: "#4e79d1",
                             green: "#59a14f",
                             orange: "#e69f00",
                             pink: "#ff9da7",
                             purple: "#6e34eb",
                             red: "#eb3449",
-                          }[entry.stable],
+                          }[entry.stable] : "var(--secondary-color",
                         }}
                       >
                         {entry.firstName} {entry.lastName}
+                        {entry.alive ? "" : " 💀"}
                       </h3>
                       <p>
                         {toTitleCase(entry.class)} - {toTitleCase(entry.dorm)} -{" "}
@@ -61,7 +58,7 @@ function StatsPage() {
                       </p>
                     </div>
                   </div>
-                  <h2 className="num-tags">{entry.tags}</h2>
+                  <h2 className="num-tags" >{entry.tags}</h2>
                 </li>
               );
             })}
@@ -110,7 +107,7 @@ function StatsPage() {
                   >
                     {toTitleCase(stable)}
                   </h3>
-                  <p>Total Dorm Tags: {tags}</p>
+                  <p>Total Stable Tags: {tags}</p>
                 </div>
               ))}
             </div>

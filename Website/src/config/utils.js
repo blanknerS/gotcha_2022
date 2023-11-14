@@ -84,6 +84,9 @@ export const tagOut = async (email) => {
     const chaser = await fetchUserDocByEmail(userData.chaser);
     const chaserData = chaser.userData;
 
+    const target = await fetchUserDocByEmail(userData.target);
+    const targetData = target.userData;
+
     // Get the user's last words
     let lastWords = prompt("Please type in your last words to tag out:");
 
@@ -96,6 +99,7 @@ export const tagOut = async (email) => {
     chaserData.tags += 1;
     chaserData.target = userData.target;
     userData.lastWords = lastWords;
+    targetData.chaser = userData.chaser;
     // Post changes to database
 
     const answer = window.confirm("Are you sure you want to tag out?");
@@ -104,9 +108,9 @@ export const tagOut = async (email) => {
       await setDoc(user.userRef, userData);
       await setDoc(chaser.userRef, chaserData);
 
+      await submitLastWords(email, fullName, lastWords);
       const fullName = userData.firstName + " " + userData.lastName;
 
-      await submitLastWords(email, fullName, lastWords);
       alert("You have been tagged out.");
     } else {
       alert("Cancelled.");
@@ -147,13 +151,18 @@ export const getUsers = async () => {
     const querySnapshot = await getDocs(collection(db, "data"));
     let allUsers = [];
     querySnapshot.forEach((doc) => {
-      // console.log(`${doc.id} => ${doc.data()}`);
       allUsers.push(doc.data());
     });
 
     allUsers = shuffle(allUsers);
 
-    const sortedUsers = allUsers.slice().sort((a, b) => b.tags - a.tags);
+    const sortedUsers = allUsers.slice().sort((a, b) => {
+      if (b.tags !== a.tags) {
+        return b.tags - a.tags;
+      } else {
+        return b.alive - a.alive;
+      }
+    });
 
     const stableTags = allUsers.reduce((acc, user) => {
       const stable = user.stable;

@@ -1,28 +1,15 @@
-// import logo from "./logo.svg";
-// import { useEffect, useState } from "react";
 import { auth, googleProvider } from "./config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-// import {
-//   addTestUser,
-//   fetchUserDoc,
-//   submitLastWords,
-//   tagSelfOut,
-// } from "./config/utils";
-// import { signInWithPopup, signOut } from "firebase/auth";
-
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
-import Sidebar from "./Components/Sidebar";
 import StatsPage from "./Pages/StatsPage";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
